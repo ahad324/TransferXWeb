@@ -16,26 +16,9 @@ const Card = ({
 }) => {
   const { showModal } = useAppContext();
 
-  const handleDownloadClick = async () => {
+  const handleDownloadClick = () => {
     if (downloadLink) {
-      try {
-        const url = new URL(downloadLink, window.location.origin);
-        console.log("Download URL:", url);
-        const response = await fetch(url);
-        if (!response.ok) throw new Error("Network response was not ok");
-        const blob = await response.blob();
-        const blobUrl = window.URL.createObjectURL(blob);
-        const link = document.createElement("a");
-        link.href = blobUrl;
-        link.download = downloadLink.split("/").pop();
-        document.body.appendChild(link);
-        link.click();
-        link.remove();
-        window.URL.revokeObjectURL(blobUrl);
-      } catch (error) {
-        console.error("Failed to download file:", error);
-        showModal("Falied to Download File.Please try again later.");
-      }
+      window.open(downloadLink, "_blank");
     } else {
       showModal(modalMessage);
     }
