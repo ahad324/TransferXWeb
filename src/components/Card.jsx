@@ -16,18 +16,29 @@ const Card = ({
 }) => {
   const { showModal } = useAppContext();
 
-  const handleDownloadClick = () => {
+  const handleDownloadClick = async () => {
     if (downloadLink) {
-      const link = document.createElement("a");
-      link.href = downloadLink;
-      link.download = downloadLink.split("/").pop();
-      document.body.appendChild(link);
-      link.click();
-      document.body.removeChild(link);
+      try {
+        const response = await fetch(downloadLink);
+        if (!response.ok) throw new Error("Network response was not ok");
+        const blob = await response.blob();
+        const url = window.URL.createObjectURL(blob);
+        const link = document.createElement("a");
+        link.href = url;
+        link.download = downloadLink.split("/").pop();
+        document.body.appendChild(link);
+        link.click();
+        link.remove();
+        window.URL.revokeObjectURL(url);
+      } catch (error) {
+        console.error("Failed to download file:", error);
+        showModal(modalMessage);
+      }
     } else {
       showModal(modalMessage);
     }
   };
+
   return (
     <div className={`card ${isDarkTheme ? "dark" : ""}`}>
       <div className="card-inner">
