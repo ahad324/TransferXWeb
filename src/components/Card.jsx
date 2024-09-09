@@ -18,12 +18,16 @@ const Card = ({
 
   const handleDownloadClick = () => {
     if (downloadLink) {
-      window.open(downloadLink, "_blank");
+      const link = document.createElement("a");
+      link.href = downloadLink;
+      link.download = downloadLink.split("/").pop();
+      document.body.appendChild(link);
+      link.click();
+      document.body.removeChild(link);
     } else {
       showModal(modalMessage);
     }
   };
-
   return (
     <div className={`card ${isDarkTheme ? "dark" : ""}`}>
       <div className="card-inner">
