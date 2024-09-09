@@ -20,6 +20,7 @@ const Card = ({
     if (downloadLink) {
       try {
         const url = new URL(downloadLink, window.location.origin);
+        console.log("Download URL:", url);
         const response = await fetch(url);
         if (!response.ok) throw new Error("Network response was not ok");
         const blob = await response.blob();
@@ -29,12 +30,11 @@ const Card = ({
         link.download = downloadLink.split("/").pop();
         document.body.appendChild(link);
         link.click();
-        console.log(link);
         link.remove();
         window.URL.revokeObjectURL(blobUrl);
       } catch (error) {
         console.error("Failed to download file:", error);
-        showModal(modalMessage);
+        showModal("Falied to Download File.Please try again later.");
       }
     } else {
       showModal(modalMessage);
