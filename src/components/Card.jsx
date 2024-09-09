@@ -19,17 +19,19 @@ const Card = ({
   const handleDownloadClick = async () => {
     if (downloadLink) {
       try {
-        const response = await fetch(downloadLink);
+        const url = new URL(downloadLink, window.location.origin);
+        const response = await fetch(url);
         if (!response.ok) throw new Error("Network response was not ok");
         const blob = await response.blob();
-        const url = window.URL.createObjectURL(blob);
+        const blobUrl = window.URL.createObjectURL(blob);
         const link = document.createElement("a");
-        link.href = url;
+        link.href = blobUrl;
         link.download = downloadLink.split("/").pop();
         document.body.appendChild(link);
         link.click();
+        console.log(link);
         link.remove();
-        window.URL.revokeObjectURL(url);
+        window.URL.revokeObjectURL(blobUrl);
       } catch (error) {
         console.error("Failed to download file:", error);
         showModal(modalMessage);

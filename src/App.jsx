@@ -25,13 +25,13 @@ const App = () => {
           title="Server App"
           description="Download the server application to manage and run your server."
           imgSrc={serverIcon}
-          downloadLink="src/assets/server-app.zip"
+          downloadLink="/assets/server-app.zip"
         />
         <Card
           title="Client App"
           description="Download the client application to connect to the server."
           imgSrc={clientIcon}
-          downloadLink="src/assets/client-app.zip"
+          downloadLink="/assets/client-app.zip"
         />
       </div>
       <Modal />
