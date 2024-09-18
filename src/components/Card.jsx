@@ -3,35 +3,26 @@ import Button from "./Button";
 import "../styles/Card.css";
 import { useAppContext } from "../context/Context";
 
-const PASSWORD = "ahad";
-const DEFAULT_MODAL_MESSAGE =
-  "🚧 This feature is under construction! 🚀 We're working hard to bring you something awesome. Stay tuned for updates! 💡";
-
 const Card = ({
   title,
   description,
   imgSrc,
   downloadLink,
-  modalMessage = DEFAULT_MODAL_MESSAGE,
+  isPasswordProtected = false,
   isDarkTheme = false,
 }) => {
-  const { showModal } = useAppContext();
+  const { showModal, PASSWORD } = useAppContext();
 
   const handleDownloadClick = () => {
-    if (downloadLink) {
-      if (downloadLink.includes("server-app")) {
-        const password = window.prompt("Enter password:");
-
-        if (password === PASSWORD) {
-          window.open(downloadLink, "_blank");
-        } else {
-          alert("Incorrect password");
-        }
-      } else {
+    if (isPasswordProtected) {
+      const password = window.prompt("Enter password:");
+      if (password === PASSWORD) {
         window.open(downloadLink, "_blank");
+      } else {
+        alert("Incorrect password");
       }
     } else {
-      showModal(modalMessage);
+      window.open(downloadLink, "_blank");
     }
   };
 

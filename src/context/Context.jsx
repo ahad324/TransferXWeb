@@ -1,9 +1,9 @@
-// src/Context.js
 import React, { createContext, useState, useContext } from "react";
 
 const AppContext = createContext();
 
 export function AppProvider({ children }) {
+  const PASSWORD = "ahad";
   const [isDarkTheme, setIsDarkTheme] = useState(
     window.matchMedia("(prefers-color-scheme: dark)").matches
   );
@@ -20,13 +20,16 @@ export function AppProvider({ children }) {
   const closeModal = () => {
     setModalMessage(null);
   };
-
+  const contextData = {
+    isDarkTheme,
+    toggleTheme,
+    modalMessage,
+    showModal,
+    closeModal,
+    PASSWORD,
+  };
   return (
-    <AppContext.Provider
-      value={{ isDarkTheme, toggleTheme, modalMessage, showModal, closeModal }}
-    >
-      {children}
-    </AppContext.Provider>
+    <AppContext.Provider value={contextData}>{children}</AppContext.Provider>
   );
 }
 
