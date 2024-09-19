@@ -12,9 +12,14 @@ const App = () => {
   const [versionData, setVersionData] = useState(null);
 
   useEffect(() => {
-    fetch("/version.json")
+    fetch(
+      "https://raw.githubusercontent.com/ahad324/TransferX/main/version.json"
+    )
       .then((response) => response.json())
-      .then((data) => setVersionData(data))
+      .then((data) => {
+        setVersionData(data);
+        console.log(data);
+      })
       .catch((error) => console.error("Error fetching version data:", error));
   }, []);
 
