@@ -12,15 +12,23 @@ const App = () => {
   const [versionData, setVersionData] = useState(null);
 
   useEffect(() => {
-    fetch(
-      "https://raw.githubusercontent.com/ahad324/TransferX/main/version.json"
-    )
-      .then((response) => response.json())
-      .then((data) => {
-        setVersionData(data);
-        console.log(data);
-      })
-      .catch((error) => console.error("Error fetching version data:", error));
+    const fetchVersionData = async () => {
+      try {
+        const response = await fetch(
+          "https://api.github.com/repos/ahad324/TransferX/releases/latest"
+        );
+        const data = await response.json();
+        setVersionData({
+          client: data.assets[0].browser_download_url,
+          server: data.assets[1].browser_download_url,
+        });
+        console.log(versionData);
+      } catch (error) {
+        console.error("Error fetching version data:", error);
+      }
+    };
+
+    fetchVersionData();
   }, []);
 
   return (
@@ -41,14 +49,14 @@ const App = () => {
               title="Server App"
               description="Download the server application to manage and run your server."
               imgSrc={serverIcon}
-              downloadLink={versionData.server.url}
+              downloadLink={versionData.server}
               isPasswordProtected={true}
             />
             <Card
               title="Client App"
               description="Download the client application to connect to the server."
               imgSrc={clientIcon}
-              downloadLink={versionData.client.url}
+              downloadLink={versionData.client}
             />
           </>
         )}
