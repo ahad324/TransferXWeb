@@ -12,23 +12,10 @@ const App = () => {
   const [versionData, setVersionData] = useState(null);
 
   useEffect(() => {
-    const fetchVersionData = async () => {
-      try {
-        const response = await fetch(
-          "https://api.github.com/repos/ahad324/TransferX/releases/latest"
-        );
-        const data = await response.json();
-        setVersionData({
-          client: data.assets[0].browser_download_url,
-          server: data.assets[1].browser_download_url,
-        });
-        console.log(versionData);
-      } catch (error) {
-        console.error("Error fetching version data:", error);
-      }
-    };
-
-    fetchVersionData();
+    setVersionData({
+      client: "/assets/TransferX.exe",
+      server: "/assets/TransferXServer.exe",
+    });
   }, []);
 
   return (
