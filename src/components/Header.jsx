@@ -19,7 +19,12 @@ const Header = ({ theme, handleThemeToggle, activeSection }) => {
   return (
     <header>
       <div className="header-content">
-        <div className="logo">TransferX</div>
+        <div className="logo">
+          <a href="/">
+            {" "}
+            <pre>𝓣𝓻𝓪𝓷𝓼𝓯𝓮𝓻𝓧</pre>{" "}
+          </a>
+        </div>
         <div className="menu-theme">
           <nav className={`nav-links ${isMenuOpen ? "active" : ""}`}>
             <ul>

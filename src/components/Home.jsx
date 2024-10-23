@@ -1,6 +1,6 @@
 import React from "react";
 import { Link } from "react-scroll";
-import "../styles/home.css";
+import "../styles/Home.css";
 import homeImage from "/logo.ico";
 
 const home = () => {

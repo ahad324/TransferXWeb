@@ -64,6 +64,9 @@
 .app-images {
   max-width: 600px;
   max-height: 55dvh;
+  border: 2px solid;
+  border-radius: 10px;
+  padding: .2rem;
 }
 
 .app-images img {
