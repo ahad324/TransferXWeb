@@ -1,0 +1,93 @@
+.about {
+  padding: 6rem 0;
+  text-align: center;
+}
+
+.about h2 {
+  font-size: 2.5rem;
+  font-weight: 700;
+  margin-bottom: 1rem;
+}
+
+.about-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2rem;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.about-image {
+  max-width: 200px;
+  border-radius: 50%;
+  overflow: hidden;
+  border: 2px solid;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.about-image img {
+  width: 100%;
+  height: auto;
+}
+
+.about-description {
+  text-align: left;
+  max-width: 600px;
+}
+
+.intro {
+  font-size: 1.25rem;
+  color: var(--text-color);
+  margin-bottom: 1rem;
+}
+
+.about-description h3 {
+  font-size: 1.5rem;
+  margin-top: 1.5rem;
+  font-weight: 600;
+}
+
+.about-description p {
+  font-size: 1rem;
+  color: var(--text-color);
+  margin-bottom: 1rem;
+}
+
+.button-group {
+  display: flex;
+  gap: 1rem;
+}
+
+.cta-button {
+  background-color: var(--primary-color);
+  color: white;
+  border: none;
+  padding: 0.8rem 1.5rem;
+  font-size: 1rem;
+  border-radius: 9999px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.cta-button:hover {
+  background-color: var(--secondary-color);
+  transform: translateY(-2px);
+}
+
+.github-button {
+  background-color: #333;
+}
+
+.github-button:hover {
+  background-color: #444;
+}
+@media (max-width:425px) {
+  .cta-button{
+    flex-direction: column;
+  }
+}
