@@ -5,24 +5,19 @@ import { FaHome, FaCog, FaAppStore, FaInfoCircle } from "react-icons/fa";
 import { Link } from "react-scroll";
 import "../styles/Header.css";
 
-const Header = ({ theme, handleThemeToggle, activeSection }) => {
+const Header = ({ theme, handleThemeToggle }) => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   const toggleMenu = () => {
     setIsMenuOpen(!isMenuOpen);
   };
 
-  // Determine if the Apps link should be active
-  const isAppsActive =
-    activeSection === "#client-app" || activeSection === "#server-app";
-
   return (
     <header>
       <div className="header-content">
         <div className="logo">
           <a href="/">
-            {" "}
-            <pre>𝓣𝓻𝓪𝓷𝓼𝓯𝓮𝓻𝓧</pre>{" "}
+            <pre>𝓣𝓻𝓪𝓷𝓼𝓯𝓮𝓻𝓧</pre>
           </a>
         </div>
         <div className="menu-theme">
@@ -30,65 +25,36 @@ const Header = ({ theme, handleThemeToggle, activeSection }) => {
             <ul>
               <div className="inner_links_div">
                 <li>
-                  <Link
-                    to="home"
-                    smooth={true}
-                    duration={500}
-                    className={activeSection === "#home" ? "active" : ""}
-                  >
+                  <Link to="home" smooth={true} duration={500}>
                     <FaHome /> Home
                   </Link>
                 </li>
                 <li>
-                  <Link
-                    to="features"
-                    smooth={true}
-                    duration={500}
-                    className={activeSection === "#features" ? "active" : ""}
-                  >
+                  <Link to="features" smooth={true} duration={500}>
                     <FaCog /> Features
                   </Link>
                 </li>
               </div>
               <div className="inner_links_div">
-                <li className={`apps-menu ${isAppsActive ? "active" : ""}`}>
+                <li className={`apps-menu`}>
                   <a>
                     <FaAppStore /> Apps
                   </a>
                   <ul className="sub-menu">
                     <li>
-                      <Link
-                        to="client-app"
-                        smooth={true}
-                        duration={500}
-                        className={
-                          activeSection === "#client-app" ? "active" : ""
-                        }
-                      >
+                      <Link to="client-app" smooth={true} duration={500}>
                         Client App
                       </Link>
                     </li>
                     <li>
-                      <Link
-                        to="server-app"
-                        smooth={true}
-                        duration={500}
-                        className={
-                          activeSection === "#server-app" ? "active" : ""
-                        }
-                      >
+                      <Link to="server-app" smooth={true} duration={500}>
                         Server App
                       </Link>
                     </li>
                   </ul>
                 </li>
                 <li>
-                  <Link
-                    to="about"
-                    smooth={true}
-                    duration={500}
-                    className={activeSection === "#about" ? "active" : ""}
-                  >
+                  <Link to="about" smooth={true} duration={500}>
                     <FaInfoCircle /> About
                   </Link>
                 </li>

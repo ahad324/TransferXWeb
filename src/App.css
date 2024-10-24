@@ -33,6 +33,10 @@ body {
   margin: 0 auto;
   padding: 0 2rem;
 }
+section{
+  padding: 4rem 0;
+  text-align: center;
+}
 section h2 {
   font-size: 2.5rem;
   font-weight: 700;

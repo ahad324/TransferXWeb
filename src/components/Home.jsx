@@ -2,8 +2,12 @@ import React from "react";
 import { Link } from "react-scroll";
 import "../styles/Home.css";
 import homeImage from "/logo.ico";
+import img1 from "../assets/Images/doc.png";
+import img2 from "../assets/Images/documents.png";
+import img3 from "../assets/Images/exe.png";
+import img4 from "../assets/Images/pdf-file.png";
 
-const home = () => {
+const Home = () => {
   return (
     <section id="home" className="home">
       <div className="home-content">
@@ -38,9 +42,15 @@ const home = () => {
           className="home-image"
           loading="lazy"
         />
+        <div className="other-images">
+          <img src={img1} alt="Document Icon" />
+          <img src={img2} alt="Documents Icon" />
+          <img src={img3} alt="Executable Icon" />
+          <img src={img4} alt="PDF Icon" />
+        </div>
       </div>
     </section>
   );
 };
 
-export default home;
+export default Home;

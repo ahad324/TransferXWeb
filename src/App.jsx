@@ -6,12 +6,13 @@ import AppSection from "./components/AppSection";
 import About from "./components/About";
 import Footer from "./components/Footer";
 import { ClientImages, ServerImages } from "./Images";
+import Loader from "./components/Loader";
 import "./App.css";
 
 const App = () => {
   const [theme, setTheme] = useState("light");
-  const [activeSection, setActiveSection] = useState("#home");
   const [versionData, setVersionData] = useState(null);
+  const [isLoading, setIsLoading] = useState(true); // Loading state
 
   useEffect(() => {
     const fetchVersionData = async () => {
@@ -24,10 +25,6 @@ const App = () => {
           client: data.assets[0].browser_download_url,
           server: data.assets[1].browser_download_url,
         });
-        // console.log("Fetched version data:", {
-        //   client: data.assets[0].browser_download_url,
-        //   server: data.assets[1].browser_download_url,
-        // }); // Log the fetched data
       } catch (error) {
         console.error("Error fetching version data:", error);
       }
@@ -37,21 +34,7 @@ const App = () => {
   }, []);
 
   useEffect(() => {
-    const observer = new IntersectionObserver(
-      (entries) => {
-        entries.forEach((entry) => {
-          if (entry.isIntersecting) {
-            setActiveSection(`#${entry.target.id}`);
-          }
-        });
-      },
-      { threshold: 0.5 }
-    );
-
-    const sections = document.querySelectorAll("section, #home, #features");
-    sections.forEach((section) => observer.observe(section));
-
-    return () => sections.forEach((section) => observer.unobserve(section));
+    setIsLoading(false);
   }, []);
 
   const handleThemeToggle = () => {
@@ -77,33 +60,37 @@ const App = () => {
 
   return (
     <div className={`app ${theme}`}>
-      <Header
-        theme={theme}
-        handleThemeToggle={handleThemeToggle}
-        activeSection={activeSection}
-      />
-      <main>
-        <Home />
-        <Features />
-        {versionData && (
-          <>
-            <AppSection
-              type="client"
-              downloadLink={versionData.client}
-              features={clientFeatures}
-              images={ClientImages}
-            />
-            <AppSection
-              type="server"
-              downloadLink={versionData.server}
-              features={serverFeatures}
-              images={ServerImages}
-            />
-          </>
-        )}
-        <About />
-      </main>
-      <Footer />
+      <Header theme={theme} handleThemeToggle={handleThemeToggle} />
+      {isLoading ? (
+        <Loader ClassName={"h-screen"} />
+      ) : (
+        <div>
+          <main>
+            <Home />
+            <Features />
+            {versionData ? (
+              <>
+                <AppSection
+                  type="client"
+                  downloadLink={versionData.client}
+                  features={clientFeatures}
+                  images={ClientImages}
+                />
+                <AppSection
+                  type="server"
+                  downloadLink={versionData.server}
+                  features={serverFeatures}
+                  images={ServerImages}
+                />
+              </>
+            ) : (
+              <Loader Message={"Loading Apps..."} />
+            )}
+            <About />
+          </main>
+          <Footer />
+        </div>
+      )}
     </div>
   );
 };

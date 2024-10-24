@@ -43,7 +43,6 @@ header {
 .apps-menu {
   position: relative;
   cursor: pointer;
-  padding: 0rem;
   padding: 1rem;
 }
 
@@ -108,8 +107,6 @@ header {
 }
 
 .nav-links a:hover,
-.nav-links a.active,
-.apps-menu.active a,
 .sub-menu a:hover {
   color: white;
   background-color: rgba(255, 255, 255, 0.3);
