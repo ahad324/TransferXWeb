@@ -95,10 +95,18 @@ const Header = ({ theme, handleThemeToggle, activeSection }) => {
               </div>
             </ul>
           </nav>
-          <button className="theme-toggle" onClick={handleThemeToggle}>
+          <button
+            className="theme-toggle"
+            name="Theme_toggler"
+            onClick={handleThemeToggle}
+          >
             {theme === "light" ? <IoMoon /> : <IoSunny />}
           </button>
-          <button className="menu-toggle" onClick={toggleMenu}>
+          <button
+            className="menu-toggle"
+            name="Menu_toggler"
+            onClick={toggleMenu}
+          >
             {isMenuOpen ? <IoClose /> : <LuLayoutGrid />}
           </button>
         </div>

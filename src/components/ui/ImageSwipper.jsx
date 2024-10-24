@@ -36,6 +36,7 @@ export const ImageSwiper = ({ images, className }) => {
               setImgIndex((pv) => pv - 1);
             }
           }}
+          name="Image_Swiper_handler_Left"
         >
           <IconChevronLeft className="stroke-neutral-600" size={20} />
         </button>
@@ -47,6 +48,7 @@ export const ImageSwiper = ({ images, className }) => {
               setImgIndex((pv) => pv + 1);
             }
           }}
+          name="Image_Swiper_handler_Right"
         >
           <IconChevronRight className="stroke-neutral-600" size={20} />
         </button>

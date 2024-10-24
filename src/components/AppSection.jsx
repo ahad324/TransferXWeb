@@ -27,7 +27,11 @@ const AppSection = ({ type, downloadLink, features, images }) => {
             <p className="app-description">
               Download our {type} app to start transferring files today.
             </p>
-            <button className="download-button" onClick={handleDownload}>
+            <button
+              className="download-button"
+              name="App_download_button"
+              onClick={handleDownload}
+            >
               <FaDownload /> Download{" "}
               {type.charAt(0).toUpperCase() + type.slice(1)} App
             </button>

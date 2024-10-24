@@ -33,11 +33,16 @@ const About = () => {
               embracing continuous learning.
             </p>
             <div className="button-group">
-              <button className="cta-button" onClick={handleViewProjects}>
+              <button
+                className="cta-button"
+                name="View_my_project"
+                onClick={handleViewProjects}
+              >
                 <FaExternalLinkAlt /> View My Projects
               </button>
               <button
                 className="cta-button github-button"
+                name="Github_profile"
                 onClick={handleGitHubProfile}
               >
                 <FaGithub /> GitHub Profile
