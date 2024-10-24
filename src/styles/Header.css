@@ -30,7 +30,7 @@ header {
   font-size: 1.8rem;
   font-weight: 800;
   color: white;
-  letter-spacing: -2px;
+  letter-spacing: -1px;
 }
 .inner_links_div {
   display: flex;
