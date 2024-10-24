@@ -11,6 +11,31 @@ import "./App.css";
 const App = () => {
   const [theme, setTheme] = useState("light");
   const [activeSection, setActiveSection] = useState("#home");
+  const [versionData, setVersionData] = useState(null);
+
+  useEffect(() => {
+    const fetchVersionData = async () => {
+      try {
+        const response = await fetch(
+          "https://api.github.com/repos/ahad324/TransferX/releases/latest"
+        );
+        const data = await response.json();
+        setVersionData({
+          client: data.assets[0].browser_download_url,
+          server: data.assets[1].browser_download_url,
+        });
+        // console.log("Fetched version data:", {
+        //   client: data.assets[0].browser_download_url,
+        //   server: data.assets[1].browser_download_url,
+        // }); // Log the fetched data
+      } catch (error) {
+        console.error("Error fetching version data:", error);
+      }
+    };
+
+    fetchVersionData();
+  }, []);
+
   useEffect(() => {
     const observer = new IntersectionObserver(
       (entries) => {
@@ -23,14 +48,14 @@ const App = () => {
       { threshold: 0.5 }
     );
 
-    const sections = document.querySelectorAll("section, #home, #features"); // Add #features here
+    const sections = document.querySelectorAll("section, #home, #features");
     sections.forEach((section) => observer.observe(section));
 
     return () => sections.forEach((section) => observer.unobserve(section));
   }, []);
 
   const handleThemeToggle = () => {
-    setTheme(theme === "light" ? "dark" : "light");
+    setTheme((prevTheme) => (prevTheme === "light" ? "dark" : "light"));
     document.body.classList.toggle("dark-theme");
   };
 
@@ -60,18 +85,22 @@ const App = () => {
       <main>
         <Home />
         <Features />
-        <AppSection
-          type="client"
-          downloadLink="https://transferx.netlify.app/assets/Transferx.exe"
-          features={clientFeatures}
-          images={ClientImages}
-        />
-        <AppSection
-          type="server"
-          downloadLink="https://transferx.netlify.app/assets/TransferXServer.exe"
-          features={serverFeatures}
-          images={ServerImages}
-        />
+        {versionData && (
+          <>
+            <AppSection
+              type="client"
+              downloadLink={versionData.client}
+              features={clientFeatures}
+              images={ClientImages}
+            />
+            <AppSection
+              type="server"
+              downloadLink={versionData.server}
+              features={serverFeatures}
+              images={ServerImages}
+            />
+          </>
+        )}
         <About />
       </main>
       <Footer />
