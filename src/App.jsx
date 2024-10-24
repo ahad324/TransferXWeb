@@ -68,7 +68,7 @@ const App = () => {
         />
         <AppSection
           type="server"
-          downloadLink="https://transferx.netlify.app/assets/Transferx-server.exe"
+          downloadLink="https://transferx.netlify.app/assets/TransferXServer.exe"
           features={serverFeatures}
           images={ServerImages}
         />
