@@ -90,6 +90,7 @@ export const ImageSwiper = ({ images, className }) => {
                 src={src}
                 className="pointer-events-none h-full w-full object-cover"
                 loading="lazy"
+                alt="Apps Screenshots"
               />
             </motion.div>
           );
