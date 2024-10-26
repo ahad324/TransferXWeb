@@ -54,35 +54,25 @@
   gap: 1rem;
 }
 
-.cta-button {
-  background-color: var(--primary-color);
-  color: white;
-  border: none;
-  padding: 0.8rem 1.5rem;
-  font-size: 1rem;
-  border-radius: 9999px;
-  cursor: pointer;
-  transition: all 0.3s ease;
-  font-weight: 600;
+.button {
   display: flex;
   align-items: center;
   gap: 0.5rem;
 }
-
-.cta-button:hover {
-  background-color: var(--secondary-color);
-  transform: translateY(-2px);
-}
-
 .github-button {
   background-color: #333;
+  transform: scale(1.05);
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
+  border: none;
 }
-
 .github-button:hover {
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
   background-color: #444;
 }
 @media (max-width:425px) {
-  .cta-button{
+  .button-group{
     flex-direction: column;
+    justify-content: center;
+    align-items: center;
   }
 }

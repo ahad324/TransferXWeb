@@ -29,7 +29,7 @@
   background-color: var(--primary-color);
   color: white;
   text-decoration: none;
-  border-radius: 8px;
+  border-radius: 8px;  
   border: none;
   cursor: pointer;
   transition: background-color 0.3s, transform 0.2s;
@@ -40,8 +40,8 @@
 
 .not-found-button:hover {
   background-color: var(--secondary-color);
-  transform: scale(1.05); /* Slightly scale up on hover */
-  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3); /* Darker shadow on hover */
+  transform: scale(1.05);
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
 }
 
 /* Responsive styles */

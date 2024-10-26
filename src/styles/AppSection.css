@@ -15,25 +15,11 @@
   margin-bottom: 1rem;
 }
 
-.download-button {
-  background-color: var(--primary-color);
-  color: white;
-  border: none;
-  padding: 0.8rem 1.5rem;
-  font-size: 1rem;
-  border-radius: 9999px;
-  cursor: pointer;
-  transition: all 0.3s ease;
-  font-weight: 600;
+.download {
   display: flex;
   align-items: center;
   gap: 0.5rem;
   margin: 1.5rem auto;
-}
-
-.download-button:hover {
-  background-color: var(--secondary-color);
-  transform: translateY(-2px);
 }
 .feature-list {
   text-align: left;

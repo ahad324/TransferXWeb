@@ -25,7 +25,7 @@ const Header = ({ theme, handleThemeToggle }) => {
             <ul>
               <div className="inner_links_div">
                 <li>
-                  <Link to="home" smooth={true} duration={500}>
+                  <Link to="home" smooth={true} duration={500} offset={-75}>
                     <FaHome /> Home
                   </Link>
                 </li>

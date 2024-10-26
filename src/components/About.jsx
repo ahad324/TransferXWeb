@@ -34,14 +34,14 @@ const About = () => {
             </p>
             <div className="button-group">
               <button
-                className="cta-button"
+                className="button primary"
                 name="View_my_project"
                 onClick={handleViewProjects}
               >
                 <FaExternalLinkAlt /> View My Projects
               </button>
               <button
-                className="cta-button github-button"
+                className="button github-button"
                 name="Github_profile"
                 onClick={handleGitHubProfile}
               >

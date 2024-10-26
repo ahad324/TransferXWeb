@@ -24,12 +24,12 @@ const Home = () => {
         </p>
         <div className="home-cta">
           <Link to="client-app" smooth={true} duration={500}>
-            <button className="cta-button primary" name="Get_Started">
+            <button className="button primary" name="Get_Started">
               Get Started
             </button>
           </Link>
           <Link to="features" smooth={true} duration={500}>
-            <button className="cta-button secondary" name="Learn_More">
+            <button className="button secondary" name="Learn_More">
               Learn More
             </button>
           </Link>

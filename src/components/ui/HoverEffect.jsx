@@ -36,9 +36,7 @@ export const HoverEffect = ({ items, className }) => {
               />
             )}
           </AnimatePresence>
-          <Card hovered={hoveredIndex === idx}>
-            {" "}
-            {/* Pass hovered state */}
+          <Card hovered={hoveredIndex === idx} className={"drop-shadow-xl"}>
             <div className="flex items-center justify-center">
               <div className="feature-icon">{item.icon}</div>
             </div>
