@@ -38,7 +38,7 @@ const Home = () => {
       <div className="home-image-container">
         <img
           src={homeImage}
-          alt="TransferX in action"
+          alt="TransferX Logo"
           className="home-image"
           loading="lazy"
         />

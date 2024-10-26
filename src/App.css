@@ -3,7 +3,7 @@
   --secondary-color: #8b5cf6;
   --background-color: #f9fafb;
   --text-color: #1f2937;
-  --card-background: #ffffff;
+  --input-background: #ffffff;
   --accent-color: #10b981;
 }
 
@@ -12,7 +12,7 @@
   --secondary-color: #a78bfa;
   --background-color: #111827;
   --text-color: #f3f4f6;
-  --card-background: #1f2937;
+  --input-background: #1f2937;
   --accent-color: #34d399;
 }
 * {

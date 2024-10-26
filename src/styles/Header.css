@@ -91,12 +91,12 @@ header {
 .nav-links a svg,
 .apps-menu svg,
 .sub-menu a svg {
-  margin-right: 0.5rem; /* Add some space between icon and text */
+  margin-right: 0.5rem;
 }
 .nav-links a,
 .apps-menu,
 .sub-menu a {
-  color: rgba(255, 255, 255, 0.8);
+  color: rgba(255, 255, 255, 0.9);
   text-decoration: none;
   transition: color 0.3s ease, transform 0.3s ease;
   font-weight: 600;

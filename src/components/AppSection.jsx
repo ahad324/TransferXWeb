@@ -1,21 +1,22 @@
 import React, { useState } from "react";
 import { FaDownload } from "react-icons/fa";
-import "../styles/AppSection.css";
 import { ImageSwiper } from "../components/ui/ImageSwipper";
+import PasswordModal from "./PasswordModal";
+import "../styles/AppSection.css";
 
 const AppSection = ({ type, downloadLink, features, images }) => {
-  const [errorMessage, setErrorMessage] = useState("");
+  const [isModalOpen, setIsModalOpen] = useState(false);
 
   const handleDownload = () => {
-    const password = prompt(
-      "Please enter the password to download the Server App:"
-    );
-    if (password === "ahad") {
-      window.open(downloadLink, "_blank");
-      setErrorMessage("");
-    } else {
-      setErrorMessage("Incorrect password. Please try again.");
-    }
+    window.open(downloadLink, "_blank");
+  };
+
+  const handleOpenModal = () => {
+    setIsModalOpen(true);
+  };
+
+  const handleCloseModal = () => {
+    setIsModalOpen(false);
   };
 
   return (
@@ -27,15 +28,10 @@ const AppSection = ({ type, downloadLink, features, images }) => {
             <p className="app-description">
               Download our {type} app to start transferring files today.
             </p>
-            <button
-              className="download-button"
-              name="App_download_button"
-              onClick={handleDownload}
-            >
+            <button className="download-button" onClick={handleOpenModal}>
               <FaDownload /> Download{" "}
               {type.charAt(0).toUpperCase() + type.slice(1)} App
             </button>
-            {errorMessage && <p className="text-red-500">{errorMessage}</p>}{" "}
             <div className="feature-list">
               <h3>Key Features:</h3>
               <ul>
@@ -46,6 +42,14 @@ const AppSection = ({ type, downloadLink, features, images }) => {
                 ))}
               </ul>
             </div>
+            <PasswordModal
+              isOpen={isModalOpen}
+              onClose={handleCloseModal}
+              onSubmit={handleDownload}
+              passwordPrompt={`Enter password to download ${
+                type.charAt(0).toUpperCase() + type.slice(1)
+              } App`}
+            />
           </div>
           <div className="app-images">
             <ImageSwiper images={images} />
