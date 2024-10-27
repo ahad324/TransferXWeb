@@ -2,6 +2,13 @@ import React, { useState } from "react";
 import { FaDownload } from "react-icons/fa";
 import { ImageSwiper } from "../components/ui/ImageSwipper";
 import PasswordModal from "./PasswordModal";
+import { motion } from "framer-motion";
+import {
+  textVariants,
+  buttonVariants,
+  containerVariants,
+  imageVariants,
+} from "../AnimationVariants";
 import "../styles/AppSection.css";
 
 const AppSection = ({ type, downloadLink, features, images }) => {
@@ -24,26 +31,62 @@ const AppSection = ({ type, downloadLink, features, images }) => {
       <div className="container">
         <div className="app-content">
           <div className="app-info">
-            <h2>{type.charAt(0).toUpperCase() + type.slice(1)} App</h2>
-            <p className="app-description">
+            <motion.h2
+              variants={textVariants}
+              initial="hidden"
+              whileInView="visible"
+              viewport={{ once: true, amount: 0.3 }}
+            >
+              {type.charAt(0).toUpperCase() + type.slice(1)} App
+            </motion.h2>
+            <motion.p
+              variants={textVariants}
+              initial="hidden"
+              whileInView="visible"
+              viewport={{ once: true, amount: 0.3 }}
+              className="app-description"
+            >
               Download our {type} app to start transferring files today.
-            </p>
-            <button
+            </motion.p>
+            <motion.button
+              variants={buttonVariants}
+              initial="hidden"
+              whileInView="visible"
+              viewport={{ once: true, amount: 0.3 }}
               className="button primary download"
               onClick={handleOpenModal}
             >
               <FaDownload /> Download{" "}
               {type.charAt(0).toUpperCase() + type.slice(1)} App
-            </button>
+            </motion.button>
             <div className="feature-list">
-              <h3>Key Features:</h3>
-              <ul>
+              <motion.h3
+                variants={textVariants}
+                initial="hidden"
+                whileInView="visible"
+                viewport={{ once: true, amount: 0.3 }}
+              >
+                Key Features:
+              </motion.h3>
+              <motion.ul
+                variants={containerVariants}
+                initial="hidden"
+                whileInView="visible"
+                viewport={{ once: true, amount: 0.3 }}
+              >
                 {features.map((feature, index) => (
-                  <li key={index} className="feature-item">
+                  <motion.li
+                    variants={textVariants}
+                    initial="hidden"
+                    whileInView="visible"
+                    viewport={{ once: true, amount: 0.3 }}
+                    key={index}
+                    className="feature-item"
+                  >
                     {feature}
-                  </li>
+                  </motion.li>
                 ))}
-              </ul>
+              </motion.ul>
             </div>
             <PasswordModal
               isOpen={isModalOpen}
@@ -54,9 +97,15 @@ const AppSection = ({ type, downloadLink, features, images }) => {
               } App`}
             />
           </div>
-          <div className="app-images">
+          <motion.div
+            variants={imageVariants}
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true, amount: 0.3 }}
+            className="app-images"
+          >
             <ImageSwiper images={images} />
-          </div>
+          </motion.div>
         </div>
       </div>
     </section>

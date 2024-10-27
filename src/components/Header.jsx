@@ -1,17 +1,29 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { LuLayoutGrid } from "react-icons/lu";
 import { IoClose, IoMoon, IoSunny } from "react-icons/io5";
 import { FaHome, FaCog, FaAppStore, FaInfoCircle } from "react-icons/fa";
 import { Link } from "react-scroll";
 import "../styles/Header.css";
 import Logo from "/logo.ico";
+import { motion } from "framer-motion";
+import { menuVariants } from "../AnimationVariants";
 
 const Header = ({ theme, handleThemeToggle }) => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const [isLargeDevice, setIsLargeDevice] = useState(window.innerWidth >= 768);
 
   const toggleMenu = () => {
     setIsMenuOpen(!isMenuOpen);
   };
+
+  useEffect(() => {
+    const handleResize = () => {
+      setIsLargeDevice(window.innerWidth >= 768);
+    };
+
+    window.addEventListener("resize", handleResize);
+    return () => window.removeEventListener("resize", handleResize);
+  }, []);
 
   return (
     <header>
@@ -28,44 +40,60 @@ const Header = ({ theme, handleThemeToggle }) => {
         </div>
         <div className="menu-theme">
           <nav className={`nav-links ${isMenuOpen ? "active" : ""}`}>
-            <ul>
+            <motion.ul
+              initial="hidden"
+              animate={isMenuOpen ? "visible" : "hidden"}
+              variants={{
+                visible: {
+                  transition: {
+                    staggerChildren: 0.1,
+                  },
+                },
+              }}
+              whileInView={isLargeDevice ? "visible" : undefined}
+              viewport={{ once: false, amount: 0.3 }}
+            >
               <div className="inner_links_div">
-                <li>
+                <motion.li custom={1} variants={menuVariants}>
                   <Link to="home" smooth={true} duration={500} offset={-75}>
                     <FaHome /> Home
                   </Link>
-                </li>
-                <li>
+                </motion.li>
+                <motion.li custom={2} variants={menuVariants}>
                   <Link to="features" smooth={true} duration={500}>
                     <FaCog /> Features
                   </Link>
-                </li>
+                </motion.li>
               </div>
               <div className="inner_links_div">
-                <li className={`apps-menu`}>
+                <motion.li
+                  custom={3}
+                  variants={menuVariants}
+                  className={`apps-menu`}
+                >
                   <a>
                     <FaAppStore /> Apps
                   </a>
                   <ul className="sub-menu">
-                    <li>
+                    <motion.li custom={4} variants={menuVariants}>
                       <Link to="client-app" smooth={true} duration={500}>
                         Client App
                       </Link>
-                    </li>
-                    <li>
+                    </motion.li>
+                    <motion.li custom={5} variants={menuVariants}>
                       <Link to="server-app" smooth={true} duration={500}>
                         Server App
                       </Link>
-                    </li>
+                    </motion.li>
                   </ul>
-                </li>
-                <li>
+                </motion.li>
+                <motion.li custom={6} variants={menuVariants}>
                   <Link to="about" smooth={true} duration={500}>
                     <FaInfoCircle /> About
                   </Link>
-                </li>
+                </motion.li>
               </div>
-            </ul>
+            </motion.ul>
           </nav>
           <button
             className="theme-toggle"

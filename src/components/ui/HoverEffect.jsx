@@ -1,10 +1,10 @@
 import { useState } from "react";
 import { cn } from "@/lib/utils";
 import { AnimatePresence, motion } from "framer-motion";
+import { cardVariants } from "@src/AnimationVariants";
 
 export const HoverEffect = ({ items, className }) => {
   let [hoveredIndex, setHoveredIndex] = useState(null);
-
   return (
     <div
       className={cn(
@@ -22,7 +22,7 @@ export const HoverEffect = ({ items, className }) => {
           <AnimatePresence>
             {hoveredIndex === idx && (
               <motion.span
-                className="absolute inset-0 h-full w-full block rounded-3xl CardHoverBG" // Adjusted color for dark mode
+                className="absolute inset-0 h-full w-full block rounded-3xl CardHoverBG"
                 layoutId="hoverBackground"
                 initial={{ opacity: 0 }}
                 animate={{
@@ -36,7 +36,7 @@ export const HoverEffect = ({ items, className }) => {
               />
             )}
           </AnimatePresence>
-          <Card hovered={hoveredIndex === idx} className="">
+          <Card hovered={hoveredIndex === idx} className="shadow-lg">
             <div className="flex items-center justify-center">
               <div className="feature-icon">{item.icon}</div>
             </div>
@@ -51,7 +51,11 @@ export const HoverEffect = ({ items, className }) => {
 
 export const Card = ({ className, children, hovered }) => {
   return (
-    <div
+    <motion.div
+      initial="hidden"
+      whileInView="visible"
+      viewport={{ once: true, amount: 0.3 }}
+      variants={cardVariants}
       className={cn(
         "rounded-2xl h-full w-full p-4 overflow-hidden bg-white border border-transparent dark:bg-gray-800 dark:border-white/[0.2] group-hover:border-slate-700 relative z-20 transition-colors duration-300", // Added transition
         { "bg-gray-100 dark:bg-gray-700": hovered }, // Change background color on hover
@@ -61,7 +65,7 @@ export const Card = ({ className, children, hovered }) => {
       <div className="relative z-50">
         <div className="p-4">{children}</div>
       </div>
-    </div>
+    </motion.div>
   );
 };
 

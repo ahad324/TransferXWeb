@@ -9,7 +9,6 @@ import Loader from "./components/Loader";
 
 const HomePage = () => {
   const [versionData, setVersionData] = useState(null);
-  const [isLoading, setIsLoading] = useState(true);
 
   useEffect(() => {
     const fetchVersionData = async () => {
@@ -30,10 +29,6 @@ const HomePage = () => {
     fetchVersionData();
   }, []);
 
-  useEffect(() => {
-    setIsLoading(false);
-  }, []);
-
   const clientFeatures = [
     "Secure File Transfers",
     "Auto-Connect",
@@ -51,38 +46,32 @@ const HomePage = () => {
   ];
 
   return (
-    <>
-      {isLoading ? (
-        <Loader ClassName={"h-screen"} />
-      ) : (
-        <div>
-          <main>
-            <Home />
-            <Features />
-            {versionData ? (
-              <>
-                <AppSection
-                  type="client"
-                  downloadLink={versionData.client}
-                  features={clientFeatures}
-                  images={ClientImages}
-                />
-                <AppSection
-                  type="server"
-                  downloadLink={versionData.server}
-                  features={serverFeatures}
-                  images={ServerImages}
-                />
-              </>
-            ) : (
-              <Loader Message={"Loading Apps..."} />
-            )}
-            <About />
-          </main>
-          <Footer />
-        </div>
-      )}
-    </>
+    <div>
+      <main>
+        <Home />
+        <Features />
+        {versionData ? (
+          <>
+            <AppSection
+              type="client"
+              downloadLink={versionData.client}
+              features={clientFeatures}
+              images={ClientImages}
+            />
+            <AppSection
+              type="server"
+              downloadLink={versionData.server}
+              features={serverFeatures}
+              images={ServerImages}
+            />
+          </>
+        ) : (
+          <Loader Message={"Loading Apps..."} />
+        )}
+        <About />
+      </main>
+      <Footer />
+    </div>
   );
 };
 

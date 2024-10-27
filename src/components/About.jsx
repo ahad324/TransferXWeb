@@ -2,6 +2,12 @@ import React from "react";
 import "../styles/About.css";
 import profileImage from "../assets/me.png";
 import { FaGithub, FaExternalLinkAlt } from "react-icons/fa";
+import { motion } from "framer-motion";
+import {
+  textVariants,
+  imageVariants,
+  buttonVariants,
+} from "../AnimationVariants";
 
 const About = () => {
   const handleViewProjects = () => {
@@ -15,38 +21,77 @@ const About = () => {
   return (
     <section id="about" className="about">
       <div className="container">
-        <h2>About Me</h2>
+        <motion.h2
+          variants={textVariants}
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true, amount: 0.3 }}
+        >
+          About Me
+        </motion.h2>
         <div className="about-content">
-          <div className="about-image">
+          <motion.div
+            variants={imageVariants}
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true, amount: 0.3 }}
+            className="about-image"
+          >
             <img src={profileImage} alt="Profile" loading="lazy" />
-          </div>
+          </motion.div>
           <div className="about-description">
-            <p className="intro">
+            <motion.p
+              variants={textVariants}
+              initial="hidden"
+              whileInView="visible"
+              viewport={{ once: true, amount: 0.3 }}
+              className="intro"
+            >
               Hi, I'm <strong>AbdulAhad</strong>, a dedicated developer
               passionate about crafting efficient software solutions that
               prioritize user experience and performance.
-            </p>
-            <h3>My Mission</h3>
-            <p>
+            </motion.p>
+            <motion.h3
+              variants={textVariants}
+              initial="hidden"
+              whileInView="visible"
+              viewport={{ once: true, amount: 0.3 }}
+            >
+              My Mission
+            </motion.h3>
+            <motion.p
+              variants={textVariants}
+              initial="hidden"
+              whileInView="visible"
+              viewport={{ once: true, amount: 0.3 }}
+            >
               I aim to empower users by simplifying technology and providing
               innovative tools that boost productivity and creativity, all while
               embracing continuous learning.
-            </p>
+            </motion.p>
             <div className="button-group">
-              <button
+              <motion.button
+                variants={buttonVariants}
+                initial="hidden"
+                whileInView="visible"
+                viewport={{ once: true, amount: 0.3 }}
                 className="button primary"
                 name="View_my_project"
                 onClick={handleViewProjects}
               >
                 <FaExternalLinkAlt /> View My Projects
-              </button>
-              <button
+              </motion.button>
+              <motion.button
+                variants={buttonVariants}
+                initial="hidden"
+                whileInView="visible"
+                viewport={{ once: true, amount: 0.3 }}
                 className="button github-button"
                 name="Github_profile"
                 onClick={handleGitHubProfile}
               >
                 <FaGithub /> GitHub Profile
-              </button>
+              </motion.button>
             </div>
           </div>
         </div>

@@ -98,7 +98,7 @@ header {
 .sub-menu a {
   color: rgba(255, 255, 255, 0.9);
   text-decoration: none;
-  transition: color 0.3s ease, transform 0.3s ease;
+  transition: color var(--transition), transform var(--transition);
   font-weight: 600;
   font-size: 1rem;
   padding: 0.5rem 1rem;
@@ -122,7 +122,7 @@ header {
   border: none;
   font-size: 1.2rem;
   cursor: pointer;
-  transition: all 0.3s ease;
+  transition: all var(--transition);
   width: 40px;
   height: 40px;
   border-radius: 50%;
@@ -169,10 +169,10 @@ header {
 
   .nav-links {
     position: absolute;
-    display: flex;
+    display: block;
     width: 100%;
     transform: translateY(27px);
-    transition: opacity 0.3s ease, transform 0.3s ease;
+    transition: opacity var(--transition), transform var(--transition);
     background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
     justify-content: center;
     align-items: center;
@@ -184,7 +184,7 @@ header {
   .nav-links ul {
     opacity: 0;
     flex-direction: column;
-    transition: opacity 0.3s ease;
+    transition: opacity var(--transition);
   }
   .nav-links.active {
     box-shadow: 0px -5px 10px rgba(0, 0, 0, 0.1);

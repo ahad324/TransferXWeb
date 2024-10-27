@@ -1,55 +1,84 @@
 import React from "react";
 import { Link } from "react-scroll";
+import { motion } from "framer-motion";
 import "../styles/Home.css";
 import homeImage from "../assets/Hero.png";
 import img1 from "../assets/Images/doc.png";
 import img2 from "../assets/Images/documents.png";
 import img3 from "../assets/Images/exe.png";
 import img4 from "../assets/Images/pdf-file.png";
+import {
+  imageVariants,
+  containerVariants,
+  buttonVariants,
+  textVariants,
+} from "../AnimationVariants";
 
 const Home = () => {
   return (
-    <section id="home" className="home">
+    <motion.section
+      id="home"
+      className="home"
+      variants={containerVariants}
+      initial="hidden"
+      animate="visible"
+    >
       <div className="home-content">
-        <h1 className="home-title">
+        <motion.h1 variants={textVariants} className="home-title">
           <span className="gradient-text">TransferX</span>
-        </h1>
-        <p className="home-subtitle">
+        </motion.h1>
+        <motion.p variants={textVariants} className="home-subtitle">
           Secure, Fast, and Effortless File Transfers
-        </p>
-        <p className="home-description">
+        </motion.p>
+        <motion.p variants={textVariants} className="home-description">
           TransferX is your go-to solution for seamless offline file sharing
           within local networks. With auto-connect and drag & drop, it's perfect
           for both personal and professional use.
-        </p>
+        </motion.p>
         <div className="home-cta">
           <Link to="client-app" smooth={true} duration={500}>
-            <button className="button primary" name="Get_Started">
+            <motion.button
+              variants={buttonVariants}
+              className="button primary"
+              name="Get_Started"
+            >
               Get Started
-            </button>
+            </motion.button>
           </Link>
           <Link to="features" smooth={true} duration={500}>
-            <button className="button secondary" name="Learn_More">
+            <motion.button
+              variants={buttonVariants}
+              className="button secondary"
+              name="Learn_More"
+            >
               Learn More
-            </button>
+            </motion.button>
           </Link>
         </div>
       </div>
       <div className="home-image-container">
-        <img
+        <motion.img
+          variants={imageVariants}
           src={homeImage}
           alt="Hero Image"
           className="home-image"
-          loading="lazy"
         />
         <div className="other-images">
-          <img src={img1} alt="Document Icon" />
-          <img src={img2} alt="Documents Icon" />
-          <img src={img3} alt="Executable Icon" />
-          <img src={img4} alt="PDF Icon" />
+          <motion.img variants={imageVariants} src={img1} alt="Document Icon" />
+          <motion.img
+            variants={imageVariants}
+            src={img2}
+            alt="Documents Icon"
+          />
+          <motion.img
+            variants={imageVariants}
+            src={img3}
+            alt="Executable Icon"
+          />
+          <motion.img variants={imageVariants} src={img4} alt="PDF Icon" />
         </div>
       </div>
-    </section>
+    </motion.section>
   );
 };
 

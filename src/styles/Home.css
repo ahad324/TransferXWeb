@@ -54,7 +54,7 @@
 .other-images img {
   width: 60px;
   height: auto;
-  transition: transform 0.3s ease;
+  transition: transform var(--transition);
   position: absolute;
   filter: drop-shadow(0 4px 8px rgba(0, 0, 0, 0.2));
 }

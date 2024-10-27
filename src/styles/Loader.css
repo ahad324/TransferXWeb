@@ -14,7 +14,7 @@
 
 .pl__ring {
   stroke: hsla(var(--hue), 10%, 10%, 0.1); /* Light stroke color for the ring */
-  transition: stroke 0.3s;
+  transition: stroke var(--transition);
 }
 
 .pl__worm {

@@ -7,6 +7,8 @@ import {
   FaServer,
   FaTabletAlt,
 } from "react-icons/fa";
+import { motion } from "framer-motion";
+import { textVariants } from "../AnimationVariants";
 import { HoverEffect } from "./ui/HoverEffect";
 import "../styles/Features.css";
 
@@ -47,7 +49,14 @@ const Features = () => {
   return (
     <section id="features" className="features">
       <div className="container">
-        <h2>Features</h2>
+        <motion.h2
+          variants={textVariants}
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true, amount: 0.3 }}
+        >
+          Features
+        </motion.h2>
         <HoverEffect items={features} />
       </div>
     </section>
