@@ -23,6 +23,11 @@
   margin-bottom: 30px;
 }
 
+@media (max-width:768px) {
+  .not-found{
+    margin-bottom: 3rem;
+  }
+}
 /* Responsive styles */
 @media (max-width: 600px) {
   .not-found-title {
