@@ -4,6 +4,7 @@
   justify-content: space-between;
   overflow: hidden;
   position: relative;
+  min-height: 100dvh;
 }
 
 .home h1 {
@@ -41,8 +42,6 @@
   height: auto;
   object-fit: contain;
   border-radius: 5%;
-  /* border: 2px solid; */
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
   position: relative;
 }
 

@@ -13,7 +13,7 @@ const NotFound = () => {
       <p className="not-found-message">
         Sorry, the page you are looking for does not exist.
       </p>
-      <Link to="/" className="not-found-button">
+      <Link to="/" className="button primary">
         Go back to Home
       </Link>
     </div>

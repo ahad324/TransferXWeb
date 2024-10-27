@@ -20,7 +20,7 @@
   scrollbar-color: var(--primary-color) var(--background-color);
 }
 body {
-  font-family: 'Inter', sans-serif;
+  font-family: "Inter", sans-serif;
   line-height: 1.6;
   color: var(--text-color);
   background-color: var(--background-color);
@@ -33,7 +33,7 @@ body {
   margin: 0 auto;
   padding: 0 2rem;
 }
-section{
+section {
   padding: 4rem 0;
   text-align: center;
 }
@@ -42,7 +42,14 @@ section h2 {
   font-weight: 700;
   margin-bottom: 1rem;
 }
-.button{
+.CardHoverBG {
+  background: linear-gradient(
+    135deg,
+    var(--primary-color),
+    var(--secondary-color)
+  );
+}
+.button {
   padding: 0.8rem 1.5rem;
   font-size: 1rem;
   font-weight: 600;

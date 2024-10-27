@@ -22,7 +22,7 @@ export const HoverEffect = ({ items, className }) => {
           <AnimatePresence>
             {hoveredIndex === idx && (
               <motion.span
-                className="absolute inset-0 h-full w-full bg-neutral-300 dark:bg-gray-700 block rounded-3xl" // Adjusted color for dark mode
+                className="absolute inset-0 h-full w-full block rounded-3xl CardHoverBG" // Adjusted color for dark mode
                 layoutId="hoverBackground"
                 initial={{ opacity: 0 }}
                 animate={{
@@ -36,7 +36,7 @@ export const HoverEffect = ({ items, className }) => {
               />
             )}
           </AnimatePresence>
-          <Card hovered={hoveredIndex === idx} className={"drop-shadow-xl"}>
+          <Card hovered={hoveredIndex === idx} className="">
             <div className="flex items-center justify-center">
               <div className="feature-icon">{item.icon}</div>
             </div>

@@ -1,7 +1,7 @@
 import React from "react";
 import { Link } from "react-scroll";
 import "../styles/Home.css";
-import homeImage from "/logo.ico";
+import homeImage from "../assets/Hero.png";
 import img1 from "../assets/Images/doc.png";
 import img2 from "../assets/Images/documents.png";
 import img3 from "../assets/Images/exe.png";
@@ -38,7 +38,7 @@ const Home = () => {
       <div className="home-image-container">
         <img
           src={homeImage}
-          alt="TransferX Logo"
+          alt="Hero Image"
           className="home-image"
           loading="lazy"
         />

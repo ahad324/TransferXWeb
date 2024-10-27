@@ -4,6 +4,7 @@ import { IoClose, IoMoon, IoSunny } from "react-icons/io5";
 import { FaHome, FaCog, FaAppStore, FaInfoCircle } from "react-icons/fa";
 import { Link } from "react-scroll";
 import "../styles/Header.css";
+import Logo from "/logo.ico";
 
 const Header = ({ theme, handleThemeToggle }) => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -16,8 +17,13 @@ const Header = ({ theme, handleThemeToggle }) => {
     <header>
       <div className="header-content">
         <div className="logo">
-          <a href="/">
-            <pre>𝓣𝓻𝓪𝓷𝓼𝓯𝓮𝓻𝓧</pre>
+          <a href="/" className="flex justify-center items-center">
+            <img
+              src={Logo}
+              alt="TransferX Logo"
+              className="w-10 h-10 mr-2 rounded-lg none md:block"
+            />
+            <h2 className="hidden sm:block">TransferX</h2>
           </a>
         </div>
         <div className="menu-theme">
