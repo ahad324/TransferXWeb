@@ -29,14 +29,20 @@ const Header = ({ theme, handleThemeToggle }) => {
     <header>
       <div className="header-content">
         <div className="logo">
-          <a href="/" className="flex justify-center items-center">
+          <Link
+            to="hero"
+            smooth={true}
+            duration={500}
+            offset={-75}
+            className="flex justify-center items-center cursor-pointer"
+          >
             <img
               src={Logo}
               alt="TransferX Logo"
               className="w-10 h-10 mr-2 rounded-lg none md:block"
             />
             <h2 className="hidden sm:block">TransferX</h2>
-          </a>
+          </Link>
         </div>
         <div className="menu-theme">
           <nav className={`nav-links ${isMenuOpen ? "active" : ""}`}>
@@ -55,9 +61,9 @@ const Header = ({ theme, handleThemeToggle }) => {
             >
               <div className="inner_links_div">
                 <motion.li custom={1} variants={menuVariants}>
-                  <Link to="home" smooth={true} duration={500} offset={-75}>
+                  <a href="/">
                     <FaHome /> Home
-                  </Link>
+                  </a>
                 </motion.li>
                 <motion.li custom={2} variants={menuVariants}>
                   <Link to="features" smooth={true} duration={500}>

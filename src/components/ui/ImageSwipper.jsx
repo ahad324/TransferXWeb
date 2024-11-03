@@ -1,16 +1,21 @@
 "use client";
 
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useRef } from "react";
 import { cn } from "@/lib/utils";
 import { motion, useMotionValue } from "framer-motion";
-import { IconChevronLeft, IconChevronRight } from "@tabler/icons-react";
+import {
+  IconChevronLeft,
+  IconChevronRight,
+  IconMaximize,
+} from "@tabler/icons-react";
 import Loader from "../Loader";
 
 export const ImageSwiper = ({ images, className }) => {
   const [imgIndex, setImgIndex] = useState(0);
   const [IsLoading, setIsLoading] = useState(true);
-
   const dragX = useMotionValue(0);
+  const swiperRef = useRef(null);
+  const [isFullscreen, setIsFullscreen] = useState(false);
 
   const onDragEnd = () => {
     const x = dragX.get();
@@ -23,23 +28,50 @@ export const ImageSwiper = ({ images, className }) => {
   };
   useEffect(() => {
     setIsLoading(false);
-  }, []);
 
+    const handleFullscreenChange = () => {
+      setIsFullscreen(document.fullscreenElement === swiperRef.current);
+    };
+
+    document.addEventListener("fullscreenchange", handleFullscreenChange);
+    return () =>
+      document.removeEventListener("fullscreenchange", handleFullscreenChange);
+  }, []);
+  const toggleFullscreen = () => {
+    if (!isFullscreen) {
+      swiperRef.current?.requestFullscreen();
+    } else {
+      document.exitFullscreen();
+    }
+  };
   return (
     <>
       {IsLoading ? (
         <Loader Message={"Loading Images..."} />
       ) : (
         <div
+          ref={swiperRef}
           className={cn(
             "group/hover relative h-full w-full overflow-hidden rounded-lg",
             className
           )}
         >
-          <div className="pointer-events-none absolute top-1/2 z-10 flex w-full -translate-y-1/2 justify-between px-5 ">
+          <motion.button
+            className="absolute top-2 right-2 z-20 rounded-full bg-white/90 border border-gray-300 shadow-lg p-2"
+            onClick={toggleFullscreen}
+            title={isFullscreen ? "Exit Fullscreen" : "Enter Fullscreen"}
+            initial={{ opacity: 0, scale: 0.8 }}
+            animate={{ opacity: 1, scale: 1 }}
+            transition={{ duration: 0.3 }}
+            whileHover={{ scale: 1.1 }}
+          >
+            <IconMaximize className="stroke-neutral-900" size={25} />
+          </motion.button>
+
+          <div className="pointer-events-none absolute top-1/2 z-10 flex w-full -translate-y-1/2 justify-between px-3 ">
             <button
               style={imgIndex === 0 ? { opacity: 0 } : {}}
-              className="pointer-events-auto h-fit w-fit rounded-full bg-white/80 p-2 opacity-0 transition-all group-hover/hover:opacity-100"
+              className="pointer-events-auto h-fit w-fit rounded-full bg-white/90 border border-gray-300 shadow-lg p-2 hover:scale-110 transition-all"
               onClick={() => {
                 if (imgIndex > 0) {
                   setImgIndex((pv) => pv - 1);
@@ -47,11 +79,11 @@ export const ImageSwiper = ({ images, className }) => {
               }}
               name="Image_Swiper_handler_Left"
             >
-              <IconChevronLeft className="stroke-neutral-600" size={20} />
+              <IconChevronLeft className="stroke-neutral-900" size={25} />
             </button>
             <button
               style={imgIndex === images.length - 1 ? { opacity: 0 } : {}}
-              className="pointer-events-auto h-fit w-fit rounded-full bg-white/80 p-2  opacity-0 transition-all group-hover/hover:opacity-100"
+              className="pointer-events-auto h-fit w-fit rounded-full bg-white/90 border border-gray-300 shadow-lg p-2 hover:scale-110 transition-all"
               onClick={() => {
                 if (imgIndex < images.length - 1) {
                   setImgIndex((pv) => pv + 1);
@@ -59,7 +91,7 @@ export const ImageSwiper = ({ images, className }) => {
               }}
               name="Image_Swiper_handler_Right"
             >
-              <IconChevronRight className="stroke-neutral-600" size={20} />
+              <IconChevronRight className="stroke-neutral-900" size={25} />
             </button>
           </div>
           <div className="pointer-events-none absolute bottom-2 z-10 flex w-full items-center justify-center">
@@ -84,7 +116,7 @@ export const ImageSwiper = ({ images, className }) => {
             }}
             onDragEnd={onDragEnd}
             transition={{
-              damping: 18,
+              damping: 15,
               stiffness: 90,
               type: "spring",
               duration: 0.2,
@@ -100,7 +132,6 @@ export const ImageSwiper = ({ images, className }) => {
                   <img
                     src={src}
                     className="pointer-events-none h-full w-full object-cover"
-                    loading="lazy"
                     alt="Apps Screenshots"
                   />
                 </motion.div>

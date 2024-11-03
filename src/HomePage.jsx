@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import Home from "./components/Home";
+import Hero from "./components/Hero";
 import Features from "./components/Features";
 import AppSection from "./components/AppSection";
 import About from "./components/About";
@@ -48,7 +48,7 @@ const HomePage = () => {
   return (
     <div>
       <main>
-        <Home />
+        <Hero />
         <Features />
         {versionData ? (
           <>

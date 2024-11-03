@@ -8,8 +8,6 @@
 }
 
 .dark-theme {
-  /* --primary-color: #818cf8;
-  --secondary-color: #a78bfa; */
   --background-color: #111827;
   --text-color: #f3f4f6;
   --input-background: #1f2937;
@@ -66,7 +64,7 @@ section h2 {
   background-color: var(--primary-color);
   color: white;
   transform: scale(1.05);
-  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
+  /* box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3); */
   border: none;
 }
 

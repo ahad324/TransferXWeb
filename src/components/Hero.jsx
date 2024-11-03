@@ -1,8 +1,8 @@
 import React from "react";
 import { Link } from "react-scroll";
 import { motion } from "framer-motion";
-import "../styles/Home.css";
-import homeImage from "../assets/Hero.png";
+import "../styles/Hero.css";
+import heroImage from "../assets/Hero.png";
 import img1 from "../assets/Images/doc.png";
 import img2 from "../assets/Images/documents.png";
 import img3 from "../assets/Images/exe.png";
@@ -14,28 +14,28 @@ import {
   textVariants,
 } from "../AnimationVariants";
 
-const Home = () => {
+const Hero = () => {
   return (
     <motion.section
-      id="home"
-      className="home"
+      id="hero"
+      className="hero"
       variants={containerVariants}
       initial="hidden"
       animate="visible"
     >
-      <div className="home-content">
-        <motion.h1 variants={textVariants} className="home-title">
+      <div className="hero-content">
+        <motion.h1 variants={textVariants} className="hero-title">
           <span className="gradient-text">TransferX</span>
         </motion.h1>
-        <motion.p variants={textVariants} className="home-subtitle">
+        <motion.p variants={textVariants} className="hero-subtitle">
           Secure, Fast, and Effortless File Transfers
         </motion.p>
-        <motion.p variants={textVariants} className="home-description">
+        <motion.p variants={textVariants} className="hero-description">
           TransferX is your go-to solution for seamless offline file sharing
           within local networks. With auto-connect and drag & drop, it's perfect
           for both personal and professional use.
         </motion.p>
-        <div className="home-cta">
+        <div className="hero-cta">
           <Link to="client-app" smooth={true} duration={500}>
             <motion.button
               variants={buttonVariants}
@@ -56,12 +56,12 @@ const Home = () => {
           </Link>
         </div>
       </div>
-      <div className="home-image-container">
+      <div className="hero-image-container">
         <motion.img
           variants={imageVariants}
-          src={homeImage}
+          src={heroImage}
           alt="Hero Image"
-          className="home-image"
+          className="hero-image"
         />
         <div className="other-images">
           <motion.img variants={imageVariants} src={img1} alt="Document Icon" />
@@ -82,4 +82,4 @@ const Home = () => {
   );
 };
 
-export default Home;
+export default Hero;

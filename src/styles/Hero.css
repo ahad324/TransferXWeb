@@ -1,4 +1,4 @@
-.home {
+.hero {
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -7,14 +7,14 @@
   min-height: 100dvh;
 }
 
-.home h1 {
+.hero h1 {
   font-size: clamp(3rem, 0.8696rem + 5.5652vw, 4rem);
   background: linear-gradient(45deg, var(--primary-color), var(--secondary-color));
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 }
 
-.home p {
+.hero p {
   font-size: 1.25rem;
   margin-bottom: 2rem;
   max-width: 600px;
@@ -22,13 +22,13 @@
   margin-right: auto;
 }
 
-.home-content {
+.hero-content {
   flex: 1;
   max-width: 50%;
   z-index: 1;
 }
 
-.home-image-container {
+.hero-image-container {
   flex: 1;
   display: flex;
   justify-content: center;
@@ -37,7 +37,7 @@
   z-index: 1;
 }
 
-.home-image {
+.hero-image {
   width: clamp(250px, 40vw, 400px);
   height: auto;
   object-fit: contain;
@@ -56,7 +56,7 @@
   height: auto;
   transition: transform var(--transition);
   position: absolute;
-  filter: drop-shadow(0 4px 8px rgba(0, 0, 0, 0.2));
+  filter: drop-shadow(0 4px 8px rgba(0, 0, 0, 0.1));
 }
 
 .other-images img:nth-child(1) { /* Top Left */
@@ -88,7 +88,7 @@
   50% { transform: translateY(-10px); }
 }
 
-.home-title {
+.hero-title {
   font-size: clamp(2.5rem, 5vw, 3.5rem);
   font-weight: 800;
   margin-bottom: 1rem;
@@ -103,14 +103,14 @@
   color: transparent;
 }
 
-.home-subtitle {
+.hero-subtitle {
   font-size: clamp(1rem, 2vw, 1.25rem);
   margin-bottom: 2rem;
   color: var(--text-color);
   opacity: 0.8;
 }
 
-.home-cta {
+.hero-cta {
   display: flex;
   gap: 1rem;
   margin-bottom: 2rem;
@@ -133,7 +133,7 @@
   font-weight: 500;
 }
 
-.home-description {
+.hero-description {
   font-size: clamp(0.9rem, 1.8vw, 1.1rem);
   margin-bottom: 2rem;
   color: var(--text-color);
@@ -144,19 +144,19 @@
 }
 
 @media (max-width: 1024px) {
-  .home-description {
+  .hero-description {
     max-width: 100%;
   }
 }
 
 @media (max-width: 1024px) {
-  .home {
+  .hero {
     flex-direction: column;
     text-align: center;
     padding: 3rem 1rem;
   }
 
-  .home-content {
+  .hero-content {
     max-width: 100%;
     margin-bottom: 2rem;
   }
@@ -167,7 +167,7 @@
 }
 
 @media (max-width: 480px) {
-  .home-cta {
+  .hero-cta {
     flex-direction: column;
     width: 100%;
   }
