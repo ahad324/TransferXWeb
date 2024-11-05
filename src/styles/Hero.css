@@ -6,11 +6,22 @@
   position: relative;
   min-height: 100dvh;
 }
-
+body.dark-theme .hero::before{
+  content: "";
+  position: absolute;
+  width: 150px;
+  height: 150px;
+  background: var(--primary-color);
+  filter: blur(250px) saturate(100);
+  right: 0;
+}
 .hero h1 {
+  letter-spacing: 2px;
+  font-family:var(--logo-font);
   font-size: clamp(3rem, 0.8696rem + 5.5652vw, 4rem);
   background: linear-gradient(45deg, var(--primary-color), var(--secondary-color));
   -webkit-background-clip: text;
+  background-clip: text;
   -webkit-text-fill-color: transparent;
 }
 
@@ -116,21 +127,6 @@
   margin-bottom: 2rem;
   justify-content: center;
   align-items: center;
-}
-
-.feature {
-  display: flex;
-  align-items: center;
-  gap: 0.5rem;
-}
-
-.feature-icon {
-  font-size: 1.5rem;
-}
-
-.feature-text {
-  font-size: clamp(0.875rem, 1.5vw, 1rem);
-  font-weight: 500;
 }
 
 .hero-description {

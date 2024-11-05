@@ -12,7 +12,6 @@ header {
   border-radius: 0 0 20px 20px;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
-
 .header-content {
   display: flex;
   justify-content: space-between;
@@ -30,7 +29,8 @@ header {
   font-size: 1.8rem;
   font-weight: 800;
   color: white;
-  letter-spacing: -1px;
+  letter-spacing: 2px;
+  font-family:var(--logo-font);
 }
 .inner_links_div {
   display: flex;
@@ -180,6 +180,7 @@ header {
     border-radius: 20px 20px 0 0;
     padding: 1.5rem;
     z-index: -1;
+    transition: .5s all ease;
   }
   .nav-links ul {
     opacity: 0;

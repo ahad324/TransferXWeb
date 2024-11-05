@@ -3,7 +3,15 @@
   font-weight: 700;
   margin-bottom: 1rem;
 }
-
+body.dark-theme .about::before{
+  content: "";
+  position: absolute;
+  width: 150px;
+  height: 150px;
+  background:  rgb(46, 178, 255);
+  filter: blur(150px);
+  right: 0;
+}
 .about-content {
   display: flex;
   flex-direction: column;
@@ -53,17 +61,84 @@
   display: flex;
   gap: 1rem;
 }
-
 .button {
   display: flex;
   align-items: center;
   gap: 0.5rem;
 }
 .github-button {
+  position: relative;
   background-color: #333;
   transform: scale(1.05);
   box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
   border: none;
+}
+.github-button::before{
+  z-index: -1;
+  position: absolute;
+  content: "";
+  left: -2em;
+  right: -2em;
+  top: -2em;
+  bottom: -2em;
+  background-repeat: no-repeat;
+  background-image: radial-gradient(
+    circle,
+    #333 20%,
+    transparent 20%
+  ),
+  radial-gradient(
+    circle,
+    transparent 10%,
+    #333 20%,
+    transparent 20%
+  ),
+  radial-gradient(circle, transparent 10%, transparent 20%, transparent 20%),
+  radial-gradient(circle, #333 20%, transparent 20%),
+  radial-gradient(
+    circle,
+    transparent 10%,
+    #333 20%,
+    transparent 20%
+  ),
+  radial-gradient(circle, #333 20%, transparent 20%),
+  radial-gradient(
+    circle,
+    transparent 10%,
+    #333 20%,
+    transparent 20%
+  ),
+  radial-gradient(circle, #333 20%, transparent 20%),
+  radial-gradient(
+    circle,
+    transparent 10%,
+    #333 20%,
+    transparent 20%
+  ),
+  /*  */
+    radial-gradient(
+      circle,
+      transparent 10%,
+      #333 20%,
+      transparent 20%
+    ),
+  radial-gradient(circle, #333 20%, transparent 20%),
+  radial-gradient(circle, transparent 10%, transparent 20%, transparent 20%),
+  radial-gradient(circle, #333 20%, transparent 20%),
+  radial-gradient(
+    circle,
+    transparent 10%,
+    #333 20%,
+    transparent 20%
+  ),
+  radial-gradient(circle, #333 20%, transparent 20%),
+  radial-gradient(circle, transparent 10%, transparent 20%, transparent 20%);
+  background-size: 10% 10%, 20% 20%, 15% 15%, 20% 20%, 18% 18%, 10% 10%, 15% 15%,
+  10% 10%, 18% 18%, 15% 15%, 20% 20%, 18% 18%, 20% 20%, 15% 15%, 10% 10%,
+  20% 20%;
+background-position: 18% 40%, 20% 31%, 30% 30%, 40% 30%, 50% 30%, 57% 30%,
+  65% 30%, 80% 32%, 15% 60%, 83% 60%, 18% 70%, 25% 70%, 41% 70%, 50% 70%,
+  64% 70%, 80% 71%;
 }
 .github-button:hover {
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);

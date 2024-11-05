@@ -1,11 +1,14 @@
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital&display=swap');
+/* Logo Font */
+@import url('https://fonts.googleapis.com/css2?family=Lobster&display=swap');
 
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
 :root {
-  --font-family: "Inter", sans-serif;
+  --logo-font: "Lobster",sans-serif;
+  --font-family: "Poppins", sans-serif
   --transition: 0.3s ease;
 }
 
