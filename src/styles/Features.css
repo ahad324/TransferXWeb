@@ -4,7 +4,7 @@ body.dark-theme .features::after{
   width: 150px;
   height: 150px;
   background: linear-gradient(45deg, var(--primary-color), var(--secondary-color));
-  filter: blur(200px);
+  filter: blur(150px);
   left: 0;
 }
 .feature-grid {

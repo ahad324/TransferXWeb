@@ -9,6 +9,7 @@ import Loader from "./components/Loader";
 
 const HomePage = () => {
   const [versionData, setVersionData] = useState(null);
+  const [error, setError] = useState(null);
 
   useEffect(() => {
     const fetchVersionData = async () => {
@@ -21,8 +22,12 @@ const HomePage = () => {
           client: data.assets[0].browser_download_url,
           server: data.assets[1].browser_download_url,
         });
+        setError(null);
       } catch (error) {
         console.error("Error fetching version data:", error);
+        setError(
+          "There was an issue loading the apps. Please try again later."
+        );
       }
     };
 
@@ -50,7 +55,11 @@ const HomePage = () => {
       <main>
         <Hero />
         <Features />
-        {versionData ? (
+        {error ? (
+          <div className="error-message text-center font-bold text-red-500">
+            {error}
+          </div>
+        ) : versionData ? (
           <>
             <AppSection
               type="client"
