@@ -68,10 +68,7 @@ const PasswordModal = ({ isOpen, onClose, onSubmit, passwordPrompt }) => {
               />
             </div>
             {errorMessage && <p className="text-red-500">{errorMessage}</p>}
-            <button
-              type="submit"
-              className="w-full text-white bg-[--primary-color] hover:bg-[--secondary-color] focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5"
-            >
+            <button type="submit" className="button primary m-auto">
               Submit
             </button>
           </form>

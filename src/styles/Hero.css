@@ -49,7 +49,7 @@ body.dark-theme .hero::before{
 }
 
 .hero-image {
-  width: clamp(250px, 40vw, 400px);
+  width: clamp(250px, 40vw, 500px);
   height: auto;
   object-fit: contain;
   border-radius: 5%;
