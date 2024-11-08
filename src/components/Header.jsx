@@ -39,7 +39,7 @@ const Header = ({ theme, handleThemeToggle }) => {
             <img
               src={Logo}
               alt="TransferX Logo"
-              className="w-10 h-10 mr-2 rounded-lg none md:block"
+              className="w-10 h-10 mr-2 bg-white p-1 rounded-lg none md:block"
             />
             <h2 className="hidden sm:block">TransferX</h2>
           </Link>

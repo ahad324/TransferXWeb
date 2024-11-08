@@ -57,7 +57,7 @@ export const ImageSwiper = ({ images, className }) => {
           )}
         >
           <motion.button
-            className="absolute top-2 right-2 z-20 rounded-full bg-white/90 border border-gray-300 shadow-lg p-2"
+            className="absolute top-0 right-0 sm:top-2 sm:right-2 z-20 rounded-full bg-white/90 border border-gray-300 shadow-lg p-1 sm:p-2"
             onClick={toggleFullscreen}
             title={isFullscreen ? "Exit Fullscreen" : "Enter Fullscreen"}
             initial={{ opacity: 0, scale: 0.8 }}
@@ -65,13 +65,13 @@ export const ImageSwiper = ({ images, className }) => {
             transition={{ duration: 0.3 }}
             whileHover={{ scale: 1.1 }}
           >
-            <IconMaximize className="stroke-neutral-900" size={25} />
+            <IconMaximize className="stroke-neutral-900" size={20} />
           </motion.button>
 
           <div className="pointer-events-none absolute top-1/2 z-10 flex w-full -translate-y-1/2 justify-between px-3 ">
             <button
               style={imgIndex === 0 ? { opacity: 0 } : {}}
-              className="pointer-events-auto h-fit w-fit rounded-full bg-white/90 border border-gray-300 shadow-lg p-2 hover:scale-110 transition-all"
+              className="pointer-events-auto h-fit w-fit rounded-full bg-white/90 border border-gray-300 shadow-lg p-1 sm:p-2 hover:scale-110 transition-all"
               onClick={() => {
                 if (imgIndex > 0) {
                   setImgIndex((pv) => pv - 1);
@@ -79,11 +79,11 @@ export const ImageSwiper = ({ images, className }) => {
               }}
               name="Image_Swiper_handler_Left"
             >
-              <IconChevronLeft className="stroke-neutral-900" size={25} />
+              <IconChevronLeft className="stroke-neutral-900" size={20} />
             </button>
             <button
               style={imgIndex === images.length - 1 ? { opacity: 0 } : {}}
-              className="pointer-events-auto h-fit w-fit rounded-full bg-white/90 border border-gray-300 shadow-lg p-2 hover:scale-110 transition-all"
+              className="pointer-events-auto h-fit w-fit rounded-full bg-white/90 border border-gray-300 shadow-lg p-1 sm:p-2 hover:scale-110 transition-all"
               onClick={() => {
                 if (imgIndex < images.length - 1) {
                   setImgIndex((pv) => pv + 1);
@@ -91,7 +91,7 @@ export const ImageSwiper = ({ images, className }) => {
               }}
               name="Image_Swiper_handler_Right"
             >
-              <IconChevronRight className="stroke-neutral-900" size={25} />
+              <IconChevronRight className="stroke-neutral-900" size={20} />
             </button>
           </div>
           <div className="pointer-events-none absolute bottom-2 z-10 flex w-full items-center justify-center">
@@ -127,7 +127,7 @@ export const ImageSwiper = ({ images, className }) => {
               return (
                 <motion.div
                   key={i}
-                  className="h-full w-full shrink-0 overflow-hidden bg-transparent object-cover first:rounded-l-[inherit] last:rounded-r-[inherit]"
+                  className="flex justify-center items-center h-full w-full shrink-0 overflow-hidden bg-transparent object-cover first:rounded-l-[inherit] last:rounded-r-[inherit]"
                 >
                   <img
                     src={src}
