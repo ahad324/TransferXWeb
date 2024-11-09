@@ -3,6 +3,10 @@ import { Link } from "react-scroll";
 import { motion } from "framer-motion";
 import "../styles/Hero.css";
 import heroImage from "../assets/Hero.png";
+import img1 from "../assets/Images/doc.png";
+import img2 from "../assets/Images/documents.png";
+import img3 from "../assets/Images/exe.png";
+import img4 from "../assets/Images/pdf-file.png";
 import {
   imageVariants,
   containerVariants,
@@ -59,6 +63,20 @@ const Hero = () => {
           alt="Hero Image"
           className="hero-image"
         />
+        <div className="other-images">
+          <motion.img variants={imageVariants} src={img1} alt="Document Icon" />
+          <motion.img
+            variants={imageVariants}
+            src={img2}
+            alt="Documents Icon"
+          />
+          <motion.img
+            variants={imageVariants}
+            src={img3}
+            alt="Executable Icon"
+          />
+          <motion.img variants={imageVariants} src={img4} alt="PDF Icon" />
+        </div>
       </div>
     </motion.section>
   );
