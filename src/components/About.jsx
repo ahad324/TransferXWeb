@@ -1,6 +1,6 @@
 import React from "react";
 import "../styles/About.css";
-import profileImage from "../assets/me.png";
+import profileImage from "../assets/me.jpg";
 import { FaGithub, FaExternalLinkAlt } from "react-icons/fa";
 import { motion } from "framer-motion";
 import {

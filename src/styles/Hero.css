@@ -3,16 +3,15 @@
   align-items: center;
   justify-content: space-between;
   overflow: hidden;
-  position: relative;
   min-height: 100dvh;
 }
 body.dark-theme .hero::before{
   content: "";
   position: absolute;
-  width: 150px;
-  height: 150px;
-  background: var(--primary-color);
-  filter: blur(150px) saturate(100);
+  width: 300px;
+  height: 300px;
+  box-shadow: 0 0 500px var(--primary-color);
+  filter: blur(200px) saturate(100);
   right: 0;
 }
 .hero h1 {

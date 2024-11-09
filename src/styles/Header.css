@@ -6,7 +6,7 @@ header {
   );
   padding: 1rem 0;
   position: sticky;
-  z-index: 1000;
+  z-index: 10;
   left: 0;
   right: 0;
   border-radius: 0 0 20px 20px;
@@ -63,7 +63,7 @@ header {
   flex-direction: column;
   padding: 0.5rem;
   width: max-content;
-  z-index: 1000;
+  z-index: 10;
 }
 
 .apps-menu:hover .sub-menu,

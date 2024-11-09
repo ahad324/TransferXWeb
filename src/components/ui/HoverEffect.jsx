@@ -57,12 +57,12 @@ export const Card = ({ className, children, hovered }) => {
       viewport={{ once: true, amount: 0.3 }}
       variants={cardVariants}
       className={cn(
-        "rounded-2xl h-full w-full p-4 overflow-hidden bg-white border border-transparent dark:bg-gray-800 dark:border-white/[0.2] group-hover:border-slate-700 relative z-20 transition-colors duration-300", // Added transition
+        "rounded-2xl h-full w-full p-4 overflow-hidden bg-white border border-transparent dark:bg-gray-800 dark:border-white/[0.2] group-hover:border-slate-700 z-[1] relative transition-colors duration-300",
         { "bg-gray-100 dark:bg-gray-700": hovered }, // Change background color on hover
         className
       )}
     >
-      <div className="relative z-50">
+      <div className="relative z-[5]">
         <div className="p-4">{children}</div>
       </div>
     </motion.div>

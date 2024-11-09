@@ -38,16 +38,18 @@ const HomePage = () => {
     "Secure File Transfers",
     "Auto-Connect",
     "Drag & Drop Functionality",
-    "Real-Time Monitoring",
-    "Customizable Interface",
+    "Real-Time Updates",
+    "Dark/Light Theme",
+    "Automatic App Updates",
   ];
 
   const serverFeatures = [
     "Manage Connections",
     "Monitor File Transfers",
     "User Management",
-    "Real-Time Notifications",
+    "Real-Time Updates",
     "Customizable Settings",
+    "Automatic App Updates",
   ];
 
   return (

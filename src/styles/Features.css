@@ -1,16 +1,11 @@
-body.dark-theme .features::after{
+body.dark-theme .features::before{
   content: "";
   position: absolute;
-  width: 150px;
-  height: 150px;
-  background: linear-gradient(45deg, var(--primary-color), var(--secondary-color));
-  filter: blur(150px);
+  width: 300px;
+  height: 300px;
+  box-shadow: 0 0 500px var(--primary-color);
+  filter: blur(200px);
   left: 0;
-}
-.feature-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
-  gap: 2rem;
 }
 
 .feature-icon {

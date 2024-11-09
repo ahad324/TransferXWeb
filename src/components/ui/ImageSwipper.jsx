@@ -57,7 +57,7 @@ export const ImageSwiper = ({ images, className }) => {
           )}
         >
           <motion.button
-            className="absolute top-0 right-0 sm:top-2 sm:right-2 z-20 rounded-full bg-white/90 border border-gray-300 shadow-lg p-1 sm:p-2"
+            className="absolute top-0 right-0 sm:top-2 sm:right-2 z-[2] rounded-full bg-white/90 border border-gray-300 shadow-lg p-1 sm:p-2"
             onClick={toggleFullscreen}
             title={isFullscreen ? "Exit Fullscreen" : "Enter Fullscreen"}
             initial={{ opacity: 0, scale: 0.8 }}
@@ -68,7 +68,7 @@ export const ImageSwiper = ({ images, className }) => {
             <IconMaximize className="stroke-neutral-900" size={20} />
           </motion.button>
 
-          <div className="pointer-events-none absolute top-1/2 z-10 flex w-full -translate-y-1/2 justify-between px-3 ">
+          <div className="pointer-events-none absolute top-1/2 z-[2] flex w-full -translate-y-1/2 justify-between px-3 ">
             <button
               style={imgIndex === 0 ? { opacity: 0 } : {}}
               className="pointer-events-auto h-fit w-fit rounded-full bg-white/90 border border-gray-300 shadow-lg p-1 sm:p-2 hover:scale-110 transition-all"
@@ -94,7 +94,7 @@ export const ImageSwiper = ({ images, className }) => {
               <IconChevronRight className="stroke-neutral-900" size={20} />
             </button>
           </div>
-          <div className="pointer-events-none absolute bottom-2 z-10 flex w-full items-center justify-center">
+          <div className="pointer-events-none absolute bottom-2 z-[2] flex w-full items-center justify-center">
             <div className="flex w-9 items-center justify-center rounded-md bg-black/80 p-0.5 text-xs text-white opacity-0 transition-all group-hover/hover:opacity-100">
               <div>
                 {imgIndex + 1}/{images.length}
