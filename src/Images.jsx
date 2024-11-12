@@ -1,6 +1,6 @@
 import heroImage from "./assets/Hero.png";
 import docImg from "./assets/Images/doc.svg";
-import allfilesImg from "./assets/Images/AllFiles.svg";
+import allfilesImg from "./assets/Images/allfiles.svg";
 import exeImg from "./assets/Images/exe.svg";
 import pdfImg from "./assets/Images/pdf.svg";
 
