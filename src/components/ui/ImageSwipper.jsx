@@ -64,6 +64,8 @@ export const ImageSwiper = ({ images, className }) => {
             animate={{ opacity: 1, scale: 1 }}
             transition={{ duration: 0.3 }}
             whileHover={{ scale: 1.1 }}
+            name="Image Swiper handler Maximize"
+            aria-label="Maximize Image"
           >
             <IconMaximize className="stroke-neutral-900" size={20} />
           </motion.button>
@@ -78,6 +80,7 @@ export const ImageSwiper = ({ images, className }) => {
                 }
               }}
               name="Image_Swiper_handler_Left"
+              aria-label="Previous Image"
             >
               <IconChevronLeft className="stroke-neutral-900" size={20} />
             </button>
@@ -90,6 +93,7 @@ export const ImageSwiper = ({ images, className }) => {
                 }
               }}
               name="Image_Swiper_handler_Right"
+              aria-label="Next Image"
             >
               <IconChevronRight className="stroke-neutral-900" size={20} />
             </button>

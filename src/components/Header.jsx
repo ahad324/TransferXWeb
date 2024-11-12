@@ -104,6 +104,7 @@ const Header = ({ theme, handleThemeToggle }) => {
           <button
             className="theme-toggle"
             name="Theme_toggler"
+            aria-label="Toggle Theme"
             onClick={handleThemeToggle}
           >
             {theme === "light" ? <IoMoon /> : <IoSunny />}
