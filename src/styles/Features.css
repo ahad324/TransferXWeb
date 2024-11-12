@@ -3,11 +3,15 @@ body.dark-theme .features::before{
   position: absolute;
   width: 300px;
   height: 300px;
-  box-shadow: 0 0 500px var(--primary-color);
+  background: var(--primary-color);
   filter: blur(200px);
   left: 0;
+  transition: transform var(--transition);
+  z-index: -1;
 }
-
+body.dark-theme .features:hover::before {
+  transform: translate(50px, 50px);
+}
 .feature-icon {
   font-size: 3rem;
   margin-bottom: 1rem;

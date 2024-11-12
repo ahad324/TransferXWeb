@@ -35,12 +35,11 @@ const HomePage = () => {
   }, []);
 
   const clientFeatures = [
-    "Secure File Transfers",
+    "Files Zipping",
     "Auto-Connect",
     "Drag & Drop Functionality",
     "Real-Time Updates",
     "Dark/Light Theme",
-    "Automatic App Updates",
   ];
 
   const serverFeatures = [
@@ -49,7 +48,6 @@ const HomePage = () => {
     "User Management",
     "Real-Time Updates",
     "Customizable Settings",
-    "Automatic App Updates",
   ];
 
   return (

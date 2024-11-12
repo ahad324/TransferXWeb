@@ -1,48 +1,47 @@
 import React from "react";
-import {
-  FaRocket,
-  FaLock,
-  FaRegSmile,
-  FaDesktop,
-  FaServer,
-  FaTabletAlt,
-} from "react-icons/fa";
 import { motion } from "framer-motion";
 import { textVariants } from "../AnimationVariants";
 import { HoverEffect } from "./ui/HoverEffect";
+import { FeaturesImages } from "../Images";
 import "../styles/Features.css";
 
 const Features = () => {
   const features = [
     {
       title: "Fast Transfer Speeds",
-      description: "Transfer files at incredible speeds.",
-      icon: <FaRocket />,
+      description:
+        "Experience the ability to transfer files at incredible speeds, ensuring your data is moved quickly and efficiently across network.",
+      image: FeaturesImages[0],
     },
     {
-      title: "Secure Encryption",
-      description: "Your files are protected with end-to-end encryption.",
-      icon: <FaLock />,
+      title: "Auto Connect",
+      description:
+        "Effortlessly discover and connect to servers on your local network, ensuring seamless integration and connectivity.",
+      image: FeaturesImages[1],
     },
     {
-      title: "Easy to Use",
-      description: "Our intuitive interface makes file transfer a breeze.",
-      icon: <FaRegSmile />,
+      title: "Automatic Files Zipping",
+      description:
+        "Effortlessly compress your files for efficient transfer, reducing file size and optimizing bandwidth usage without manual effort.",
+      image: FeaturesImages[2],
     },
     {
-      title: "Cross-Platform Support",
-      description: "Available on Windows, Mac, and Linux.",
-      icon: <FaDesktop />,
+      title: "Automatic App Updates",
+      description:
+        "Easily receive the latest features and security enhancements, ensuring your app stays up-to-date with minimal effort.",
+      image: FeaturesImages[3],
     },
     {
       title: "Real-Time Response",
-      description: "Send files instantly to your server.",
-      icon: <FaServer />,
+      description:
+        "Send files instantly to your server with real-time response capabilities, ensuring immediate data availability and access.",
+      image: FeaturesImages[4],
     },
     {
       title: "User-Friendly Interface",
-      description: "Designed for simplicity and efficiency.",
-      icon: <FaTabletAlt />,
+      description:
+        "Designed for simplicity and efficiency, our interface allows users to navigate and operate with ease, enhancing user experience.",
+      image: FeaturesImages[5],
     },
   ];
 

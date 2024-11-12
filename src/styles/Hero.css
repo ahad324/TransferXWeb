@@ -10,9 +10,15 @@ body.dark-theme .hero::before{
   position: absolute;
   width: 300px;
   height: 300px;
-  box-shadow: 0 0 500px var(--primary-color);
-  filter: blur(200px) saturate(100);
+  background: var(--primary-color);
+  filter: blur(200px) saturate(15) hue-rotate(300deg);
+  top: 0;
   right: 0;
+  transition: transform var(--transition);
+  z-index:-1;
+}
+body.dark-theme .hero:hover::before {
+  transform: translate(-50px, 50px);
 }
 .hero h1 {
   letter-spacing: 2px;
@@ -66,7 +72,7 @@ body.dark-theme .hero::before{
   height: auto;
   transition: transform var(--transition);
   position: absolute;
-  filter: drop-shadow(0 4px 8px rgba(0, 0, 0, 0.1));
+  filter: drop-shadow(2px 4px 20px rgba(0,0,0,0.2));
 }
 
 .other-images img:nth-child(1) { /* Top Left */

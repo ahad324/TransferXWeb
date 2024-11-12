@@ -38,7 +38,9 @@ export const HoverEffect = ({ items, className }) => {
           </AnimatePresence>
           <Card hovered={hoveredIndex === idx} className="shadow-lg">
             <div className="flex items-center justify-center">
-              <div className="feature-icon">{item.icon}</div>
+              <div className="feature-icon w-20 h-20">
+                <img src={item.image} alt="image" />
+              </div>
             </div>
             <CardTitle>{item.title}</CardTitle>
             <CardDescription>{item.description}</CardDescription>
