@@ -3,6 +3,7 @@ import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import { ReactLenis } from "lenis/react";
 import Header from "./components/Header";
 import HomePage from "./HomePage";
+import TutorialPage from "./components/TutorialPage";
 import NotFound from "./components/NotFound";
 import "./App.css";
 
@@ -27,6 +28,7 @@ const App = () => {
           <Header theme={theme} handleThemeToggle={handleThemeToggle} />
           <Routes>
             <Route path="/" element={<HomePage />} />
+            <Route path="tutorial/:AppName" element={<TutorialPage />} />
             <Route path="*" element={<NotFound />} />
           </Routes>
         </div>

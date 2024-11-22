@@ -1,6 +1,6 @@
 import React from "react";
 import "../styles/About.css";
-import profileImage from "../assets/me.jpg";
+import { myImage } from "../Images";
 import { FaGithub, FaExternalLinkAlt } from "react-icons/fa";
 import { motion } from "framer-motion";
 import {
@@ -37,7 +37,7 @@ const About = () => {
             viewport={{ once: true, amount: 0.3 }}
             className="about-image"
           >
-            <img src={profileImage} alt="Profile" loading="lazy" />
+            <img src={myImage} alt="Profile" loading="lazy" />
           </motion.div>
           <div className="about-description">
             <motion.p

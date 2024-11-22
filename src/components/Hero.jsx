@@ -29,7 +29,7 @@ const Hero = () => {
         <motion.p variants={textVariants} className="hero-description">
           TransferX is your go-to solution for seamless offline file sharing
           within local networks. With auto-connect and drag & drop, it's perfect
-          for both personal and professional use.
+          for organizational use.
         </motion.p>
         <div className="hero-cta">
           <Link to="client-app" smooth={true} duration={500}>

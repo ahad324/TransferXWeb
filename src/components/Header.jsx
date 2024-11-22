@@ -4,7 +4,7 @@ import { IoClose, IoMoon, IoSunny } from "react-icons/io5";
 import { FaHome, FaCog, FaAppStore, FaInfoCircle } from "react-icons/fa";
 import { Link } from "react-scroll";
 import "../styles/Header.css";
-import Logo from "/logo.ico";
+import { Logo } from "../Images";
 import { motion } from "framer-motion";
 import { menuVariants } from "../AnimationVariants";
 

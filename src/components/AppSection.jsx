@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { FaDownload } from "react-icons/fa";
+import { IoLogoWindows } from "react-icons/io5";
 import { ImageSwiper } from "../components/ui/ImageSwipper";
 import PasswordModal from "./PasswordModal";
 import { motion } from "framer-motion";
@@ -46,7 +46,7 @@ const AppSection = ({ type, downloadLink, features, images }) => {
               viewport={{ once: true, amount: 0.3 }}
               className="app-description"
             >
-              Download our {type} app to start transferring files today.
+              Download the {type} app to start transferring files today.
             </motion.p>
             <motion.button
               variants={buttonVariants}
@@ -56,9 +56,18 @@ const AppSection = ({ type, downloadLink, features, images }) => {
               className="button primary download"
               onClick={handleOpenModal}
             >
-              <FaDownload /> Download{" "}
-              {type.charAt(0).toUpperCase() + type.slice(1)} App
+              <IoLogoWindows /> Download for Windows
             </motion.button>
+            {type === "client" && (
+              <a
+                href={`/tutorial/${type}`}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="underline text-[--primary-color] hover:text-[--secondary-color] font-bold"
+              >
+                How to use?
+              </a>
+            )}
             <div className="feature-list">
               <motion.h3
                 variants={textVariants}
