@@ -15,7 +15,7 @@ const HomePage = () => {
     const fetchVersionData = async () => {
       try {
         const response = await fetch(
-          "https://api.github.com/repos/ahad324/TransferX/releases/latest"
+          "https://api.github.com/repos/ahad324/TransferXUpdates/releases/latest"
         );
         const data = await response.json();
         setVersionData({
