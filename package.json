@@ -6,6 +6,8 @@
   "scripts": {
     "dev": "vite",
     "build": "vite build",
+    "generate-sitemap": "node sitemap-generator.js",
+    "postbuild": "npm run generate-sitemap",
     "lint": "eslint .",
     "preview": "vite preview"
   },
@@ -13,12 +15,14 @@
     "@tabler/icons-react": "^3.20.0",
     "clsx": "^2.1.1",
     "framer-motion": "^11.11.9",
-    "lenis": "^1.1.14",
+    "lenis": "^1.1.18",
     "react": "^18.3.1",
     "react-dom": "^18.3.1",
+    "react-helmet-async": "^2.0.5",
     "react-icons": "^5.3.0",
     "react-router-dom": "^6.27.0",
     "react-scroll": "^1.9.0",
+    "sitemap": "^8.0.0",
     "tailwind-merge": "^2.5.4"
   },
   "devDependencies": {

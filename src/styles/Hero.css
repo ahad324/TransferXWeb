@@ -5,7 +5,7 @@
   overflow: hidden;
   min-height: 100dvh;
 }
-body.dark-theme .hero::before{
+body.dark-theme .hero::before {
   content: "";
   position: absolute;
   width: 300px;
@@ -15,16 +15,20 @@ body.dark-theme .hero::before{
   top: 0;
   right: 0;
   transition: transform var(--transition);
-  z-index:-1;
+  z-index: -1;
 }
 body.dark-theme .hero:hover::before {
   transform: translate(-50px, 50px);
 }
 .hero h1 {
   letter-spacing: 2px;
-  font-family:var(--logo-font);
+  font-family: var(--logo-font);
   font-size: clamp(3rem, 0.8696rem + 5.5652vw, 4rem);
-  background: linear-gradient(45deg, var(--primary-color), var(--secondary-color));
+  background: linear-gradient(
+    45deg,
+    var(--primary-color),
+    var(--secondary-color)
+  );
   -webkit-background-clip: text;
   background-clip: text;
   -webkit-text-fill-color: transparent;
@@ -57,7 +61,7 @@ body.dark-theme .hero:hover::before {
   width: clamp(250px, 40vw, 500px);
   height: auto;
   object-fit: contain;
-  border-radius: 5% ;
+  border-radius: 5%;
   position: relative;
 }
 
@@ -72,36 +76,45 @@ body.dark-theme .hero:hover::before {
   height: auto;
   transition: transform var(--transition);
   position: absolute;
-  filter: drop-shadow(2px 2px 30px rgba(0,0,0,0.2));
+  filter: drop-shadow(2px 2px 30px rgba(0, 0, 0, 0.2));
 }
 
-.other-images img:nth-child(1) { /* Top Left */
+.other-images img:nth-child(1) {
+  /* Top Left */
   top: 0px;
   left: 10%;
   animation: float 4s ease-in-out infinite;
 }
 
-.other-images img:nth-child(2) { /* Top Right */
+.other-images img:nth-child(2) {
+  /* Top Right */
   top: 10px;
   right: 10%;
   animation: float 5s ease-in-out infinite;
 }
 
-.other-images img:nth-child(3) { /* Bottom Left */
+.other-images img:nth-child(3) {
+  /* Bottom Left */
   bottom: 0px;
   left: 10%;
   animation: float 6s ease-in-out infinite;
 }
 
-.other-images img:nth-child(4) { /* Bottom Right */
+.other-images img:nth-child(4) {
+  /* Bottom Right */
   bottom: -30px;
   right: 10%;
   animation: float 7s ease-in-out infinite;
 }
 
 @keyframes float {
-  0%, 100% { transform: translateY(0px); }
-  50% { transform: translateY(-10px); }
+  0%,
+  100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
 }
 
 .hero-title {
@@ -112,7 +125,11 @@ body.dark-theme .hero:hover::before {
 }
 
 .gradient-text {
-  background: linear-gradient(45deg, var(--primary-color), var(--secondary-color));
+  background: linear-gradient(
+    45deg,
+    var(--primary-color),
+    var(--secondary-color)
+  );
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;

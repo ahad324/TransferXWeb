@@ -54,7 +54,7 @@ const Features = () => {
           whileInView="visible"
           viewport={{ once: true, amount: 0.3 }}
         >
-          Features
+          Key Features
         </motion.h2>
         <HoverEffect items={features} />
       </div>

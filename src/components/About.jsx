@@ -37,7 +37,7 @@ const About = () => {
             viewport={{ once: true, amount: 0.3 }}
             className="about-image"
           >
-            <img src={myImage} alt="Profile" loading="lazy" />
+            <img src={myImage} alt="Profile of AbdulAhad" loading="lazy" />
           </motion.div>
           <div className="about-description">
             <motion.p
