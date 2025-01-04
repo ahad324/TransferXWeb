@@ -10,7 +10,7 @@ async function generateSitemap() {
 
     sitemapStream.write({ url: '/', changefreq: 'weekly', priority: 1 });
     sitemapStream.write({ url: '/tutorial/client', changefreq: 'weekly' });
-    sitemapStream.write({ url: '/tutorial/server', changefreq: 'weekly' });
+    // sitemapStream.write({ url: '/tutorial/server', changefreq: 'weekly' });
 
 
     sitemapStream.end();
