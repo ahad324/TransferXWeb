@@ -11,9 +11,11 @@ async function generateSitemap() {
     const currentDate = new Date().toISOString().split('T')[0];
 
     sitemapStream.write({ url: '/', changefreq: 'weekly', priority: 1, lastmod: currentDate });
+    sitemapStream.write({ url: '/how-transferx-works', changefreq: 'weekly', lastmod: currentDate });
+    sitemapStream.write({ url: '/about', changefreq: 'weekly', lastmod: currentDate });
+    sitemapStream.write({ url: '/contact', changefreq: 'weekly', lastmod: currentDate });
     sitemapStream.write({ url: '/tutorial/client', changefreq: 'weekly', lastmod: currentDate });
-    // sitemapStream.write({ url: '/tutorial/server', changefreq: 'weekly' });
-
+    sitemapStream.write({ url: '/tutorial/server', changefreq: 'weekly', lastmod: currentDate });
 
     sitemapStream.end();
 
@@ -26,6 +28,5 @@ async function generateSitemap() {
     console.error('Error generating sitemap:', error);
   }
 }
-
 
 generateSitemap();

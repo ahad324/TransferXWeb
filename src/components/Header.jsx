@@ -1,7 +1,6 @@
 import React, { useState } from "react";
 import { LuLayoutGrid } from "react-icons/lu";
 import { IoClose } from "react-icons/io5";
-import { FaHome, FaCog, FaAppStore, FaInfoCircle } from "react-icons/fa";
 import { Link } from "react-router-dom";
 import "../styles/Header.css";
 import { Logo } from "../Images";
