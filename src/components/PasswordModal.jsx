@@ -7,7 +7,8 @@ const PasswordModal = ({ isOpen, onClose, onSubmit, passwordPrompt }) => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    if (password === "ahad") {
+    const secretpass = import.meta.env.VITE_PASSWORD;
+    if (password === secretpass) {
       onSubmit(password);
       setPassword("");
       onClose();
@@ -62,12 +63,14 @@ const PasswordModal = ({ isOpen, onClose, onSubmit, passwordPrompt }) => {
                 autoFocus
                 value={password}
                 onChange={(e) => setPassword(e.target.value)}
-                className="bg-[--input-background] border border-gray-300 text-[--text-color] text-sm rounded-lg focus:ring-[--primary-color] focus:border-[--primary-color] block w-full p-2.5"
+                className="input-style"
                 placeholder="••••••••"
                 required
               />
             </div>
-            {errorMessage && <p className="text-red-500">{errorMessage}</p>}
+            {errorMessage && (
+              <p className="text-[--error-color]">{errorMessage}</p>
+            )}
             <button type="submit" className="button primary m-auto">
               Submit
             </button>

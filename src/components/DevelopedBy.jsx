@@ -1,5 +1,5 @@
 import React from "react";
-import "../styles/About.css";
+import "../styles/DevelopedBy.css";
 import { myImage } from "../Images";
 import { FaGithub, FaExternalLinkAlt } from "react-icons/fa";
 import { motion } from "framer-motion";
@@ -9,7 +9,7 @@ import {
   buttonVariants,
 } from "../AnimationVariants";
 
-const About = () => {
+const DevelopedBy = () => {
   const handleViewProjects = () => {
     window.open("https://ahad324.github.io/AllProjects/", "_blank");
   };
@@ -27,7 +27,7 @@ const About = () => {
           whileInView="visible"
           viewport={{ once: true, amount: 0.3 }}
         >
-          About Me
+          Developed by
         </motion.h2>
         <div className="about-content">
           <motion.div
@@ -79,7 +79,7 @@ const About = () => {
                 name="View_my_project"
                 onClick={handleViewProjects}
               >
-                <FaExternalLinkAlt /> View My Projects
+                <FaExternalLinkAlt size={20} /> View My Projects
               </motion.button>
               <motion.button
                 variants={buttonVariants}
@@ -90,7 +90,7 @@ const About = () => {
                 name="Github_profile"
                 onClick={handleGitHubProfile}
               >
-                <FaGithub /> GitHub Profile
+                <FaGithub size={20} /> GitHub Profile
               </motion.button>
             </div>
           </div>
@@ -100,4 +100,4 @@ const About = () => {
   );
 };
 
-export default About;
+export default DevelopedBy;

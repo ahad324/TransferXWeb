@@ -1,14 +1,18 @@
 import React from "react";
 import { Link } from "react-scroll";
+import { Link as LinkOpener } from "react-router-dom";
 import { motion } from "framer-motion";
 import "../styles/Hero.css";
-import { HeroImages } from "../Images";
 import {
-  imageVariants,
   containerVariants,
   buttonVariants,
   textVariants,
 } from "../AnimationVariants";
+import { FiDownloadCloud } from "react-icons/fi";
+
+import { HiOutlineLightBulb } from "react-icons/hi";
+
+import ShinyText from "./ui/ShinyText";
 
 const Hero = () => {
   return (
@@ -20,66 +24,41 @@ const Hero = () => {
       animate="visible"
     >
       <div className="hero-content">
-        <motion.h1 variants={textVariants} className="hero-title">
-          <span className="gradient-text">TransferX</span>
+        <motion.span
+          variants={textVariants}
+          className="inline-block bg-gray-800 text-xs uppercase tracking-wider py-1 px-3 rounded-full mb-4 "
+        >
+          <ShinyText text="Secure Offline File Transfers" speed={3} />
+        </motion.span>
+        <motion.h1 variants={textVariants} className="heading">
+          Offline Exam Submissions Fast & Secure with{" "}
+          <span className="hero_name">TransferX</span>
         </motion.h1>
-        <motion.p variants={textVariants} className="hero-subtitle">
-          Secure, Fast, and Effortless File Transfers
-        </motion.p>
         <motion.p variants={textVariants} className="hero-description">
-          TransferX is your go-to solution for seamless offline file sharing
-          within local networks. With auto-connect and drag & drop, it's perfect
-          for organizational use.
+          Streamline exam file submissions with secure, offline transfers.
+          TransferX simplifies the collection process ensuring seamless, fast
+          and tamper-proof submissions even without internet access.
         </motion.p>
         <div className="hero-cta">
-          <Link to="client-app" smooth={true} duration={500}>
+          <Link to="downloadapps" smooth={true} duration={500}>
             <motion.button
               variants={buttonVariants}
               className="button primary"
-              name="Get_Started"
+              name="Download_TransferX"
             >
-              Get Started
+              <FiDownloadCloud size={25} />
+              Download TransferX
             </motion.button>
           </Link>
-          <Link to="features" smooth={true} duration={500}>
+          <LinkOpener to="/how-transferx-works">
             <motion.button
               variants={buttonVariants}
               className="button secondary"
-              name="Learn_More"
+              name="How_TransferX_Works"
             >
-              Learn More
+              <HiOutlineLightBulb size={25} /> How TransferX Works
             </motion.button>
-          </Link>
-        </div>
-      </div>
-      <div className="hero-image-container">
-        <motion.img
-          variants={imageVariants}
-          src={HeroImages[0]}
-          alt="Hero Image"
-          className="hero-image"
-        />
-        <div className="other-images">
-          <motion.img
-            variants={imageVariants}
-            src={HeroImages[1]}
-            alt="Document Icon"
-          />
-          <motion.img
-            variants={imageVariants}
-            src={HeroImages[2]}
-            alt="Documents Icon"
-          />
-          <motion.img
-            variants={imageVariants}
-            src={HeroImages[3]}
-            alt="Executable Icon"
-          />
-          <motion.img
-            variants={imageVariants}
-            src={HeroImages[4]}
-            alt="PDF Icon"
-          />
+          </LinkOpener>
         </div>
       </div>
     </motion.section>

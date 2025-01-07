@@ -8,7 +8,7 @@
 
 :root {
   --logo-font: "Lobster",sans-serif;
-  --font-family: "Poppins", sans-serif
+  --font: "Poppins", sans-serif;
   --transition: 0.3s ease;
 }
 
@@ -19,8 +19,13 @@
 }
 
 body {
-  font-family: var(--font-family);
+  font-family: var(--font);
   transition: background var(--transition);
+  color: var(--text-color);
+  background-color: var(--background-color);
+  transition: background-color var(--transition), color var(--transition);
+  margin: 0;
+  padding: 0;
 }
 
 .app {

@@ -8,8 +8,10 @@ async function generateSitemap() {
       hostname: 'https://transferx.netlify.app',
     });
 
-    sitemapStream.write({ url: '/', changefreq: 'weekly', priority: 1 });
-    sitemapStream.write({ url: '/tutorial/client', changefreq: 'weekly' });
+    const currentDate = new Date().toISOString().split('T')[0];
+
+    sitemapStream.write({ url: '/', changefreq: 'weekly', priority: 1, lastmod: currentDate });
+    sitemapStream.write({ url: '/tutorial/client', changefreq: 'weekly', lastmod: currentDate });
     // sitemapStream.write({ url: '/tutorial/server', changefreq: 'weekly' });
 
 

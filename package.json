@@ -13,8 +13,12 @@
   },
   "dependencies": {
     "@tabler/icons-react": "^3.20.0",
+    "@tsparticles/engine": "^3.7.1",
+    "@tsparticles/react": "^3.0.0",
+    "@tsparticles/slim": "^3.7.1",
     "clsx": "^2.1.1",
-    "framer-motion": "^11.11.9",
+    "emailjs-com": "^3.2.0",
+    "framer-motion": "^11.16.0",
     "lenis": "^1.1.18",
     "react": "^18.3.1",
     "react-dom": "^18.3.1",
@@ -23,7 +27,7 @@
     "react-router-dom": "^6.27.0",
     "react-scroll": "^1.9.0",
     "sitemap": "^8.0.0",
-    "tailwind-merge": "^2.5.4"
+    "tailwind-merge": "^2.6.0"
   },
   "devDependencies": {
     "@eslint/js": "^9.9.0",

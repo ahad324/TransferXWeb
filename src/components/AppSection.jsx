@@ -46,7 +46,8 @@ const AppSection = ({ type, downloadLink, features, images }) => {
               viewport={{ once: true, amount: 0.3 }}
               className="app-description"
             >
-              Download the {type} app to start transferring files today.
+              Download the {type} app to start{" "}
+              {type == "client" ? "transferring" : "receiving"} files today.
             </motion.p>
             <motion.button
               variants={buttonVariants}
@@ -56,7 +57,7 @@ const AppSection = ({ type, downloadLink, features, images }) => {
               className="button primary download"
               onClick={handleOpenModal}
             >
-              <IoLogoWindows /> Download for Windows
+              <IoLogoWindows size={20} /> Download for Windows
             </motion.button>
             {type === "client" && (
               <a

@@ -59,8 +59,8 @@ export const Card = ({ className, children, hovered }) => {
       viewport={{ once: true, amount: 0.3 }}
       variants={cardVariants}
       className={cn(
-        "rounded-2xl h-full w-full p-4 overflow-hidden bg-white border border-transparent dark:bg-gray-800 dark:border-white/[0.2] group-hover:border-slate-700 z-[1] relative transition-colors duration-300",
-        { "bg-gray-100 dark:bg-gray-700": hovered }, // Change background color on hover
+        "rounded-2xl h-full w-full p-4 overflow-hidden  border bg-gray-800 border-white/[0.2] group-hover:border-slate-700 z-[1] relative transition-colors duration-300",
+        { "bg-gray-700": hovered }, // Change background color on hover
         className
       )}
     >
@@ -73,12 +73,7 @@ export const Card = ({ className, children, hovered }) => {
 
 export const CardTitle = ({ className, children }) => {
   return (
-    <h4
-      className={cn(
-        "text-gray-800 dark:text-gray-200 font-bold tracking-wide mt-4",
-        className
-      )}
-    >
+    <h4 className={cn("text-gray-200 font-bold tracking-wide mt-4", className)}>
       {children}
     </h4>
   );
@@ -88,7 +83,7 @@ export const CardDescription = ({ className, children }) => {
   return (
     <p
       className={cn(
-        "mt-2 text-gray-600 dark:text-gray-400 tracking-wide leading-relaxed text-sm",
+        "mt-2 text-gray-400 tracking-wide leading-relaxed text-sm",
         className
       )}
     >
