@@ -1,7 +1,15 @@
 import React from "react";
 import { useParams } from "react-router-dom";
 import SEO from "@components/SEO";
+import VideoPlayer from "@components/VideoPlayer";
+import { motion } from "framer-motion";
+import { containerVariants } from "../AnimationVariants";
 
+// Mapping of app names to video links
+const videoLinks = {
+  client: "https://www.youtube.com/embed/Hk2IUU5uBaY?si=H3xeWMR1OO3vWhYb",
+  server: "https://www.youtube.com/embed/videoId2",
+};
 const TutorialPage = () => {
   const { AppName } = useParams();
   const appNameTitleCase = AppName.charAt(0).toUpperCase() + AppName.slice(1);
@@ -11,8 +19,17 @@ const TutorialPage = () => {
   const canonical = `https://transferx.netlify.app/tutorial/${AppName}`;
   const ogtitle = `How to Use TransferX ${AppName} | Setup and Configuration Guide`;
 
+  // Get the video link based on the app name
+  const videoLink = videoLinks[AppName.toLowerCase()] || ""; // Default to empty if not found
+  const errorMessage = "Video not available for this app."; // Error message
+
   return (
-    <div className="flex flex-col items-center justify-center min-h-screen p-4">
+    <motion.div
+      variants={containerVariants}
+      initial="hidden"
+      animate="visible"
+      className="flex flex-col items-center justify-center min-h-screen p-4 max-w-4xl mx-auto"
+    >
       <SEO
         title={title}
         description={description}
@@ -20,17 +37,15 @@ const TutorialPage = () => {
         canonical={canonical}
         ogtitle={ogtitle}
       />
-      <h1 className="heading">
+      <h1 className="heading text-2xl font-bold mb-4">
         {appNameTitleCase} App Tutorial
       </h1>
-      <video
-        controls
-        className="w-full max-w-4xl border-4 border-[--primary-color] rounded-lg shadow-3xl"
-      >
-        <source src={`/videos/${AppName}-tutorial.mp4`} type="video/mp4" />
-        Your browser does not support the video tag.
-      </video>
-    </div>
+      <VideoPlayer
+        videoLink={videoLink}
+        errorMessage={errorMessage}
+        title={`${appNameTitleCase} App Tutorial`}
+      />
+    </motion.div>
   );
 };
 

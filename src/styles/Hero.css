@@ -2,22 +2,7 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  padding-top: 5rem;
 }
-.hero .hero_name {
-  letter-spacing: 2px;
-  font-family: var(--logo-font);
-  font-size: clamp(3rem, 0.8696rem + 5.5652vw, 4rem);
-  background: linear-gradient(
-    45deg,
-    var(--primary-color),
-    var(--secondary-color)
-  );
-  -webkit-background-clip: text;
-  background-clip: text;
-  -webkit-text-fill-color: transparent;
-}
-
 .hero p {
   font-size: clamp(1rem, 0.8rem + 1vw, 1.25rem);
   margin-bottom: 2rem;
@@ -30,6 +15,7 @@
   flex: 1;
   max-width: 50%;
   z-index: 1;
+  padding-top: 5rem;
 }
 .hero-cta {
   display: flex;
@@ -59,12 +45,12 @@
   .hero {
     flex-direction: column;
     text-align: center;
-    padding: 3rem 1rem 0;
+    padding: 0rem 1rem 0;
   }
 
   .hero-content {
     max-width: 100%;
-    margin-bottom: 2rem;
+    /* margin-bottom: 2rem; */
   }
 }
 

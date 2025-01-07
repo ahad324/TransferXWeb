@@ -14,7 +14,7 @@ const SEO = ({ title, description, keywords, canonical, ogImage, ogTitle }) => {
       <meta property="og:title" content={ogTitle || title} />
       <meta property="og:description" content={description} />
       <meta property="og:url" content={canonical} />
-      <meta property="og:image" content={ogImage || "/logo.png"} />
+      <meta property="og:image" content={ogImage || "/assets/logo.svg"} />
 
       <script type="application/ld+json">
         {JSON.stringify({
@@ -31,7 +31,7 @@ const SEO = ({ title, description, keywords, canonical, ogImage, ogTitle }) => {
             priceCurrency: "USD",
           },
           url: "https://transferx.netlify.app/",
-          image: "https://transferx.netlify.app/logo.png",
+          image: "https://transferx.netlify.app/assets/logo.svg",
           author: {
             "@type": "Person",
             name: "Abdul Ahad",
@@ -41,7 +41,7 @@ const SEO = ({ title, description, keywords, canonical, ogImage, ogTitle }) => {
             name: "TransferX",
             logo: {
               "@type": "ImageObject",
-              url: "https://transferx.netlify.app/logo.png",
+              url: "https://transferx.netlify.app/assets/logo.svg",
             },
           },
         })}

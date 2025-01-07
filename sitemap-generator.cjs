@@ -8,25 +8,36 @@ async function generateSitemap() {
       hostname: 'https://transferx.netlify.app',
     });
 
-    const currentDate = new Date().toISOString().split('T')[0];
+    const currentDate = new Date().toISOString().split('T');
 
     sitemapStream.write({ url: '/', changefreq: 'weekly', priority: 1, lastmod: currentDate });
     sitemapStream.write({ url: '/how-transferx-works', changefreq: 'weekly', lastmod: currentDate });
     sitemapStream.write({ url: '/about', changefreq: 'weekly', lastmod: currentDate });
     sitemapStream.write({ url: '/contact', changefreq: 'weekly', lastmod: currentDate });
+    sitemapStream.write({ url: '/certificate', changefreq: 'weekly', lastmod: currentDate });
     sitemapStream.write({ url: '/tutorial/client', changefreq: 'weekly', lastmod: currentDate });
     sitemapStream.write({ url: '/tutorial/server', changefreq: 'weekly', lastmod: currentDate });
 
     sitemapStream.end();
 
     const sitemapData = await streamToPromise(sitemapStream);
+    const formattedSitemap = formatSitemap(sitemapData.toString());
     const sitemapPath = path.resolve(__dirname, 'public/sitemap.xml');
-    fs.writeFileSync(sitemapPath, sitemapData.toString());
+    fs.writeFileSync(sitemapPath, formattedSitemap);
     console.log('Sitemap generated successfully!');
 
   } catch (error) {
     console.error('Error generating sitemap:', error);
   }
+}
+
+function formatSitemap(xml) {
+  const formatted = xml
+    .replace(/></g, '>\n<')
+    .replace(/<url>/g, '\n<url>')
+    .replace(/<\/url>/g, '</url>\n')
+    .trim();
+  return formatted;
 }
 
 generateSitemap();

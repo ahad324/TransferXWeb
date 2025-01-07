@@ -1,13 +1,9 @@
-@import url('https://fonts.googleapis.com/css2?family=Poppins:ital&display=swap');
-/* Logo Font */
-@import url('https://fonts.googleapis.com/css2?family=Lobster&display=swap');
-
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
 :root {
-  --logo-font: "Lobster",sans-serif;
+  --logo-font: "Lobster", sans-serif;
   --font: "Poppins", sans-serif;
   --transition: 0.3s ease;
 }

@@ -8,9 +8,9 @@ import Contact from "./pages/Contact";
 import Footer from "./components/Footer";
 import TutorialPage from "./pages/Tutorials";
 import HowItWorks from "./pages/HowItWorks";
+import CertificatePage from "./pages/CertificatePage";
 import NotFound from "./pages/NotFound";
 import ScrollToTop from "./components/ScrollToTop";
-import { SparklesCore } from "./components/ui/Sparkles";
 import "./App.css";
 
 const App = () => {
@@ -27,17 +27,6 @@ const App = () => {
   return (
     <ReactLenis root>
       <>
-        <div className="w-full fixed -z-10 h-screen">
-          <SparklesCore
-            id="tsparticlesfullpage"
-            background="transparent"
-            minSize={0.6}
-            maxSize={1.4}
-            particleDensity={100}
-            className="w-full h-full"
-            particleColor="#FFFFFF"
-          />
-        </div>
         <Header />
         <ScrollToTop />
         <Routes>
@@ -45,6 +34,7 @@ const App = () => {
           <Route path="/how-transferx-works" element={<HowItWorks />} />
           <Route path="/about" element={<About />} />
           <Route path="/contact" element={<Contact />} />
+          <Route path="/certificate" element={<CertificatePage />} />
           <Route path="tutorial/:AppName" element={<TutorialPage />} />
           <Route path="*" element={<NotFound />} />
         </Routes>

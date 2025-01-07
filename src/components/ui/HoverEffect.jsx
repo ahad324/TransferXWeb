@@ -73,9 +73,14 @@ export const Card = ({ className, children, hovered }) => {
 
 export const CardTitle = ({ className, children }) => {
   return (
-    <h4 className={cn("text-gray-200 font-bold tracking-wide mt-4", className)}>
+    <h2
+      className={cn(
+        "text-[--text-color] font-bold tracking-wide mt-4 text-base",
+        className
+      )}
+    >
       {children}
-    </h4>
+    </h2>
   );
 };
 

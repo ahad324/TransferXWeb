@@ -73,7 +73,7 @@ const Contact = () => {
         ogTitle={ogtitle}
       />
       <span className="flex justify-center items-center flex-col">
-        <h1 className="heading">Contact Us</h1>
+        <h1 className="heading">Contact Me</h1>
         <p className="mb-6">Reach out for any inquiries or support.</p>
       </span>
       {Message.success ? (
@@ -81,7 +81,7 @@ const Contact = () => {
       ) : (
         <p className="text-[--error-color] mb-4">{Message.error}</p>
       )}
-      <motion.form className="space-y-4" onSubmit={handleSubmit}>
+      <form className="space-y-4" onSubmit={handleSubmit}>
         <div>
           <label
             className="block text-sm font-medium text-[--text-color] mb-2"
@@ -137,7 +137,7 @@ const Contact = () => {
           ></textarea>
         </div>
         <div>
-          <motion.button
+          <button
             type="submit"
             className="button primary"
             whileHover={{ scale: 1.05 }}
@@ -147,12 +147,12 @@ const Contact = () => {
               "Sending..."
             ) : (
               <>
-                <FaPaperPlane className="mr-2" /> Send Message
+                <FaPaperPlane size={20} /> Send Message
               </>
             )}
-          </motion.button>
+          </button>
         </div>
-      </motion.form>
+      </form>
     </motion.div>
   );
 };

@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { Link } from "react-router-dom";
 import { IoLogoWindows } from "react-icons/io5";
 import { ImageSwiper } from "../components/ui/ImageSwipper";
 import PasswordModal from "./PasswordModal";
@@ -60,14 +61,12 @@ const AppSection = ({ type, downloadLink, features, images }) => {
               <IoLogoWindows size={20} /> Download for Windows
             </motion.button>
             {type === "client" && (
-              <a
-                href={`/tutorial/${type}`}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="underline text-[--primary-color] hover:text-[--secondary-color] font-bold"
+              <Link
+                to={`/tutorial/${type}`}
+                className="underline underline-offset-2 text-[--primary-color] hover:text-[--secondary-color] font-semibold"
               >
-                How to use?
-              </a>
+                Watch Tutorial
+              </Link>
             )}
             <div className="feature-list">
               <motion.h3

@@ -16,15 +16,10 @@
   max-width: 1200px;
   margin: 0 auto;
   padding: 0 2rem;
+  position: relative;
 }
 .input-style {
   @apply bg-[--input-background] border border-gray-300 text-[--text-color] text-sm rounded-lg focus:ring-[--primary-color] focus:border-[--primary-color] block w-full p-2.5;
-}
-.heading{
-  font-size: clamp(2.5rem, 0.8696rem + 5.5652vw, 3rem);
-  font-weight: 800;
-  margin-bottom: 1rem;
-  line-height: 1.2;
 }
 section {
   padding: 2rem 0;
@@ -34,6 +29,25 @@ section h2 {
   font-size: clamp(2.5rem, 0.8696rem + 5.5652vw, 3rem);
   font-weight: 700;
   margin-bottom: 1rem;
+}
+.heading{
+  font-size: clamp(2.5rem, 0.8696rem + 5.5652vw, 3rem);
+  font-weight: 800;
+  margin-bottom: 1rem;
+  line-height: 1.2;
+}
+.hero_name {
+  letter-spacing: 2px;
+  font-family: var(--logo-font);
+  font-size: clamp(3rem, 0.8696rem + 5.5652vw, 4rem);
+  background: linear-gradient(
+    45deg,
+    var(--primary-color),
+    var(--secondary-color)
+  );
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
 }
 .CardHoverBG {
   background: linear-gradient(
