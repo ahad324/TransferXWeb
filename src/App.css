@@ -1,11 +1,11 @@
 :root {
-  --primary-color: #6366f1;
+  --primary-color: #5355d6;
   --secondary-color: #8b5cf6;
   --background-color: #111827;
   --text-color: #f3f4f6;
   --input-background: #1f2937;
   --success-color: #34d399;
-  --error-color :#ef4444;
+  --error-color: #ef4444;
   --transition: 0.3s ease;
 }
 * {
@@ -30,7 +30,7 @@ section h2 {
   font-weight: 700;
   margin-bottom: 1rem;
 }
-.heading{
+.heading {
   font-size: clamp(2.5rem, 0.8696rem + 5.5652vw, 3rem);
   font-weight: 800;
   margin-bottom: 1rem;

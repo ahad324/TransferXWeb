@@ -63,7 +63,7 @@ const AppSection = ({ type, downloadLink, features, images }) => {
             {type === "client" && (
               <Link
                 to={`/tutorial/${type}`}
-                className="underline underline-offset-2 text-[--primary-color] hover:text-[--secondary-color] font-semibold"
+                className="underline underline-offset-2 text-[--success-color] font-semibold"
               >
                 Watch Tutorial
               </Link>

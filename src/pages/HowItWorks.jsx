@@ -31,12 +31,12 @@ const HowItWorks = () => {
           </p>
           <p className="mt-2">
             To bypass this, install our <strong>trusted certificate</strong>.
-            You can download it{" "}
+            You can download our{" "}
             <Link
               to="/certificate"
-              className="underline text-[--secondary-color]"
+              className="underline text-[--success-color]"
             >
-              here
+              trusted security certificate
             </Link>
             . It only takes 5 seconds, and this ensures smooth installation.
           </p>

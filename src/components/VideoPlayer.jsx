@@ -1,9 +1,23 @@
-import React from "react";
+import React, { useState } from "react";
 
 const VideoPlayer = ({ videoLink, errorMessage, title }) => {
+  const [isVideoLoaded, setIsVideoLoaded] = useState(false);
+
   return (
     <div className="relative overflow-hidden pt-[56.25%] w-full">
-      {videoLink && (
+      {title && <h2 className="text-xl font-semibold mb-2">{title}</h2>}{" "}
+      {/* Display the title */}
+      {!isVideoLoaded && videoLink && (
+        <img
+          src={`https://img.youtube.com/vi/${
+            videoLink.split("embed/")[1].split("?si")[0]
+          }/hqdefault.jpg`} // Dynamic thumbnail
+          alt={`Thumbnail for ${title}`}
+          className="absolute top-0 left-0 w-full h-full rounded-lg cursor-pointer"
+          onClick={() => setIsVideoLoaded(true)} // Load video on click
+        />
+      )}
+      {isVideoLoaded && videoLink && (
         <iframe
           src={videoLink}
           title={title}
