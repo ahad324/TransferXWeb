@@ -49,7 +49,7 @@ const Hero = () => {
             and tamper-proof submissions even without internet access.
           </motion.p>
           <div className="hero-cta">
-            <Link to="/#downloadapps" smooth={true} duration={500}>
+            <Link to="/#downloadapps" smooth={"true"} duration={500}>
               <motion.button
                 variants={buttonVariants}
                 className="button primary"
