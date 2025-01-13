@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { LuLayoutGrid } from "react-icons/lu";
 import { IoClose } from "react-icons/io5";
-import { Link } from "react-router-dom";
+import { NavLink } from "react-router-dom";
 import "../styles/Header.css";
 import { Logo } from "../Images";
 import { motion } from "framer-motion";
@@ -45,25 +45,37 @@ const Header = () => {
             viewport={{ once: false, amount: 0.3 }}
           >
             <motion.li custom={1} variants={menuVariants}>
-              <Link to="/" onClick={toggleMenu}>
+              <NavLink to="/" onClick={toggleMenu} activeClassName="active">
                 Home
-              </Link>
+              </NavLink>
             </motion.li>
             <motion.li custom={2} variants={menuVariants}>
-              <Link to="/how-transferx-works" onClick={toggleMenu}>
+              <NavLink
+                to="/how-transferx-works"
+                onClick={toggleMenu}
+                activeClassName="active"
+              >
                 How TransferX Works
-              </Link>
+              </NavLink>
             </motion.li>
 
             <motion.li custom={3} variants={menuVariants}>
-              <Link to="/about" onClick={toggleMenu}>
+              <NavLink
+                to="/about"
+                onClick={toggleMenu}
+                activeClassName="active"
+              >
                 About
-              </Link>
+              </NavLink>
             </motion.li>
             <motion.li custom={4} variants={menuVariants}>
-              <Link to="/contact" onClick={toggleMenu}>
+              <NavLink
+                to="/contact"
+                onClick={toggleMenu}
+                activeClassName="active"
+              >
                 Contact
-              </Link>
+              </NavLink>
             </motion.li>
           </motion.ul>
         </nav>
