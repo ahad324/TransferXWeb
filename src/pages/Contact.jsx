@@ -8,7 +8,7 @@ import {
 import { motion } from "framer-motion";
 import { containerVariants } from "../AnimationVariants";
 import SEO from "../components/SEO";
-import emailjs from "emailjs-com";
+import emailjs from '@emailjs/browser';
 
 const Contact = () => {
   const [formData, setFormData] = useState({

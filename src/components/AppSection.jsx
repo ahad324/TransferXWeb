@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import { IoLogoWindows } from "react-icons/io5";
 import { ImageSwiper } from "../components/ui/ImageSwipper";
-import PasswordModal from "./PasswordModal";
+// import PasswordModal from "./PasswordModal";
 import { motion } from "framer-motion";
 import {
   textVariants,
@@ -13,19 +13,19 @@ import {
 import "../styles/AppSection.css";
 
 const AppSection = ({ type, downloadLink, features, images }) => {
-  const [isModalOpen, setIsModalOpen] = useState(false);
+  // const [isModalOpen, setIsModalOpen] = useState(false);
 
   const handleDownload = () => {
     window.open(downloadLink, "_blank");
   };
 
-  const handleOpenModal = () => {
-    setIsModalOpen(true);
-  };
+  // const handleOpenModal = () => {
+  //   setIsModalOpen(true);
+  // };
 
-  const handleCloseModal = () => {
-    setIsModalOpen(false);
-  };
+  // const handleCloseModal = () => {
+  //   setIsModalOpen(false);
+  // };
 
   return (
     <section id={`${type}-app`} className={`app-section ${type}`}>
@@ -56,7 +56,7 @@ const AppSection = ({ type, downloadLink, features, images }) => {
               whileInView="visible"
               viewport={{ once: true, amount: 0.3 }}
               className="button primary download"
-              onClick={handleOpenModal}
+              onClick={handleDownload}
             >
               <IoLogoWindows size={20} /> Download for Windows
             </motion.button>
@@ -97,14 +97,14 @@ const AppSection = ({ type, downloadLink, features, images }) => {
                 ))}
               </motion.ul>
             </div>
-            <PasswordModal
+            {/* <PasswordModal
               isOpen={isModalOpen}
               onClose={handleCloseModal}
               onSubmit={handleDownload}
               passwordPrompt={`Enter password to download ${
                 type.charAt(0).toUpperCase() + type.slice(1)
               } App`}
-            />
+            /> */}
           </div>
           <motion.div
             variants={imageVariants}
