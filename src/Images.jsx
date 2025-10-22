@@ -29,7 +29,7 @@ export const FeaturesImages = [
 import computer404 from "/assets/404-computer.svg";
 export const NotFoundImage = computer404;
 
-import profileImage from "/assets/me.jpg";
+import profileImage from "/assets/me.png";
 export const myImage = profileImage;
 
 import logo from "/assets/logo.svg";
