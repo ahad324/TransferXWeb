@@ -23,14 +23,14 @@ const DownloadApps = () => {
     <div id="downloadapps">
       <AppSection
         type="client"
-        downloadLink={"https://ahad324.github.io/TransferXClient/TransferX.exe"}
+        downloadLink={"https://github.com/ahad324/TransferXClient/releases/download/Installer/TransferX.exe"}
         features={clientFeatures}
         images={ClientImages}
       />
       <AppSection
         type="server"
         downloadLink={
-          "https://ahad324.github.io/TransferXServer/TransferXServer.exe"
+          "https://github.com/ahad324/TransferXServer/releases/download/Installer/TransferXServer.exe"
         }
         features={serverFeatures}
         images={ServerImages}
