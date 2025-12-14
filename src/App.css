@@ -15,7 +15,7 @@
 }
 
 html {
-  scroll-behavior: smooth;
+  /* scroll-behavior: smooth; REMOVED to avoid conflict with Lenis */
 }
 
 .container {
