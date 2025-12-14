@@ -5,10 +5,12 @@ import {
   FaCommentDots,
   FaPaperPlane,
 } from "react-icons/fa";
-import { motion } from "framer-motion";
 import { containerVariants } from "../AnimationVariants";
 import SEO from "../components/SEO";
 import emailjs from '@emailjs/browser';
+import SectionWrapper from "../components/ui/SectionWrapper";
+import { Input, Textarea } from "../components/ui/Input";
+import Button from "../components/ui/Button";
 
 const Contact = () => {
   const [formData, setFormData] = useState({
@@ -59,11 +61,8 @@ const Contact = () => {
   };
 
   return (
-    <motion.div
-      className="max-w-3xl min-h-screen flex justify-center items-center flex-col mx-auto p-8 text-[--text-color]"
-      variants={containerVariants}
-      initial="hidden"
-      animate="visible"
+    <SectionWrapper
+      className="max-w-3xl flex justify-center items-center flex-col mx-auto"
     >
       <SEO
         title={title}
@@ -72,9 +71,9 @@ const Contact = () => {
         canonical={canonical}
         ogTitle={ogtitle}
       />
-      <div className="w-full h-full">
-        <span className="flex justify-center items-center flex-col">
-          <h1 className="heading">Contact Me</h1>
+      <div className="w-full">
+        <span className="flex justify-center items-center flex-col text-center">
+          <h1 className="heading">Contact US</h1>
           <p className="mb-6">Reach out for any inquiries or support.</p>
         </span>
         {Message.success ? (
@@ -83,66 +82,41 @@ const Contact = () => {
           <p className="text-[--error-color] mb-4">{Message.error}</p>
         )}
         <form className="space-y-4" onSubmit={handleSubmit}>
+          <Input
+            label={<><FaUser className="inline-block mr-2" /> Name</>}
+            type="text"
+            id="name"
+            name="name"
+            value={formData.name}
+            onChange={handleChange}
+            placeholder="Your Name"
+            required
+          />
+          <Input
+            label={<><FaEnvelope className="inline-block mr-2" /> Email</>}
+            type="email"
+            id="email"
+            name="email"
+            value={formData.email}
+            onChange={handleChange}
+            placeholder="you@example.com"
+            required
+          />
+          <Textarea
+            label={<><FaCommentDots className="inline-block mr-2" /> Message</>}
+            id="message"
+            name="message"
+            value={formData.message}
+            onChange={handleChange}
+            rows="4"
+            placeholder="Your message"
+            required
+          />
           <div>
-            <label
-              className="block text-sm font-medium text-[--text-color] mb-2"
-              htmlFor="name"
-            >
-              <FaUser className="inline-block mr-2" /> Name
-            </label>
-            <input
-              type="text"
-              id="name"
-              name="name"
-              value={formData.name}
-              onChange={handleChange}
-              className="input-style"
-              placeholder="Your Name"
-              required
-            />
-          </div>
-          <div>
-            <label
-              className="block text-sm font-medium text-[--text-color] mb-2"
-              htmlFor="email"
-            >
-              <FaEnvelope className="inline-block mr-2" /> Email
-            </label>
-            <input
-              type="email"
-              id="email"
-              name="email"
-              value={formData.email}
-              onChange={handleChange}
-              className="input-style"
-              placeholder="you@example.com"
-              required
-            />
-          </div>
-          <div>
-            <label
-              className="block text-sm font-medium text-[--text-color] mb-2"
-              htmlFor="message"
-            >
-              <FaCommentDots className="inline-block mr-2" /> Message
-            </label>
-            <textarea
-              id="message"
-              name="message"
-              value={formData.message}
-              onChange={handleChange}
-              rows="4"
-              className="input-style"
-              placeholder="Your message"
-              required
-            ></textarea>
-          </div>
-          <div>
-            <button
+            <Button
               type="submit"
-              className="button primary"
-              whileHover={{ scale: 1.05 }}
-              whileTap={{ scale: 0.95 }}
+              disabled={loading}
+              className="w-full md:w-auto"
             >
               {loading ? (
                 "Sending..."
@@ -151,11 +125,11 @@ const Contact = () => {
                   <FaPaperPlane size={20} /> Send Message
                 </>
               )}
-            </button>
+            </Button>
           </div>
         </form>
       </div>
-    </motion.div>
+    </SectionWrapper>
   );
 };
 

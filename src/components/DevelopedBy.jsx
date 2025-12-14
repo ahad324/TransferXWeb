@@ -5,9 +5,9 @@ import { FaGithub, FaExternalLinkAlt } from "react-icons/fa";
 import { motion } from "framer-motion";
 import {
   textVariants,
-  imageVariants,
   buttonVariants,
 } from "../AnimationVariants";
+import Button from "./ui/Button";
 
 const DevelopedBy = () => {
   const handleViewProjects = () => {
@@ -52,21 +52,21 @@ const DevelopedBy = () => {
             </p>
 
             <div className="button-group-center">
-              <motion.button
+              <Button
                 variants={buttonVariants}
-                className="button primary"
                 onClick={handleViewProjects}
               >
-                <FaExternalLinkAlt size={18} className="mr-2"/>View Projects
-              </motion.button>
+                <FaExternalLinkAlt size={18} className="mr-2" />View Projects
+              </Button>
 
-              <motion.button
+              <Button
+                variant="secondary"
                 variants={buttonVariants}
-                className="button secondary github-btn"
+                className="github-btn"
                 onClick={handleGitHubProfile}
               >
                 <FaGithub size={20} className="mr-2" />GitHub
-              </motion.button>
+              </Button>
             </div>
           </motion.div>
         </div>

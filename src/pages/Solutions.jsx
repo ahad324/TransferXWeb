@@ -1,10 +1,13 @@
 import React from "react";
 import { motion } from "framer-motion";
-import { containerVariants, textVariants } from "../AnimationVariants";
+import { textVariants } from "../AnimationVariants";
 import SEO from "../components/SEO";
 import { FiBookOpen, FiBriefcase, FiVideo, FiWifi } from "react-icons/fi";
 import { LuRocket } from "react-icons/lu";
 import { Link } from "react-router-dom";
+import SectionWrapper from "../components/ui/SectionWrapper";
+import Card from "../components/ui/Card";
+import Button from "../components/ui/Button";
 
 const Solutions = () => {
   const useCases = [
@@ -35,12 +38,7 @@ const Solutions = () => {
   ];
 
   return (
-    <motion.section
-      className="min-h-screen py-20 px-4 md:px-8 text-[--text-color]"
-      variants={containerVariants}
-      initial="hidden"
-      animate="visible"
-    >
+    <SectionWrapper>
       <SEO
         title="TransferX Solutions | Universal Offline Data Collection"
         description="Discover how TransferX solves secure file transfer challenges for Education, Enterprise, and Creative Professionals without internet."
@@ -61,10 +59,9 @@ const Solutions = () => {
 
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
           {useCases.map((useCase, index) => (
-            <motion.div
+            <Card
               key={index}
               variants={textVariants}
-              className="p-8 rounded-2xl bg-[--card-bg] border border-[--border-color] hover:border-[--primary-color] transition-all duration-300 shadow-lg hover:shadow-[--primary-color]/20 group"
             >
               <div className="mb-6 p-4 rounded-full bg-[--bg-dark] w-fit group-hover:scale-110 transition-transform duration-300">
                 {useCase.icon}
@@ -74,7 +71,7 @@ const Solutions = () => {
               <div className="text-sm font-semibold text-[--primary-color] bg-[--primary-color]/10 py-2 px-4 rounded-full w-fit">
                 {useCase.highlight}
               </div>
-            </motion.div>
+            </Card>
           ))}
         </div>
 
@@ -84,14 +81,16 @@ const Solutions = () => {
         >
           <h2 className="text-3xl font-bold mb-4">Ready to secure your data flow?</h2>
           <p className="mb-8 text-lg">Deploy TransferX in your environment today. No configuration required.</p>
-          <Link to="/#downloadapps" className="flex justify-center">
-            <button className="button primary md:text-lg px-8 py-3 flex items-center justify-center gap-2">
-              <LuRocket size={20} /> Get Started Now
-            </button>
-          </Link>
+          <span className="flex justify-center">
+            <Link to="/#downloadapps">
+              <Button>
+                <LuRocket size={20} /> Get Started Now
+              </Button>
+            </Link>
+          </span>
         </motion.div>
       </div>
-    </motion.section>
+    </SectionWrapper>
   );
 };
 

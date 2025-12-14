@@ -1,7 +1,6 @@
 import React from "react";
-import { motion } from "framer-motion";
 import SEO from "../components/SEO";
-import { containerVariants } from "../AnimationVariants";
+import { textVariants } from "../AnimationVariants";
 import { Link } from "react-router-dom";
 import {
   FiMail,
@@ -9,7 +8,12 @@ import {
   FiCheckCircle,
   FiServer,
   FiUsers,
+  FiShield,
+  FiWifi
 } from "react-icons/fi";
+import SectionWrapper from "../components/ui/SectionWrapper";
+import Card from "../components/ui/Card";
+import Button from "../components/ui/Button";
 
 const About = () => {
   const title = "About TransferX | Secure Offline File Transfers for Education";
@@ -22,11 +26,8 @@ const About = () => {
     "About TransferX | Revolutionizing File Transfers in Education";
 
   return (
-    <motion.div
-      className="max-w-4xl min-h-screen flex justify-center items-center flex-col mx-auto px-6 py-12 text-[--text-color] leading-relaxed"
-      variants={containerVariants}
-      initial="hidden"
-      animate="visible"
+    <SectionWrapper
+      className="max-w-6xl mx-auto px-4 py-12 text-[--text-color] leading-relaxed"
     >
       <SEO
         title={title}
@@ -35,99 +36,96 @@ const About = () => {
         canonical={canonical}
         ogTitle={ogtitle}
       />
-      <div className="w-full h-full">
-        <h1 className="heading text-center leading-tight">
+      <div className="w-full text-center mb-16">
+        <h1 className="heading text-center leading-tight mb-6">
           Redefining Offline Data Logistics with{" "}
           <span className="hero_name">TransferX</span>
         </h1>
-        <p className="mb-8 text-center text-lg">
+        <p className="text-xl opacity-90 max-w-3xl mx-auto">
           Welcome to TransferX – the standard for high-security, internet-free data collection.
           What started as a tool for exam security has evolved into a universal solution for
           managing massive file transfers in air-gapped environments.
         </p>
+      </div>
 
-        {/* The Challenge Section */}
-        <div className="flex items-center gap-2 mb-4">
-          <FiAlertCircle size={30} className="text-[--primary-color]" />
-          <h2 className="text-3xl font-semibold">The Challenge</h2>
-        </div>
-        <p className="mb-6">
-          Many universities, particularly in Pakistan, face significant hurdles
-          during computer-based exams. Submitting programming assignments or
-          exams in labs can be inefficient and prone to errors. USB drives and
-          shared folders are unreliable, and internet-based solutions are often
-          impractical.
-        </p>
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-16">
+        <Card className="h-full border-[--error-color]/30 hover:border-[--error-color] bg-[--bg-dark]/50">
+          <div className="flex items-center gap-3 mb-4 text-[--error-color]">
+            <FiAlertCircle size={32} />
+            <h2 className="text-2xl font-bold mb-0">The Challenge</h2>
+          </div>
+          <p className="opacity-90 leading-relaxed">
+            Many universities face significant hurdles during computer-based exams.
+            Submitting programming assignments or exams in labs can be inefficient and prone to errors.
+            <br /><br />
+            USB drives are slow and viral-prone. Shared folders are insecure. Internet-based solutions
+            open the door to cheating and distractions.
+          </p>
+        </Card>
 
-        {/* The Solution Section */}
-        <div className="flex items-center gap-2 mb-4">
-          <FiCheckCircle size={30} className="text-[--primary-color]" />
-          <h2 className="text-3xl font-semibold">TransferX – The Solution</h2>
-        </div>
-        <p className="mb-6">
-          TransferX streamlines file submissions through an offline,
-          client-server model. This innovative tool ensures seamless file
-          transfers without the need for internet connectivity, boosting
-          security and efficiency in exam environments.
-        </p>
+        <Card className="h-full border-[--success-color]/30 hover:border-[--success-color] bg-[--bg-dark]/50">
+          <div className="flex items-center gap-3 mb-4 text-[--success-color]">
+            <FiCheckCircle size={32} />
+            <h2 className="text-2xl font-bold mb-0">The Solution</h2>
+          </div>
+          <p className="opacity-90 leading-relaxed">
+            TransferX streamlines file submissions through a modern client-server model.
+            This tool ensures seamless file transfers without the need for <strong>any</strong> internet connectivity.
+            <br /><br />
+            It boosts security, eliminates cheating vectors, and provides a drag-and-drop experience
+            that just works.
+          </p>
+        </Card>
+      </div>
 
-        {/* Key Features Section */}
-        <div className="flex items-center gap-2 mb-4">
-          <FiServer size={30} className="text-[--primary-color]" />
-          <h2 className="text-3xl font-semibold">Key Features</h2>
+      <div className="mb-16">
+        <div className="text-center mb-10">
+          <h2 className="text-3xl font-bold mb-4">Core Architecture</h2>
+          <p className="opacity-80">Built for speed, security, and simplicity.</p>
         </div>
-        <ul className="list-disc pl-6 space-y-3 mb-8">
-          <li>
-            <strong>Server-Client Architecture</strong> – Students submit files
-            directly to a central server, eliminating peer-to-peer sharing.
-          </li>
-          <li>
-            <strong>mDNS Protocol</strong> – Automatic detection of available
-            servers, ensuring quick and hassle-free connections.
-          </li>
-          <li>
-            <strong>Completely Offline</strong> – Operates without internet
-            access, ensuring secure transfers and preventing online
-            distractions.
-          </li>
-        </ul>
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+          <Card hoverEffect={true} className="text-center p-6">
+            <div className="inline-block p-4 rounded-full bg-[--primary-color]/10 text-[--primary-color] mb-4">
+              <FiServer size={30} />
+            </div>
+            <h3 className="text-xl font-bold mb-2">Centralized Server</h3>
+            <p className="text-sm opacity-80">Students submit directly to a central admin dashboard. No p2p confusion.</p>
+          </Card>
+          <Card hoverEffect={true} className="text-center p-6">
+            <div className="inline-block p-4 rounded-full bg-[--primary-color]/10 text-[--primary-color] mb-4">
+              <FiWifi size={30} />
+            </div>
+            <h3 className="text-xl font-bold mb-2">mDNS Discovery</h3>
+            <p className="text-sm opacity-80">Zero IP configuration. Clients auto-detect the server on the LAN.</p>
+          </Card>
+          <Card hoverEffect={true} className="text-center p-6">
+            <div className="inline-block p-4 rounded-full bg-[--primary-color]/10 text-[--primary-color] mb-4">
+              <FiShield size={30} />
+            </div>
+            <h3 className="text-xl font-bold mb-2">Air-Gapped</h3>
+            <p className="text-sm opacity-80">100% Offline. Your data never leaves the local network infrastructure.</p>
+          </Card>
+        </div>
+      </div>
 
-        {/* Why TransferX Matters Section */}
-        <div className="flex items-center gap-2 mb-4">
-          <FiUsers size={30} className="text-[--primary-color]" />
-          <h2 className="text-3xl font-semibold">Why TransferX Matters</h2>
-        </div>
-        <p className="mb-4">
-          <strong>Efficiency at Scale:</strong> Educational institutions can
-          reduce administrative overhead during exams by automating file
-          submissions.
-        </p>
-        <p className="mb-4">
-          <strong>Versatility Beyond Exams:</strong> TransferX can facilitate
-          file transfers in labs, offices, and other offline environments.
-        </p>
-        <p className="mb-8">
-          <strong>Affordable and Scalable:</strong> Built with educational
-          institutions in mind, TransferX is budget-friendly and easy to deploy.
-        </p>
-
-        {/* Collaboration Section */}
-        <div className="flex items-center gap-2 mb-4">
-          <FiMail size={30} className="text-[--primary-color]" />
-          <h2 className="text-3xl font-semibold">Enterprise & Education Partnerships</h2>
-        </div>
-        <p className="mb-6">
+      <Card className="bg-gradient-to-br from-[--card-bg] to-[--bg-dark] p-10 mt-16 text-center border-[--primary-color]/20">
+        <FiUsers size={40} className="mx-auto text-[--primary-color] mb-4" />
+        <h2 className="text-3xl font-bold mb-6">Partnerships & Customization</h2>
+        <p className="max-w-2xl mx-auto mb-8 text-lg opacity-90">
           We are actively deploying TransferX in universities, studios, and secure facilities.
           If you need a custom version for your specific workflow or security requirements, let's talk.
         </p>
-        <span className="flex items-center justify-center">
-          <Link to="/contact" className="mt-4 button primary">
-            <FiMail size={25} />
-            Contact Me
+
+        <span className="flex justify-center">
+          <Link to="/contact" >
+            <Button>
+              <FiMail size={20} /> Contact US
+            </Button>
           </Link>
         </span>
-      </div>
-    </motion.div>
+      </Card>
+
+    </SectionWrapper>
   );
 };
 

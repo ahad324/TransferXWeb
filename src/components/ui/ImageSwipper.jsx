@@ -63,7 +63,7 @@ export const ImageSwiper = ({ images, className }) => {
             initial={{ opacity: 0, scale: 0.8 }}
             animate={{ opacity: 1, scale: 1 }}
             transition={{ duration: 0.3 }}
-            whileHover={{ scale: 1.1 }}
+            whilehover={{ scale: 1.1 }}
             name="Image Swiper handler Maximize"
             aria-label="Maximize Image"
           >

@@ -16,7 +16,7 @@ const Features = () => {
     {
       title: "Zero-Config Auto Connect",
       description:
-        "Forget IP addresses. Our mDNS discovery finds local servers instantly. Just launch and connect—it works like magic.",
+        "Forget IP addresses. Our smart detection technology finds local servers instantly. Just launch and connect—it works like magic.",
       image: FeaturesImages[1],
     },
     {

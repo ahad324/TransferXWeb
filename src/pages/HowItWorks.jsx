@@ -1,10 +1,11 @@
 import React from "react";
-import { motion } from "framer-motion";
 import SEO from "../components/SEO";
-import { containerVariants, textVariants } from "../AnimationVariants";
+import { textVariants } from "../AnimationVariants";
 import { Link } from "react-router-dom";
 import { FiDownloadCloud, FiShield, FiWifi, FiUpload } from "react-icons/fi";
 import { Timeline } from "../components/ui/Timeline";
+import SectionWrapper from "../components/ui/SectionWrapper";
+import Button from "../components/ui/Button";
 
 const HowItWorks = () => {
   const title = "How TransferX Works | Secure Offline File Transfers";
@@ -74,11 +75,8 @@ const HowItWorks = () => {
   ];
 
   return (
-    <motion.div
-      className="max-w-5xl min-h-screen flex justify-center items-center flex-col mx-auto px-2 md:px-8 pt-10 text-[--text-color] leading-relaxed"
-      variants={containerVariants}
-      initial="hidden"
-      animate="visible"
+    <SectionWrapper
+      className="max-w-5xl flex justify-center items-center flex-col mx-auto pt-10 leading-relaxed"
     >
       <SEO
         title={title}
@@ -105,13 +103,13 @@ const HowItWorks = () => {
 
         <div className="text-center flex justify-center items-center my-20">
           <Link to="/#downloadapps">
-            <button className="button primary">
+            <Button>
               <FiDownloadCloud size={25} /> Download TransferX
-            </button>
+            </Button>
           </Link>
         </div>
       </div>
-    </motion.div>
+    </SectionWrapper>
   );
 };
 

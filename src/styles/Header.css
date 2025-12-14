@@ -78,7 +78,7 @@ header {
 }
 
 /* Responsive Styles */
-@media (max-width: 640px) {
+@media (max-width: 768px) {
   header {
     position: sticky;
     box-shadow: 0px -4px 11px 3px rgba(0, 0, 0, 0.1);
