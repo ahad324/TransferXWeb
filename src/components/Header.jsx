@@ -45,7 +45,11 @@ const Header = () => {
             viewport={{ once: false, amount: 0.3 }}
           >
             <motion.li custom={1} variants={menuVariants}>
-              <NavLink to="/" onClick={toggleMenu} activeClassName="active">
+              <NavLink
+                to="/"
+                onClick={toggleMenu}
+                className={({ isActive }) => isActive ? "active" : ""}
+              >
                 Home
               </NavLink>
             </motion.li>
@@ -53,7 +57,7 @@ const Header = () => {
               <NavLink
                 to="/how-transferx-works"
                 onClick={toggleMenu}
-                activeClassName="active"
+                className={({ isActive }) => isActive ? "active" : ""}
               >
                 How It Works
               </NavLink>
@@ -63,7 +67,7 @@ const Header = () => {
               <NavLink
                 to="/solutions"
                 onClick={toggleMenu}
-                activeClassName="active"
+                className={({ isActive }) => isActive ? "active" : ""}
               >
                 Solutions
               </NavLink>
@@ -73,7 +77,7 @@ const Header = () => {
               <NavLink
                 to="/about"
                 onClick={toggleMenu}
-                activeClassName="active"
+                className={({ isActive }) => isActive ? "active" : ""}
               >
                 About
               </NavLink>
@@ -82,7 +86,7 @@ const Header = () => {
               <NavLink
                 to="/contact"
                 onClick={toggleMenu}
-                activeClassName="active"
+                className={({ isActive }) => isActive ? "active" : ""}
               >
                 Contact
               </NavLink>

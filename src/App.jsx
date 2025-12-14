@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { Routes, Route, useLocation } from "react-router-dom";
-import { ReactLenis } from "lenis/react";
+/* import { ReactLenis } from "lenis/react"; // REMOVED for native scroll performance */
 import Header from "./components/Header";
 import Footer from "./components/Footer";
 import ScrollToTop from "./components/ScrollToTop";
@@ -26,18 +26,16 @@ const App = () => {
   }, [location]);
 
   return (
-    <ReactLenis root>
-      <>
-        <Header />
-        <ScrollToTop />
-        {isLoading ? (
-          <Loader ClassName="h-screen w-full bg-[background-color]" />
-        ) : (
-          <AppRoutes />
-        )}
-        <Footer />
-      </>
-    </ReactLenis>
+    <>
+      <Header />
+      <ScrollToTop />
+      {isLoading ? (
+        <Loader ClassName="h-screen w-full bg-[background-color]" />
+      ) : (
+        <AppRoutes />
+      )}
+      <Footer />
+    </>
   );
 };
 
