@@ -14,14 +14,10 @@
   scrollbar-color: var(--primary-color) var(--background-color);
 }
 
-html {
-  /* scroll-behavior: smooth; REMOVED to avoid conflict with Lenis */
-}
-
 .container {
   max-width: 1200px;
   margin: 0 auto;
-  padding: 0 2rem;
+  padding: 0 1rem;
   position: relative;
 }
 

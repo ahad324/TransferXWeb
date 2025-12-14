@@ -3,6 +3,7 @@ import { motion } from "framer-motion";
 import { containerVariants, textVariants } from "../AnimationVariants";
 import SEO from "../components/SEO";
 import { FiBookOpen, FiBriefcase, FiVideo, FiWifi } from "react-icons/fi";
+import { LuRocket } from "react-icons/lu";
 import { Link } from "react-router-dom";
 
 const Solutions = () => {
@@ -77,15 +78,15 @@ const Solutions = () => {
           ))}
         </div>
 
-        <motion.div 
+        <motion.div
           className="mt-16 text-center bg-[--card-bg] p-10 rounded-3xl border border-[--border-color]"
           variants={textVariants}
         >
           <h2 className="text-3xl font-bold mb-4">Ready to secure your data flow?</h2>
           <p className="mb-8 text-lg">Deploy TransferX in your environment today. No configuration required.</p>
           <Link to="/#downloadapps" className="flex justify-center">
-            <button className="button primary text-lg px-8 py-3">
-              Get Started Now
+            <button className="button primary md:text-lg px-8 py-3 flex items-center justify-center gap-2">
+              <LuRocket size={20} /> Get Started Now
             </button>
           </Link>
         </motion.div>

@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { LuLayoutGrid } from "react-icons/lu";
+import { LuLayoutGrid, LuHome, LuHelpCircle, LuRocket, LuInfo, LuMail } from "react-icons/lu";
 import { IoClose } from "react-icons/io5";
 import { NavLink } from "react-router-dom";
 import "../styles/Header.css";
@@ -50,7 +50,8 @@ const Header = () => {
                 onClick={toggleMenu}
                 className={({ isActive }) => isActive ? "active" : ""}
               >
-                Home
+                <LuHome className="nav-icon" />
+                <span>Home</span>
               </NavLink>
             </motion.li>
             <motion.li custom={2} variants={menuVariants}>
@@ -59,7 +60,8 @@ const Header = () => {
                 onClick={toggleMenu}
                 className={({ isActive }) => isActive ? "active" : ""}
               >
-                How It Works
+                <LuHelpCircle className="nav-icon" />
+                <span>How It Works</span>
               </NavLink>
             </motion.li>
 
@@ -69,7 +71,8 @@ const Header = () => {
                 onClick={toggleMenu}
                 className={({ isActive }) => isActive ? "active" : ""}
               >
-                Solutions
+                <LuRocket className="nav-icon" />
+                <span>Solutions</span>
               </NavLink>
             </motion.li>
 
@@ -79,7 +82,8 @@ const Header = () => {
                 onClick={toggleMenu}
                 className={({ isActive }) => isActive ? "active" : ""}
               >
-                About
+                <LuInfo className="nav-icon" />
+                <span>About</span>
               </NavLink>
             </motion.li>
             <motion.li custom={4} variants={menuVariants}>
@@ -88,7 +92,8 @@ const Header = () => {
                 onClick={toggleMenu}
                 className={({ isActive }) => isActive ? "active" : ""}
               >
-                Contact
+                <LuMail className="nav-icon" />
+                <span>Contact</span>
               </NavLink>
             </motion.li>
           </motion.ul>

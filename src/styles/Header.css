@@ -12,6 +12,7 @@ header {
   border-radius: 12px;
   border: 1px solid rgba(255, 255, 255, 0.125);
 }
+
 .header-content {
   display: flex;
   justify-content: space-between;
@@ -20,6 +21,7 @@ header {
   margin: 0 auto;
   padding: 0 1rem;
 }
+
 .logo {
   font-size: 1.8rem;
   font-weight: 800;
@@ -27,24 +29,28 @@ header {
   letter-spacing: 2px;
   font-family: var(--logo-font);
 }
+
 .nav-links {
   display: flex;
   padding: 0 0rem 0rem 5rem;
   position: relative;
 }
 
-.nav-links > ul {
+.nav-links>ul {
   display: flex;
   list-style: none;
   margin: 0;
   padding: 0;
 }
-.nav-links > li {
+
+.nav-links>li {
   margin-left: 2rem;
 }
+
 .nav-links a svg {
   margin-right: 0.5rem;
 }
+
 .nav-links a {
   display: flex;
   align-items: center;
@@ -59,13 +65,16 @@ header {
   justify-content: center;
 }
 
-.nav-links a:hover,.nav-links a.active {
+.nav-links a:hover,
+.nav-links a.active {
   color: white;
   background-color: rgba(255, 255, 255, 0.3);
   transform: translateY(-2px);
 }
+
 .menu-toggle {
-  display: none; /* Hide by default */
+  display: none;
+  /* Hide by default */
 }
 
 /* Responsive Styles */
@@ -75,6 +84,7 @@ header {
     box-shadow: 0px -4px 11px 3px rgba(0, 0, 0, 0.1);
     width: 95%;
   }
+
   .header-content {
     align-items: center;
   }
@@ -84,8 +94,15 @@ header {
     display: block;
     width: 100%;
   }
+
+  /* Grid Layout for Mobile Menu */
   .nav-links ul {
-    flex-direction: column;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    /* 3 columns based on user image */
+    gap: .5rem;
+    align-items: center;
+    justify-items: center;
     position: fixed;
     top: -500%;
     width: 100%;
@@ -93,19 +110,60 @@ header {
     z-index: -1;
     left: 0;
     border-radius: 12px;
-    padding: 2rem;
+    padding: 0.5rem;
     background: var(--background-color);
     border: 1px solid rgba(255, 255, 255, 0.125);
     transition: 0.3s all ease;
     opacity: 0;
+    align-content: start;
   }
+
   .nav-links.active ul {
     opacity: 1;
     top: 110%;
   }
-  .nav-links a {
-    margin-bottom: 1rem;
+
+  .nav-links li {
+    margin-left: 0;
+    /* Override desktop margin */
+    width: 100%;
   }
+
+  .nav-links a {
+    margin-bottom: 0;
+    flex-direction: column;
+    justify-content: center;
+    gap: 0.8rem;
+    padding: 0.5rem 0.5rem;
+    background: transparent;
+    border-radius: 12px;
+    height: 100%;
+    text-align: center;
+    width: 100%;
+  }
+
+  .nav-links a .nav-icon {
+    font-size: 2rem;
+    /* Larger icons for mobile grid */
+    margin-right: 0;
+    margin-bottom: 0;
+  }
+
+  .nav-links a span {
+    font-size: 0.9rem;
+  }
+
+  /* Hover state for mobile - subtle */
+  .nav-links a:hover,
+  .nav-links a.active {
+    background-color: transparent;
+    color: var(--primary-color);
+  }
+
+  .nav-links a.active .nav-icon {
+    color: var(--primary-color);
+  }
+
   .menu-toggle {
     display: block;
     background: transparent;
@@ -114,4 +172,17 @@ header {
     font-size: 1.5rem;
     cursor: pointer;
   }
+
+  /* Center the last item (Contact) in the 2-column grid */
+  .nav-links li:last-child {
+    grid-column: span 2;
+  }
+}
+
+
+/* Icon style for Desktop */
+.nav-icon {
+  margin-right: 0.5rem;
+  font-size: 1.2rem;
+  display: inline-flex;
 }

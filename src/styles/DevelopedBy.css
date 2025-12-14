@@ -65,13 +65,6 @@
     line-height: 1.2;
 }
 
-.highlight-name {
-    background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
-    -webkit-background-clip: text;
-    background-clip: text;
-    color: transparent;
-}
-
 .dev-title {
     font-size: 1.1rem;
     color: var(--primary-color);

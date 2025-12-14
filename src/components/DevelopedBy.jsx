@@ -35,8 +35,8 @@ const DevelopedBy = () => {
               <div className="avatar-ring"></div>
             </div>
 
-            <h2 className="dev-name">Developed by <span className="highlight-name">AbdulAhad</span></h2>
-            <p className="dev-title">Full Stack Developer & Performance Engineer</p>
+            <h2 className="dev-name">Developed by <span className="hero_name">AbdulAhad</span></h2>
+            <p className="dev-title">Full Stack Developer</p>
           </motion.div>
 
           <motion.div
@@ -57,7 +57,7 @@ const DevelopedBy = () => {
                 className="button primary"
                 onClick={handleViewProjects}
               >
-                <FaExternalLinkAlt size={18} className="mr-2"/> My Projects
+                <FaExternalLinkAlt size={18} className="mr-2"/>View Projects
               </motion.button>
 
               <motion.button
@@ -65,7 +65,7 @@ const DevelopedBy = () => {
                 className="button secondary github-btn"
                 onClick={handleGitHubProfile}
               >
-                <FaGithub size={20} className="mr-2" /> GitHub
+                <FaGithub size={20} className="mr-2" />GitHub
               </motion.button>
             </div>
           </motion.div>
