@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://transferx.netlify.app/sitemap.xml
