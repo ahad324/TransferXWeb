@@ -3,7 +3,6 @@ import { Link } from "react-router-dom";
 import { motion } from "framer-motion";
 import "../styles/Hero.css";
 import {
-  containerVariants,
   buttonVariants,
   textVariants,
 } from "../AnimationVariants";
@@ -11,8 +10,9 @@ import { FiDownloadCloud } from "react-icons/fi";
 import { HiOutlineLightBulb } from "react-icons/hi";
 
 import { SparklesCore } from "./ui/Sparkles";
-
 import ShinyText from "./ui/ShinyText";
+import SectionWrapper from "./ui/SectionWrapper";
+import Button from "./ui/Button";
 
 const Hero = () => {
   return (
@@ -24,12 +24,9 @@ const Hero = () => {
         particleDensity={50}
         className="w-full h-full absolute"
       />
-      <motion.section
+      <SectionWrapper
         id="hero"
         className="hero"
-        variants={containerVariants}
-        initial="hidden"
-        animate="visible"
       >
         {" "}
         <div className="hero-content">
@@ -37,42 +34,43 @@ const Hero = () => {
             variants={textVariants}
             className="inline-block bg-gray-800 text-xs uppercase tracking-wider py-1 px-3 rounded-full mb-4 "
           >
-            <ShinyText text="Secure Offline File Transfers" speed={3} />
+            <ShinyText text="Universal Offline Data Collection" speed={3} />
           </motion.span>
           <motion.h1 variants={textVariants} className="heading">
-            Offline Exam Submissions Fast & Secure with{" "}
+            Instant Data Collection <br />
+            Fast & Secure with <br />
             <span className="hero_name">TransferX</span>
           </motion.h1>
           <motion.p variants={textVariants} className="hero-description">
-            Streamline exam file submissions with secure, offline transfers.
-            TransferX simplifies the collection process ensuring seamless, fast
-            and tamper-proof submissions even without internet access.
+            The fastest way to collect files from multiple devices <br />
+            without internet. Zero-config setup for exams, <br />
+            creative studios, and secure facilities.
           </motion.p>
           <div className="hero-cta">
-            <Link to="/#downloadapps" smooth={"true"} duration={500}>
-              <motion.button
+            <Link to="/#downloadapps">
+              <Button
                 variants={buttonVariants}
-                className="button primary"
                 name="Download_TransferX"
               >
                 <FiDownloadCloud size={25} />
-                Download TransferX
-              </motion.button>
+                Start Collecting
+              </Button>
             </Link>
             <Link to="/how-transferx-works">
-              <motion.button
+              <Button
+                variant="secondary"
                 variants={buttonVariants}
-                className="button secondary"
                 name="How_TransferX_Works"
               >
                 <HiOutlineLightBulb size={25} /> How TransferX Works
-              </motion.button>
+              </Button>
             </Link>
           </div>
         </div>
-      </motion.section>
+      </SectionWrapper>
     </div>
   );
 };
 
 export default Hero;
+

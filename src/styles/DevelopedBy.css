@@ -1,81 +1,122 @@
-.about h2 {
-  font-size: 2.5rem;
-  font-weight: 700;
-  margin-bottom: 1rem;
-}
-.about-content {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 2rem;
-  max-width: 1200px;
-  margin: 0 auto;
+/* Base Layout */
+.about-section {
+    padding: 6rem 0;
+    position: relative;
+    overflow: hidden;
 }
 
-.about-image {
-  max-width: 250px;
-  border-radius:50% 50% 50% 50% / 30% 30% 70% 70%  ;
-  overflow: hidden;
-  border: 5px solid var(--primary-color);
-  box-shadow: 0 0 25px var(--primary-color);
-  transition: box-shadow 0.3s ease, transform 0.3s ease;
-}
-
-.about-image:hover {
-  box-shadow: 0 0 35px var(--primary-color);  /* Stronger glow on hover */
-  transform: translateY(-5px);  /* Slight lift on hover */
-}
-
-.about-image img {
-  width: 100%;
-  height: auto;
-}
-
-.about-description {
-  text-align: left;
-  max-width: 600px;
-}
-
-.intro {
-  font-size: 1.25rem;
-  margin-bottom: 1rem;
-}
-
-.about-description h3 {
-  font-size: 1.5rem;
-  margin-top: 1.5rem;
-  font-weight: 600;
-}
-
-.about-description p {
-  font-size: 1rem;
-  margin-bottom: 1rem;
-}
-
-.button-group {
-  display: flex;
-  gap: 1rem;
-}
-.button {
-  display: flex;
-  align-items: center;
-  gap: 0.5rem;
-}
-.github-button {
-  position: relative;
-  background-color: #333;
-  transform: scale(1.05);
-  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
-  border: none;
-}
-.github-button:hover {
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-  background-color: #444;
-}
-@media (max-width:425px) {
-  .button-group{
+/* Glass Card Container */
+.profile-card-glass {
+    background: rgba(31, 41, 55, 0.4);
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    border-radius: 2rem;
+    padding: 4rem 2rem;
+    max-width: 900px;
+    margin: 0 auto;
+    display: flex;
     flex-direction: column;
-    justify-content: center;
     align-items: center;
-  }
+    text-align: center;
+    position: relative;
+    box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5);
+}
+
+/* Avatar Styling */
+.avatar-container {
+    position: relative;
+    width: 180px;
+    height: 180px;
+    margin: 0 auto 2rem;
+}
+
+.profile-avatar {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 50%;
+    position: relative;
+    z-index: 2;
+    border: 4px solid white; /* Inner border to separate from ring */
+}
+
+.avatar-ring {
+    position: absolute;
+    top: -5px; bottom: -5px; left: -5px; right: -5px;
+    background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+    border-radius: 50%;
+    z-index: 1;
+    animation: spin-slow 10s linear infinite;
+    opacity: 0.8;
+    filter: blur(8px);
+}
+
+@keyframes spin-slow {
+    from { transform: rotate(0deg); }
+    to { transform: rotate(360deg); }
+}
+
+/* Typography */
+.dev-name {
+    font-size: 2.5rem;
+    font-weight: 700;
+    margin-bottom: 0.5rem;
+    line-height: 1.2;
+}
+
+.dev-title {
+    font-size: 1.1rem;
+    color: var(--primary-color);
+    font-weight: 500;
+    margin-bottom: 2rem;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    font-size: 0.85rem;
+    opacity: 0.9;
+}
+
+.mission-text {
+    font-size: 1.15rem;
+    color: var(--text-secondary, rgba(255,255,255,0.7));
+    line-height: 1.8;
+    max-width: 700px;
+    margin: 0 auto 3rem;
+    font-style: italic;
+}
+
+/* Button Group */
+.button-group-center {
+    display: flex;
+    gap: 1.5rem;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.github-btn {
+    /* Rely on global .button.secondary for border/color */
+    /* background: transparent; removed to use global */
+    /* border: 1px solid rgba(255,255,255,0.2); removed to use global */
+}
+/* Removed hover override to allow global hover effect */
+
+/* Responsive */
+@media (max-width: 768px) {
+    .profile-card-glass {
+        padding: 3rem 1.5rem;
+        width: 95%;
+    }
+    
+    .avatar-container {
+        width: 140px;
+        height: 140px;
+    }
+    
+    .dev-name {
+        font-size: 2rem;
+    }
+    
+    .mission-text {
+        font-size: 1rem;
+    }
 }

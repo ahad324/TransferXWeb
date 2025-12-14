@@ -1,10 +1,13 @@
 import React from "react";
-import { Link } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import { NotFoundImage } from "../Images";
 import "../styles/NotFound.css";
 import SEO from "../components/SEO";
+import Button from "../components/ui/Button";
 
 const NotFound = () => {
+  const navigate = useNavigate();
+
   return (
     <div className="not-found">
       <SEO
@@ -22,9 +25,9 @@ const NotFound = () => {
       <p className="not-found-message">
         Sorry, the page you are looking for does not exist.
       </p>
-      <Link to="/" className="button primary">
+      <Button onClick={() => navigate("/")}>
         Go back to Home
-      </Link>
+      </Button>
     </div>
   );
 };

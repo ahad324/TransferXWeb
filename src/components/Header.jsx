@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { LuLayoutGrid } from "react-icons/lu";
+import { LuLayoutGrid, LuHome, LuHelpCircle, LuRocket, LuInfo, LuMail } from "react-icons/lu";
 import { IoClose } from "react-icons/io5";
 import { NavLink } from "react-router-dom";
 import "../styles/Header.css";
@@ -45,17 +45,34 @@ const Header = () => {
             viewport={{ once: false, amount: 0.3 }}
           >
             <motion.li custom={1} variants={menuVariants}>
-              <NavLink to="/" onClick={toggleMenu} activeClassName="active">
-                Home
+              <NavLink
+                to="/"
+                onClick={toggleMenu}
+                className={({ isActive }) => isActive ? "active" : ""}
+              >
+                <LuHome className="nav-icon" />
+                <span>Home</span>
               </NavLink>
             </motion.li>
             <motion.li custom={2} variants={menuVariants}>
               <NavLink
                 to="/how-transferx-works"
                 onClick={toggleMenu}
-                activeClassName="active"
+                className={({ isActive }) => isActive ? "active" : ""}
               >
-                How TransferX Works
+                <LuHelpCircle className="nav-icon" />
+                <span>How It Works</span>
+              </NavLink>
+            </motion.li>
+
+            <motion.li custom={3} variants={menuVariants}>
+              <NavLink
+                to="/solutions"
+                onClick={toggleMenu}
+                className={({ isActive }) => isActive ? "active" : ""}
+              >
+                <LuRocket className="nav-icon" />
+                <span>Solutions</span>
               </NavLink>
             </motion.li>
 
@@ -63,18 +80,20 @@ const Header = () => {
               <NavLink
                 to="/about"
                 onClick={toggleMenu}
-                activeClassName="active"
+                className={({ isActive }) => isActive ? "active" : ""}
               >
-                About
+                <LuInfo className="nav-icon" />
+                <span>About</span>
               </NavLink>
             </motion.li>
             <motion.li custom={4} variants={menuVariants}>
               <NavLink
                 to="/contact"
                 onClick={toggleMenu}
-                activeClassName="active"
+                className={({ isActive }) => isActive ? "active" : ""}
               >
-                Contact
+                <LuMail className="nav-icon" />
+                <span>Contact</span>
               </NavLink>
             </motion.li>
           </motion.ul>
