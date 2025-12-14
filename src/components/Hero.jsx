@@ -37,16 +37,17 @@ const Hero = () => {
             variants={textVariants}
             className="inline-block bg-gray-800 text-xs uppercase tracking-wider py-1 px-3 rounded-full mb-4 "
           >
-            <ShinyText text="Secure Offline File Transfers" speed={3} />
+            <ShinyText text="Universal Offline Data Collection" speed={3} />
           </motion.span>
           <motion.h1 variants={textVariants} className="heading">
-            Offline Exam Submissions Fast & Secure with{" "}
+            Instant Data Collection <br />
+            Fast & Secure with <br />
             <span className="hero_name">TransferX</span>
           </motion.h1>
           <motion.p variants={textVariants} className="hero-description">
-            Streamline exam file submissions with secure, offline transfers.
-            TransferX simplifies the collection process ensuring seamless, fast
-            and tamper-proof submissions even without internet access.
+            The fastest way to collect files from multiple devices <br />
+            without internet. Zero-config setup for exams, <br />
+            creative studios, and secure facilities.
           </motion.p>
           <div className="hero-cta">
             <Link to="/#downloadapps" smooth={"true"} duration={500}>
@@ -56,7 +57,7 @@ const Hero = () => {
                 name="Download_TransferX"
               >
                 <FiDownloadCloud size={25} />
-                Download TransferX
+                Start Collecting
               </motion.button>
             </Link>
             <Link to="/how-transferx-works">

@@ -1,0 +1,288 @@
+.bento-section {
+    padding: 6rem 0;
+    position: relative;
+}
+
+.bento-container {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 0 1.5rem;
+}
+
+.bento-header {
+    text-align: center;
+    margin-bottom: 3.5rem;
+}
+
+/* --- The Main Grid --- */
+.bento-grid {
+    display: grid;
+    /* 4 Columns: Left(2) + Right-Col-1(1) + Right-Col-2(1) */
+    grid-template-columns: 1.2fr 1.2fr 1fr 1fr;
+    grid-template-rows: minmax(180px, auto) minmax(200px, auto);
+    gap: 1.25rem;
+}
+
+.bento-card {
+    background: var(--input-background);
+    border: 1px solid rgba(255, 255, 255, 0.04);
+    border-radius: 1.5rem;
+    padding: 1.5rem;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    overflow: hidden;
+    transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+}
+
+.bento-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.35);
+    border-color: rgba(83, 85, 214, 0.4);
+    z-index: 2;
+}
+
+/* --- Grid Placements --- */
+
+.hero-ethernet {
+    grid-column: span 2;
+    grid-row: span 2;
+    background: radial-gradient(circle at top right, rgba(0, 224, 255, 0.08), transparent 60%),
+        var(--input-background);
+    justify-content: space-between;
+    border: 1px solid rgba(0, 224, 255, 0.15);
+}
+
+.wide-wifi {
+    grid-column: span 2;
+    grid-row: span 1;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    padding-right: 2rem;
+    background: linear-gradient(90deg, var(--input-background) 0%, rgba(52, 211, 153, 0.05) 100%);
+}
+
+.card-hotspot {
+    grid-column: span 1;
+    grid-row: span 1;
+    align-items: center;
+    text-align: center;
+    justify-content: center;
+}
+
+/* Quad Container takes the 4th slot but has NO style itself */
+.card-quad-container {
+    grid-column: span 1;
+    grid-row: span 1;
+    display: flex;
+    /* flex to fill */
+}
+
+/* --- Quad Grid Internals --- */
+.quad-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
+    gap: 0.8rem;
+    width: 100%;
+    height: 100%;
+}
+
+/* Now Mini-Stat Items ARE the cards */
+.mini-stat-item {
+    background: var(--input-background);
+    border-radius: 1rem;
+    /* Slightly smaller radius for smaller cards */
+    padding: 0.5rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    border: 1px solid rgba(255, 255, 255, 0.04);
+    transition: all 0.3s ease;
+    cursor: default;
+}
+
+.mini-stat-item:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+    border-color: rgba(255, 255, 255, 0.2);
+    z-index: 2;
+}
+
+.mini-icon {
+    width: 32px;
+    height: 32px;
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 0.4rem;
+}
+
+.mini-text h5 {
+    font-size: 0.7rem;
+    font-weight: 700;
+    margin-bottom: 2px;
+    color: rgba(255, 255, 255, 0.9);
+}
+
+.mini-text span {
+    font-size: 0.6rem;
+    color: rgba(255, 255, 255, 0.5);
+    display: block;
+    line-height: 1.1;
+}
+
+
+/* --- SVG Gauge Fix --- */
+.gauge-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.gauge-wrapper {
+    position: relative;
+    /* width/height set inline */
+}
+
+.gauge-svg {
+    width: 100%;
+    height: 100%;
+    overflow: visible;
+}
+
+.gauge-label {
+    text-align: center;
+    margin-top: 1rem;
+}
+
+.gauge-label h4 {
+    margin: 0;
+    font-weight: 700;
+    color: #fff;
+    margin-bottom: 0.2rem;
+}
+
+.gauge-label p {
+    font-size: 0.75rem;
+    color: rgba(255, 255, 255, 0.4);
+    margin: 0;
+}
+
+
+/* --- Ethernet Internals --- */
+.bento-top {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+}
+
+.bento-center {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.bento-footer {
+    text-align: center;
+}
+
+.bento-footer p {
+    font-size: 0.9rem;
+    color: rgba(255, 255, 255, 0.7);
+    margin-bottom: 0.5rem;
+}
+
+.status-badge {
+    font-size: 0.65rem;
+    font-weight: 800;
+    background: rgba(0, 224, 255, 0.15);
+    color: #00E0FF;
+    padding: 0.25rem 0.6rem;
+    border-radius: 12px;
+    letter-spacing: 1px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.mini-spec {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.4rem;
+    font-size: 0.8rem;
+    color: rgba(255, 255, 255, 0.4);
+    background: rgba(255, 255, 255, 0.05);
+    padding: 0.2rem 0.6rem;
+    border-radius: 1rem;
+}
+
+.icon-badge {
+    width: 44px;
+    height: 44px;
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.3rem;
+    background: rgba(255, 255, 255, 0.05);
+}
+
+.icon-badge.cyan {
+    color: #00E0FF;
+    background: rgba(0, 224, 255, 0.1);
+}
+
+.icon-badge.green {
+    color: var(--success-color);
+    background: rgba(52, 211, 153, 0.1);
+}
+
+.icon-badge.orange {
+    color: #FFB020;
+    background: rgba(255, 176, 32, 0.1);
+}
+
+h3 {
+    font-size: 1.25rem;
+    font-weight: 700;
+    margin-bottom: 0.3rem;
+}
+
+/* Responsive */
+@media (max-width: 1024px) {
+    .bento-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .hero-ethernet,
+    .wide-wifi {
+        grid-column: span 2;
+    }
+
+    .card-hotspot,
+    .card-quad-container {
+        grid-column: span 1;
+    }
+}
+
+@media (max-width: 640px) {
+    .bento-grid {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .wide-wifi {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .quad-grid {
+        grid-template-columns: 1fr 1fr;
+    }
+}

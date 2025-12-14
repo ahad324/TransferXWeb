@@ -55,7 +55,17 @@ const Header = () => {
                 onClick={toggleMenu}
                 activeClassName="active"
               >
-                How TransferX Works
+                How It Works
+              </NavLink>
+            </motion.li>
+
+            <motion.li custom={3} variants={menuVariants}>
+              <NavLink
+                to="/solutions"
+                onClick={toggleMenu}
+                activeClassName="active"
+              >
+                Solutions
               </NavLink>
             </motion.li>
 

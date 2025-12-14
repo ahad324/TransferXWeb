@@ -4,19 +4,19 @@ import { ClientImages, ServerImages } from "@src/Images";
 
 const DownloadApps = () => {
   const clientFeatures = [
-    "Files Zipping",
-    "Auto-Connect",
-    "Drag & Drop Functionality",
-    "Real-Time Updates",
+    "Smart Resume Support",
+    "Auto Folder Zipping",
+    "Drag & Drop Upload",
+    "Zero-Config Discovery",
     "Dark/Light Theme",
   ];
 
   const serverFeatures = [
-    "Manage Connections",
-    "Monitor File Transfers",
-    "User Management",
-    "Real-Time Updates",
-    "Customizable Settings",
+    "Live Transfer Dashboard",
+    "Connection Management",
+    "Activity Logging (DB)",
+    "Air-Gapped Security",
+    "Customizable Limits",
   ];
 
   return (

@@ -5,7 +5,7 @@ import About from "../pages/About";
 import Contact from "../pages/Contact";
 import TutorialPage from "../pages/Tutorials";
 import HowItWorks from "../pages/HowItWorks";
-import CertificatePage from "../pages/CertificatePage";
+import Solutions from "../pages/Solutions";
 import NotFound from "../pages/NotFound";
 
 const AppRoutes = () => {
@@ -13,9 +13,9 @@ const AppRoutes = () => {
     <Routes>
       <Route path="/" element={<Home />} />
       <Route path="/how-transferx-works" element={<HowItWorks />} />
+      <Route path="/solutions" element={<Solutions />} />
       <Route path="/about" element={<About />} />
       <Route path="/contact" element={<Contact />} />
-      <Route path="/certificate" element={<CertificatePage />} />
       <Route path="tutorial/:AppName" element={<TutorialPage />} />
       <Route path="*" element={<NotFound />} />
     </Routes>

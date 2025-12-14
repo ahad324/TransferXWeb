@@ -2,8 +2,10 @@ import React from "react";
 import Hero from "@components/Hero";
 import Features from "@components/Features";
 import DevelopedBy from "@components/DevelopedBy";
-import DownloadApps from "../components/DownloadApps";
+// import DownloadApps from "../components/DownloadApps"; // REMOVED
+import DownloadsSection from "../components/DownloadsSection"; // NEW
 import SEO from "@components/SEO";
+import BentoBenchmarks from "../components/BentoBenchmarks";
 
 const Home = () => {
   return (
@@ -24,7 +26,7 @@ const Home = () => {
                 "description": "Secure, Fast and Effortless File Transfer across local network",
                  "applicationCategory": "Multimedia",
                  "operatingSystem": "Windows",
-                "offers": {
+                 "offers": {
                     "@type": "Offer",
                     "price": "0",
                     "priceCurrency": "USD"
@@ -42,11 +44,14 @@ const Home = () => {
             }
             `}
       </script>
-
-      <Hero />
-      <Features />
-      <DownloadApps />
-      <DevelopedBy />
+      <div className="home-container">
+        <SEO />
+        <Hero />
+        <Features />
+        <BentoBenchmarks />
+        <DownloadsSection />
+        <DevelopedBy />
+      </div>
     </>
   );
 };

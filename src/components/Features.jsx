@@ -8,39 +8,39 @@ import "../styles/Features.css";
 const Features = () => {
   const features = [
     {
-      title: "Fast Transfer Speeds",
+      title: "Smart Resume",
       description:
-        "Experience the ability to transfer files at incredible speeds, ensuring your data is moved quickly and efficiently across network.",
+        "Network interrupted? No problem. TransferX automatically resumes uploads exactly where they left off, ensuring no data is ever lost.",
       image: FeaturesImages[0],
     },
     {
-      title: "Auto Connect",
+      title: "Zero-Config Auto Connect",
       description:
-        "Effortlessly discover and connect to servers on your local network, ensuring seamless integration and connectivity.",
+        "Forget IP addresses. Our mDNS discovery finds local servers instantly. Just launch and connect—it works like magic.",
       image: FeaturesImages[1],
     },
     {
-      title: "Automatic Files Zipping",
+      title: "On-the-Fly Zipping",
       description:
-        "Effortlessly compress your files for efficient transfer, reducing file size and optimizing bandwidth usage without manual effort.",
+        "Drag a folder with 100 files, and TransferX zips them instantly before sending. Orderly, compressed, and efficient.",
       image: FeaturesImages[2],
     },
     {
-      title: "Automatic App Updates",
+      title: "Air-Gapped Privacy",
       description:
-        "Easily receive the latest features and security enhancements, ensuring your app stays up-to-date with minimal effort.",
+        "Your data never touches the cloud. 100% offline transfer means total privacy for exams, legal docs, and trade secrets.",
       image: FeaturesImages[3],
     },
     {
-      title: "Real-Time Response",
+      title: "Live Transfer Dashboard",
       description:
-        "Send files instantly to your server with real-time response capabilities, ensuring immediate data availability and access.",
+        "Watch transfers in real-time. The server dashboard updates live, giving you total visibility over incoming data flow.",
       image: FeaturesImages[4],
     },
     {
-      title: "User-Friendly Interface",
+      title: "Beautiful Dark Mode",
       description:
-        "Designed for simplicity and efficiency, our interface allows users to navigate and operate with ease, enhancing user experience.",
+        "Built for focus. Toggle between a crisp Light Mode and a stunning, battery-saving Dark Mode with a single click.",
       image: FeaturesImages[5],
     },
   ];
@@ -48,14 +48,25 @@ const Features = () => {
   return (
     <section id="features" className="features">
       <div className="container">
-        <motion.h2
+        <motion.div
+          className="flex flex-col items-center justify-center text-center mb-12"
           variants={textVariants}
           initial="hidden"
           whileInView="visible"
           viewport={{ once: true, amount: 0.3 }}
         >
-          Key Features
-        </motion.h2>
+          <span className="sparkle-tag text-sm font-semibold tracking-wider text-text uppercase bg-[var(--primary-color)]/10 px-3 py-1 rounded-full mb-4">
+            Why TransferX?
+          </span>
+          <h2 className="heading text-4xl mb-4">
+            Everything You Need <br />
+            <span className="hero_name">Built-In</span>
+          </h2>
+          <p className="description text-gray-400 max-w-2xl mx-auto text-lg">
+            No external dependencies. No internet required. Just pure, unmatched speed and reliability for your local network.
+          </p>
+        </motion.div>
+
         <HoverEffect items={features} />
       </div>
     </section>

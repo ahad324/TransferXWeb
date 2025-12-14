@@ -37,14 +37,13 @@ const About = () => {
       />
       <div className="w-full h-full">
         <h1 className="heading text-center leading-tight">
-          Transforming Education with{" "}
+          Redefining Offline Data Logistics with{" "}
           <span className="hero_name">TransferX</span>
         </h1>
         <p className="mb-8 text-center text-lg">
-          Welcome to TransferX – an innovative solution designed to transform
-          file management in educational institutions. By simplifying offline
-          file submissions, i'm making exam management efficient, secure, and
-          stress-free.
+          Welcome to TransferX – the standard for high-security, internet-free data collection.
+          What started as a tool for exam security has evolved into a universal solution for
+          managing massive file transfers in air-gapped environments.
         </p>
 
         {/* The Challenge Section */}
@@ -115,12 +114,11 @@ const About = () => {
         {/* Collaboration Section */}
         <div className="flex items-center gap-2 mb-4">
           <FiMail size={30} className="text-[--primary-color]" />
-          <h2 className="text-3xl font-semibold">Let's Collaborate</h2>
+          <h2 className="text-3xl font-semibold">Enterprise & Education Partnerships</h2>
         </div>
         <p className="mb-6">
-          I’m seeking partnerships with universities and institutions to
-          implement TransferX into their academic workflows. If you’re
-          interested in driving innovation in education, let's connect!{" "}
+          We are actively deploying TransferX in universities, studios, and secure facilities.
+          If you need a custom version for your specific workflow or security requirements, let's talk.
         </p>
         <span className="flex items-center justify-center">
           <Link to="/contact" className="mt-4 button primary">

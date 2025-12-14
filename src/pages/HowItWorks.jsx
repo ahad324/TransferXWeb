@@ -11,107 +11,63 @@ const HowItWorks = () => {
   const description =
     "Understand how TransferX simplifies offline file transfers for educational institutions. Explore its features and seamless integration process.";
   const keywords =
-    "TransferX, offline file transfer, educational technology, secure file submission, client-server model, exam file management";
+    "TransferX, offline file transfer, exam software, client-server file sharing, mdns discovery, resumable upload, air-gapped transfer";
 
   const timelineData = [
     {
-      title: "Installation Process",
+      title: "One-Click Installation",
       icon: <FiShield size={30} className="text-[--primary-color]" />,
       content: (
         <div>
           <p>
-            Download and install the TransferX server application on the
-            examiner’s system and the client application on student devices.
+            Download the <strong>Server</strong> app for the teacher/manager, and the <strong>Client</strong> app for students or contributors.
           </p>
           <p className="mt-4">
-            <strong>⚠ Important Note:</strong> Currently, TransferX is not
-            signed with an online digital signature. This may trigger a warning
-            during installation. Please ignore the warning and proceed with
-            installation.
-          </p>
-          <p className="mt-2">
-            To bypass this, install our <strong>trusted certificate</strong>.
-            You can download our{" "}
-            <Link
-              to="/certificate"
-              className="underline text-[--success-color]"
-            >
-              trusted security certificate
-            </Link>
-            . It only takes 5 seconds, and this ensures smooth installation.
-          </p>
-          <p className="mt-4">
-            Your trust and support help grow TransferX – built by a passionate
-            developer with limited resources. Thank you for being part of this
-            journey!
+            That's it. No database configuration, no complex IP routing, and no internet required. Just run the installer and you're ready.
           </p>
         </div>
       ),
     },
     {
-      title: "Launch and Setup",
+      title: "Zero-Config Launch",
       icon: <FiWifi size={30} className="text-[--primary-color]" />,
       content: (
         <div>
           <p>
-            Ensure both the client and server applications are connected to the
-            <strong> same network</strong>. This can be achieved through Wi-Fi,
-            Ethernet, or even a mobile hotspot.
+            <strong>Server Side:</strong> Click <strong>Start Server</strong>. We handle the firewall rules and network ports automatically.
           </p>
           <p className="mt-4">
-            <strong>Server Side:</strong> Launch the TransferX server app and
-            click <strong>Start Server</strong>. If prompted by the firewall,
-            click <strong>Allow</strong> to enable the server to accept
-            connections.
+            <strong>Client Side:</strong> Launch the app and click <strong>Connect</strong>.
           </p>
-          <p className="mt-4">
-            You can customize the server by navigating to the{" "}
-            <strong>Settings</strong> tab and updating configurations.
-          </p>
-          <p className="mt-4">
-            <strong>Client Side:</strong> Open the TransferX client app and
-            click <strong>Connect to Server</strong>. The client will
-            automatically discover available servers within the same network and
-            connect to them.
-          </p>
-          <p className="mt-4">
-            Connection status will be displayed in the{" "}
-            <strong>bottom-left corner</strong> of the client application.
+          <p className="mt-2">
+            Thanks to our smart <strong>mDNS Discovery</strong>, the client finds the server instantly without typing a single IP address. It really is that simple.
           </p>
         </div>
       ),
     },
     {
-      title: "Secure File Submission",
+      title: "Drag, Drop, Done",
       icon: <FiUpload size={30} className="text-[--primary-color]" />,
       content: (
         <div>
           <p>
-            Once connected to the server, students can submit their files
-            directly by entering their roll number.
+            Students simply enter their ID or Name and <strong>Drag & Drop</strong> their exam files.
           </p>
           <p className="mt-4">
-            <strong>How it Works:</strong> The roll number you enter will
-            automatically replace the file name. If multiple files are selected,
-            they will be zipped and sent as one, ensuring consistent and
-            organized submissions.
+            <strong>Smart Engines:</strong> TransferX automatically zips their files, establishes a secure stream, and uploads it at maximum LAN speeds.
           </p>
-          <p className="mt-4">
-            Click <strong>Upload</strong>, and the files will transfer instantly
-            to the server. Real-time progress ensures you stay updated
-            throughout the submission process.
+          <p className="mt-2">
+            If the Wi-Fi drops, the <strong>Smart Resume</strong> feature ensures the upload picks up exactly where it left off once reconnected.
           </p>
         </div>
       ),
     },
     {
-      title: "Auto-Updates",
+      title: "Silent Auto-Updates",
       icon: <FiShield size={30} className="text-[--primary-color]" />,
       content: (
         <p>
-          TransferX checks for updates periodically and installs them silently.
-          This ensures that the software remains up-to-date with the latest
-          security enhancements and features without requiring user interaction.
+          We keep your security tight. TransferX silently updates itself in the background when an internet connection is available, ensuring you always have the latest features and patches.
         </p>
       ),
     },
