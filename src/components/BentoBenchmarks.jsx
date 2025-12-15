@@ -1,7 +1,7 @@
 import React from "react";
 import { motion } from "framer-motion";
 import { containerVariants, textVariants } from "../AnimationVariants";
-import { FiCpu, FiHardDrive, FiWifi, FiZap, FiServer, FiActivity, FiShield, FiGlobe, FiClock } from "react-icons/fi";
+import { FiCpu, FiHardDrive, FiWifi, FiZap, FiServer, FiActivity, FiShield, FiGlobe, FiClock, FiLock } from "react-icons/fi";
 import "../styles/BentoBenchmarks.css";
 
 const CircularGauge = ({ value, max, label, subLabel, color, delay, size = "normal" }) => {
@@ -169,7 +169,7 @@ const BentoBenchmarks = () => {
                         <div className="quad-grid">
                             <MiniStat icon={FiCpu} title="Adaptive" desc="Auto-Buffer" color="#5355d6" />
                             <MiniStat icon={FiHardDrive} title="Direct I/O" desc="Zero-Copy" color="#8b5cf6" />
-                            <MiniStat icon={FiShield} title="Air-Gapped" desc="100% Offline" color="#10b981" />
+                            <MiniStat icon={FiLock} title="TLS Security" desc="Encrypted" color="#10b981" />
                             <MiniStat icon={FiGlobe} title="vs Cloud" desc="20x Faster" color="#ef4444" />
                         </div>
                     </motion.div>

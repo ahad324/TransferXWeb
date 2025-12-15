@@ -26,9 +26,9 @@ const Features = () => {
       image: FeaturesImages[2],
     },
     {
-      title: "Air-Gapped Privacy",
+      title: "Enterprise Security",
       description:
-        "Your data never touches the cloud. 100% offline transfer means total privacy for exams, legal docs, and trade secrets.",
+        "Bank-grade TLS 1.3 encryption with Mutual Authentication (mTLS). Your data is encrypted in transit and verified at every step.",
       image: FeaturesImages[3],
     },
     {

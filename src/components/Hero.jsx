@@ -34,7 +34,7 @@ const Hero = () => {
             variants={textVariants}
             className="inline-block bg-gray-800 text-xs uppercase tracking-wider py-1 px-3 rounded-full mb-4 "
           >
-            <ShinyText text="Universal Offline Data Collection" speed={3} />
+            <ShinyText text="Secure Offline Data Collection" speed={3} />
           </motion.span>
           <motion.h1 variants={textVariants} className="heading">
             Instant Data Collection <br />

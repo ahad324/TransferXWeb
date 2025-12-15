@@ -9,7 +9,8 @@ import {
   FiServer,
   FiUsers,
   FiShield,
-  FiWifi
+  FiWifi,
+  FiLock
 } from "react-icons/fi";
 import SectionWrapper from "../components/ui/SectionWrapper";
 import Card from "../components/ui/Card";
@@ -100,10 +101,10 @@ const About = () => {
           </Card>
           <Card hoverEffect={true} className="text-center p-6">
             <div className="inline-block p-4 rounded-full bg-[--primary-color]/10 text-[--primary-color] mb-4">
-              <FiShield size={30} />
+              <FiLock size={30} />
             </div>
-            <h3 className="text-xl font-bold mb-2">Air-Gapped</h3>
-            <p className="text-sm opacity-80">100% Offline. Your data never leaves the local network infrastructure.</p>
+            <h3 className="text-xl font-bold mb-2">Enterprise Security</h3>
+            <p className="text-sm opacity-80">End-to-end encryption (TLS 1.3) with mutual authentication. 100% offline and secure.</p>
           </Card>
         </div>
       </div>
