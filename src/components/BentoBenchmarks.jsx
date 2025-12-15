@@ -112,7 +112,7 @@ const BentoBenchmarks = () => {
                     >
                         <div className="bento-top">
                             <div className="icon-badge cyan"><FiServer /></div>
-                            <div className="status-badge">ACTIVE</div>
+                            <div className="status-badge">LAB TESTED</div>
                         </div>
 
                         <div className="bento-center">
@@ -127,9 +127,13 @@ const BentoBenchmarks = () => {
                             />
                         </div>
 
+
                         <div className="bento-footer">
                             <p>Transfer 50GB in ~6 minutes.</p>
                             <div className="mini-spec"><FiClock /> Latency &lt; 1ms</div>
+                            <div className="benchmark-disclaimer">
+                                <FiActivity className="inline mr-1 text-yellow-400" /> Results vary by hardware & network.
+                            </div>
                         </div>
                     </motion.div>
 
