@@ -63,7 +63,7 @@ const CircularGauge = ({ value, max, label, subLabel, color, delay, size = "norm
                 </svg>
             </div>
             <div className="gauge-label">
-                <h4 style={{ fontSize: size === 'large' ? '1.2rem' : '0.9rem' }}>{label}</h4>
+                <h3 style={{ fontSize: size === 'large' ? '1.2rem' : '0.9rem' }}>{label}</h3>
                 {subLabel && <p>{subLabel}</p>}
             </div>
         </div>
