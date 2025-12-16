@@ -67,17 +67,6 @@ const Header = () => {
 
             <motion.li custom={3} variants={menuVariants}>
               <NavLink
-                to="/solutions"
-                onClick={toggleMenu}
-                className={({ isActive }) => isActive ? "active" : ""}
-              >
-                <LuRocket className="nav-icon" />
-                <span>Solutions</span>
-              </NavLink>
-            </motion.li>
-
-            <motion.li custom={3} variants={menuVariants}>
-              <NavLink
                 to="/about"
                 onClick={toggleMenu}
                 className={({ isActive }) => isActive ? "active" : ""}
@@ -110,7 +99,7 @@ const Header = () => {
           {isMenuOpen ? <IoClose /> : <LuLayoutGrid />}
         </button>
       </div>
-    </header>
+    </header >
   );
 };
 

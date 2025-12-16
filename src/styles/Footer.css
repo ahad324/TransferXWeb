@@ -1,7 +1,72 @@
-footer {
-  text-align: center;
+/* Footer.css */
+.footer-container {
+  background-color: var(--secondary-bg);
+  /* Assuming there's a secondary dark bg color */
+  margin-top: auto;
+  /* Push to bottom if flex column layout */
 }
 
-.footer-content p {
-  margin-bottom: 1rem;
+.footer-heading {
+  font-size: 0.95rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  margin-bottom: 1.25rem;
+  color: var(--text-color);
+  opacity: 0.9;
+}
+
+.footer-links {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.footer-links li {
+  margin-bottom: 0.75rem;
+}
+
+.footer-links a {
+  color: var(--text-color);
+  opacity: 0.7;
+  text-decoration: none;
+  font-size: 0.95rem;
+  transition: all 0.2s ease;
+  position: relative;
+  display: inline-block;
+}
+
+.footer-links a:hover {
+  opacity: 1;
+  color: var(--primary-color);
+  transform: translateX(4px);
+}
+
+.social-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background-color: var(--card-bg);
+  color: var(--text-color);
+  border: 1px solid var(--border-color);
+  transition: all 0.3s ease;
+}
+
+.social-icon:hover {
+  background-color: var(--primary-color);
+  color: #fff;
+  /* Force white icon on primary brand color */
+  border-color: var(--primary-color);
+  transform: translateY(-3px);
+  box-shadow: 0 4px 12px rgba(var(--primary-rgb, 0, 123, 255), 0.3);
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .footer-content {
+    text-align: left;
+  }
 }

@@ -96,8 +96,8 @@ const About = () => {
             <div className="inline-block p-4 rounded-full bg-[--primary-color]/10 text-[--primary-color] mb-4">
               <FiWifi size={30} />
             </div>
-            <h3 className="text-xl font-bold mb-2">mDNS Discovery</h3>
-            <p className="text-sm opacity-80">Zero IP configuration. Clients auto-detect the server on the LAN.</p>
+            <h3 className="text-xl font-bold mb-2">Zero-Config Discovery</h3>
+            <p className="text-sm opacity-80">Powered by mDNS. Auto-detects the server instantly. No manual IP entry required.</p>
           </Card>
           <Card hoverEffect={true} className="text-center p-6">
             <div className="inline-block p-4 rounded-full bg-[--primary-color]/10 text-[--primary-color] mb-4">

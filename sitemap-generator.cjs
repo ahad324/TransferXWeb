@@ -15,6 +15,7 @@ async function generateSitemap() {
     sitemapStream.write({ url: '/solutions', changefreq: 'weekly', lastmod: currentDate });
     sitemapStream.write({ url: '/about', changefreq: 'weekly', lastmod: currentDate });
     sitemapStream.write({ url: '/contact', changefreq: 'weekly', lastmod: currentDate });
+    sitemapStream.write({ url: '/privacy-policy', changefreq: 'yearly', lastmod: currentDate });
     sitemapStream.end();
 
     const sitemapData = await streamToPromise(sitemapStream);

@@ -173,10 +173,7 @@ header {
     cursor: pointer;
   }
 
-  /* Center the last item (Contact) in the 2-column grid */
-  .nav-links li:last-child {
-    grid-column: span 2;
-  }
+
 }
 
 

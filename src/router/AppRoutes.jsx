@@ -6,6 +6,7 @@ import Contact from "../pages/Contact";
 
 import HowItWorks from "../pages/HowItWorks";
 import Solutions from "../pages/Solutions";
+import PrivacyPolicy from "../pages/PrivacyPolicy";
 import NotFound from "../pages/NotFound";
 
 const AppRoutes = () => {
@@ -14,6 +15,7 @@ const AppRoutes = () => {
       <Route path="/" element={<Home />} />
       <Route path="/how-transferx-works" element={<HowItWorks />} />
       <Route path="/solutions" element={<Solutions />} />
+      <Route path="/privacy-policy" element={<PrivacyPolicy />} />
       <Route path="/about" element={<About />} />
       <Route path="/contact" element={<Contact />} />
 
