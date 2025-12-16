@@ -45,7 +45,6 @@ const Home = () => {
             `}
       </script>
       <div className="home-container page-wrapper">
-        <SEO />
         <Hero />
         <Features />
         <BentoBenchmarks />
