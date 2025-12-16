@@ -29,7 +29,7 @@ const DownloadsSection = () => {
     };
 
     const downloadLinks = {
-        client: "https://github.com/ahad324/TransferXClient/releases/download/Installer/TransferX.exe",
+        client: "https://github.com/ahad324/TransferXClient/releases/download/Installer/TransferXClient.exe",
         server: "https://github.com/ahad324/TransferXServer/releases/download/Installer/TransferXServer.exe"
     };
 
