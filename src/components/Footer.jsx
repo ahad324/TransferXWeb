@@ -6,7 +6,7 @@ import "../styles/Footer.css";
 
 const Footer = () => {
   return (
-    <footer className="footer-container border-t border-[--border-color]">
+    <footer className="footer-container border-t-2 md:border-t-4 border-[--border-color]  md:rounded-t-[100px]">
       <div className="footer-content max-w-7xl mx-auto px-6 py-12 grid grid-cols-1 md:grid-cols-4 gap-8">
 
         {/* Brand Section */}

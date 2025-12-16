@@ -75,41 +75,43 @@ const HowItWorks = () => {
   ];
 
   return (
-    <SectionWrapper
-      className="max-w-5xl flex justify-center items-center flex-col mx-auto pt-10 leading-relaxed"
-    >
-      <SEO
-        title={title}
-        description={description}
-        keywords={keywords}
-        canonical="https://transferx.netlify.app/how-it-works"
-        ogTitle="How TransferX Works | Secure Offline File Transfers"
-      />
-      <div className="w-full h-full">
-        <h1
-          className="text-center heading leading-tight gradient-text"
-          variants={textVariants}
-        >
-          How <span className="hero_name">TransferX </span>
-          Works
-        </h1>
-        <p className="text-center text-lg max-w-3xl mx-auto mb-4">
-          TransferX revolutionizes offline file submissions through a secure
-          client-server model, ensuring hassle-free file transfers during exams
-          without relying on the internet.
-        </p>
+    <div className="page-wrapper">
+      <SectionWrapper
+        className="max-w-5xl flex justify-center items-center flex-col mx-auto pt-10 leading-relaxed"
+      >
+        <SEO
+          title={title}
+          description={description}
+          keywords={keywords}
+          canonical="https://transferx.netlify.app/how-it-works"
+          ogTitle="How TransferX Works | Secure Offline File Transfers"
+        />
+        <div className="w-full h-full">
+          <h1
+            className="text-center heading leading-tight gradient-text"
+            variants={textVariants}
+          >
+            How <span className="hero_name">TransferX </span>
+            Works
+          </h1>
+          <p className="text-center text-lg max-w-3xl mx-auto mb-4">
+            TransferX revolutionizes offline file submissions through a secure
+            client-server model, ensuring hassle-free file transfers during exams
+            without relying on the internet.
+          </p>
 
-        <Timeline data={timelineData} />
+          <Timeline data={timelineData} />
 
-        <div className="text-center flex justify-center items-center my-20">
-          <Link to="/#downloadapps">
-            <Button>
-              <FiDownloadCloud size={25} /> Download TransferX
-            </Button>
-          </Link>
+          <div className="text-center flex justify-center items-center my-20">
+            <Link to="/#downloadapps">
+              <Button>
+                <FiDownloadCloud size={25} /> Download TransferX
+              </Button>
+            </Link>
+          </div>
         </div>
-      </div>
-    </SectionWrapper>
+      </SectionWrapper>
+    </div>
   );
 };
 

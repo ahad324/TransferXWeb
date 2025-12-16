@@ -103,3 +103,8 @@ section h2 {
 .button.secondary:hover {
   background: var(--primary-color);
 }
+
+.page-wrapper {
+  width: 100%;
+  background: var(--background-color);
+}
