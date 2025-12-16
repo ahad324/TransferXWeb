@@ -76,7 +76,7 @@ const MiniStat = ({ icon: Icon, title, desc, color }) => (
             <Icon size={16} />
         </div>
         <div className="mini-text">
-            <h5>{title}</h5>
+            <h3>{title}</h3>
             <span>{desc}</span>
         </div>
     </div>
