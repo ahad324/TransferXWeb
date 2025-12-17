@@ -16,7 +16,7 @@ import Button from "./ui/Button";
 
 const Hero = () => {
   return (
-    <div>
+    <div className="relative w-full overflow-hidden">
       <SparklesCore
         background="transparent"
         minSize={0.6}
