@@ -4,7 +4,7 @@ import { pageVariants } from "../AnimationVariants";
 
 const PageWrapper = ({ children, className = "" }) => {
     return (
-        <motion.div
+        <motion.main
             variants={pageVariants}
             initial="initial"
             animate="animate"
@@ -12,7 +12,7 @@ const PageWrapper = ({ children, className = "" }) => {
             className={`w-full ${className}`}
         >
             {children}
-        </motion.div>
+        </motion.main>
     );
 };
 
