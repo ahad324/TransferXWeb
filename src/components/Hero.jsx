@@ -26,7 +26,7 @@ const Hero = () => {
       />
       <SectionWrapper
         id="hero"
-        className="hero"
+        className="hero min-h-fit"
       >
         {" "}
         <div className="hero-content">
@@ -42,8 +42,8 @@ const Hero = () => {
             <span className="hero_name">TransferX</span>
           </motion.h1>
           <motion.p variants={textVariants} className="hero-description">
-            The fastest way to collect files from multiple devices <br />
-            without internet. Zero-config setup for exams, <br />
+            The fastest way to collect files from multiple devices <br className="hidden sm:block" />
+            without internet. Zero-config setup for exams, <br className="hidden sm:block" />
             creative studios, and secure facilities.
           </motion.p>
           <div className="hero-cta">
