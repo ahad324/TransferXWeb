@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { LuLayoutGrid, LuHome, LuHelpCircle, LuRocket, LuInfo, LuMail } from "react-icons/lu";
+import { FiDownloadCloud } from "react-icons/fi";
 import { IoClose } from "react-icons/io5";
 import { NavLink } from "react-router-dom";
 import "../styles/Header.css";
@@ -65,12 +66,12 @@ const Header = () => {
             </motion.li>
             <motion.li custom={2} variants={menuVariants}>
               <NavLink
-                to="/how-transferx-works"
+                to="/download"
                 onClick={toggleMenu}
                 className={({ isActive }) => isActive ? "active" : ""}
               >
-                <LuHelpCircle className="nav-icon" />
-                <span>How It Works</span>
+                <FiDownloadCloud className="nav-icon" />
+                <span>Download</span>
               </NavLink>
             </motion.li>
 

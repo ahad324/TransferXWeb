@@ -3,9 +3,9 @@ import Hero from "@components/Hero";
 import Features from "@components/Features";
 import DevelopedBy from "@components/DevelopedBy";
 // import DownloadApps from "../components/DownloadApps"; // REMOVED
-import DownloadsSection from "../components/DownloadsSection"; // NEW
 import SEO from "@components/SEO";
 import BentoBenchmarks from "../components/BentoBenchmarks";
+import CTASection from "../components/CTASection";
 
 const Home = () => {
   return (
@@ -48,7 +48,7 @@ const Home = () => {
         <Hero />
         <Features />
         <BentoBenchmarks />
-        <DownloadsSection />
+        <CTASection />
         <DevelopedBy />
       </div>
     </>

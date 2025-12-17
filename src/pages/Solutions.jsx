@@ -83,7 +83,7 @@ const Solutions = () => {
             <h2 className="text-3xl font-bold mb-4">Ready to secure your data flow?</h2>
             <p className="mb-8 text-lg">Deploy TransferX in your environment today. No configuration required.</p>
             <span className="flex justify-center">
-              <Link to="/#downloadapps">
+              <Link to="/download">
                 <Button>
                   <LuRocket size={20} /> Get Started Now
                 </Button>

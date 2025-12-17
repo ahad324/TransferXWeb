@@ -11,6 +11,7 @@ async function generateSitemap() {
     const currentDate = new Date().toISOString().split('T');
 
     sitemapStream.write({ url: '/', changefreq: 'weekly', priority: 1, lastmod: currentDate });
+    sitemapStream.write({ url: '/download', changefreq: 'monthly', priority: 0.9, lastmod: currentDate });
     sitemapStream.write({ url: '/how-transferx-works', changefreq: 'weekly', lastmod: currentDate });
     sitemapStream.write({ url: '/solutions', changefreq: 'weekly', lastmod: currentDate });
     sitemapStream.write({ url: '/about', changefreq: 'weekly', lastmod: currentDate });

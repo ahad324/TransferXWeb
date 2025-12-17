@@ -5,6 +5,7 @@ import PageWrapper from "../components/PageWrapper";
 import Home from "../pages/Home";
 import About from "../pages/About";
 import Contact from "../pages/Contact";
+import Download from "../pages/Download";
 
 import HowItWorks from "../pages/HowItWorks";
 import Solutions from "../pages/Solutions";
@@ -23,6 +24,7 @@ const AppRoutes = () => {
         <Route path="/privacy-policy" element={<PageWrapper><PrivacyPolicy /></PageWrapper>} />
         <Route path="/about" element={<PageWrapper><About /></PageWrapper>} />
         <Route path="/contact" element={<PageWrapper><Contact /></PageWrapper>} />
+        <Route path="/download" element={<PageWrapper><Download /></PageWrapper>} />
 
         <Route path="*" element={<PageWrapper><NotFound /></PageWrapper>} />
       </Routes>

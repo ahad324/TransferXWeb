@@ -47,7 +47,7 @@ const Hero = () => {
             creative studios, and secure facilities.
           </motion.p>
           <div className="hero-cta">
-            <Link to="/#downloadapps">
+            <Link to="/download">
               <Button
                 variants={buttonVariants}
                 name="Download_TransferX"

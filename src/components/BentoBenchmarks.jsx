@@ -175,16 +175,16 @@ const BentoBenchmarks = () => {
                     </motion.div>
 
                 </div>
+                <p className="disclaimer-note" style={{
+                    textAlign: 'center',
+                    fontSize: '0.8rem',
+                    color: 'rgba(255, 255, 255, 0.7)',
+                    marginTop: '2rem',
+                    fontStyle: 'italic'
+                }}>
+                    * Results may vary based on your device hardware and network environment.
+                </p>
             </div>
-            <p className="disclaimer-note" style={{
-                textAlign: 'center',
-                fontSize: '0.8rem',
-                color: 'rgba(255, 255, 255, 0.4)',
-                marginTop: '2rem',
-                fontStyle: 'italic'
-            }}>
-                * Results may vary based on your device hardware and network environment.
-            </p>
         </section >
     );
 };

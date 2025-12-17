@@ -103,7 +103,7 @@ const HowItWorks = () => {
           <Timeline data={timelineData} />
 
           <div className="text-center flex justify-center items-center my-20">
-            <Link to="/#downloadapps">
+            <Link to="/download">
               <Button>
                 <FiDownloadCloud size={25} /> Download TransferX
               </Button>

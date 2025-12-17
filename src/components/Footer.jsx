@@ -22,7 +22,9 @@ const Footer = () => {
             <a href="https://github.com/ahad324" target="_blank" rel="noopener noreferrer" className="social-icon" aria-label="GitHub">
               <FaGithub size={20} />
             </a>
-            {/* Add more social icons if needed, keeping it minimal for now */}
+            <a href="https://www.linkedin.com/in/abdul-ahad-a08263273" target="_blank" rel="noopener noreferrer" className="social-icon" aria-label="LinkedIn">
+              <FaLinkedin size={20} />
+            </a>
           </div>
         </div>
 
@@ -33,7 +35,7 @@ const Footer = () => {
             <li><Link to="/">Home</Link></li>
             <li><Link to="/how-transferx-works">How It Works</Link></li>
             <li><Link to="/solutions">Solutions</Link></li>
-            <li><Link to="/#downloadapps">Download</Link></li>
+            <li><Link to="/download">Download</Link></li>
           </ul>
         </div>
 
