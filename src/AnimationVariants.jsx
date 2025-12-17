@@ -38,3 +38,32 @@ export const menuVariants = {
     },
   }),
 };
+
+export const pageVariants = {
+  initial: {
+    opacity: 0,
+    y: 20,
+    scale: 0.98,
+  },
+  animate: {
+    opacity: 1,
+    y: 0,
+    scale: 1,
+    transition: {
+      type: "spring",
+      stiffness: 100,
+      damping: 20,
+      mass: 0.5,
+      duration: 0.5,
+    },
+  },
+  exit: {
+    opacity: 0,
+    scale: 1.02,
+    filter: "blur(5px)",
+    transition: {
+      duration: 0.3,
+      ease: "easeInOut",
+    },
+  },
+};

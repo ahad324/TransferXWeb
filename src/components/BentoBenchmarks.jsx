@@ -112,7 +112,7 @@ const BentoBenchmarks = () => {
                     >
                         <div className="bento-top">
                             <div className="icon-badge cyan"><FiServer /></div>
-                            <div className="status-badge">ACTIVE</div>
+                            <div className="status-badge">VERIFIED</div>
                         </div>
 
                         <div className="bento-center">
@@ -176,7 +176,16 @@ const BentoBenchmarks = () => {
 
                 </div>
             </div>
-        </section>
+            <p className="disclaimer-note" style={{
+                textAlign: 'center',
+                fontSize: '0.8rem',
+                color: 'rgba(255, 255, 255, 0.4)',
+                marginTop: '2rem',
+                fontStyle: 'italic'
+            }}>
+                * Results may vary based on your device hardware and network environment.
+            </p>
+        </section >
     );
 };
 

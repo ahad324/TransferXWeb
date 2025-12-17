@@ -1,5 +1,7 @@
 import React from "react";
-import { Routes, Route } from "react-router-dom";
+import { Routes, Route, useLocation } from "react-router-dom";
+import { AnimatePresence } from "framer-motion";
+import PageWrapper from "../components/PageWrapper";
 import Home from "../pages/Home";
 import About from "../pages/About";
 import Contact from "../pages/Contact";
@@ -10,17 +12,21 @@ import PrivacyPolicy from "../pages/PrivacyPolicy";
 import NotFound from "../pages/NotFound";
 
 const AppRoutes = () => {
-  return (
-    <Routes>
-      <Route path="/" element={<Home />} />
-      <Route path="/how-transferx-works" element={<HowItWorks />} />
-      <Route path="/solutions" element={<Solutions />} />
-      <Route path="/privacy-policy" element={<PrivacyPolicy />} />
-      <Route path="/about" element={<About />} />
-      <Route path="/contact" element={<Contact />} />
+  const location = useLocation();
 
-      <Route path="*" element={<NotFound />} />
-    </Routes>
+  return (
+    <AnimatePresence mode="wait">
+      <Routes location={location} key={location.pathname}>
+        <Route path="/" element={<PageWrapper><Home /></PageWrapper>} />
+        <Route path="/how-transferx-works" element={<PageWrapper><HowItWorks /></PageWrapper>} />
+        <Route path="/solutions" element={<PageWrapper><Solutions /></PageWrapper>} />
+        <Route path="/privacy-policy" element={<PageWrapper><PrivacyPolicy /></PageWrapper>} />
+        <Route path="/about" element={<PageWrapper><About /></PageWrapper>} />
+        <Route path="/contact" element={<PageWrapper><Contact /></PageWrapper>} />
+
+        <Route path="*" element={<PageWrapper><NotFound /></PageWrapper>} />
+      </Routes>
+    </AnimatePresence>
   );
 };
 
