@@ -19,7 +19,7 @@ const CTASection = () => {
                     viewport={{ once: true }}
                     className="text-3xl md:text-5xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-white to-gray-400 mb-6"
                 >
-                    Ready to Collect Files?
+                    Ready to Supercharge Your Workflow?
                 </motion.h2>
 
                 <motion.p
@@ -29,7 +29,7 @@ const CTASection = () => {
                     viewport={{ once: true }}
                     className="text-lg text-gray-400 mb-10 max-w-2xl mx-auto leading-relaxed"
                 >
-                    Start using TransferX today for secure, offline, and lightning-fast file transfers across your local network. No internet required.
+                    Experience the fastest, most secure way to collect files offline. No internet, no limits—just pure speed.
                 </motion.p>
 
                 <motion.div

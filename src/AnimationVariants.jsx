@@ -42,25 +42,24 @@ export const menuVariants = {
 export const pageVariants = {
   initial: {
     opacity: 0,
-    y: 20,
-    scale: 0.98,
+    y: 15, // Subtle slide up from bottom
+    scale: 0.99, // Very subtle scale to add depth
+    filter: "blur(2px)",
   },
   animate: {
     opacity: 1,
     y: 0,
     scale: 1,
+    filter: "blur(0px)",
     transition: {
-      type: "spring",
-      stiffness: 100,
-      damping: 20,
-      mass: 0.5,
-      duration: 0.5,
+      duration: 0.4,
+      ease: [0.25, 0.1, 0.25, 1.0], // cubic-bezier(0.25, 0.1, 0.25, 1.0) - similar to easeOutQuad but smoother
     },
   },
   exit: {
     opacity: 0,
-    scale: 1.02,
-    filter: "blur(5px)",
+    y: -10, // Slight slide up on exit
+    filter: "blur(2px)",
     transition: {
       duration: 0.3,
       ease: "easeInOut",
