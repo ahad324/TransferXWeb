@@ -15,7 +15,16 @@ const Header = () => {
   };
 
   return (
-    <header>
+    <motion.header
+      initial={{ y: -50, opacity: 0, scale: 0.9 }}
+      animate={{ y: 0, opacity: 1, scale: 1 }}
+      transition={{
+        type: "spring",
+        stiffness: 120,
+        damping: 10,
+        duration: 0.8
+      }}
+    >
       <div className="header-content">
         <div className="logo">
           <a
@@ -25,7 +34,7 @@ const Header = () => {
             <img
               src={Logo}
               alt="TransferX Logo"
-              className="w-12  h-12 p-1 rounded-lg none md:block"
+              className="w-12  h-12 p-1 rounded-lg none md:block  "
             />
             <span>TransferX</span>
           </a>
@@ -99,7 +108,7 @@ const Header = () => {
           {isMenuOpen ? <IoClose /> : <LuLayoutGrid />}
         </button>
       </div>
-    </header >
+    </motion.header >
   );
 };
 
