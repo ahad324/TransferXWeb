@@ -1,7 +1,7 @@
 import React from "react";
 import Hero from "@components/Hero";
 import Features from "@components/Features";
-import DevelopedBy from "@components/DevelopedBy";
+
 // import DownloadApps from "../components/DownloadApps"; // REMOVED
 import SEO from "@components/SEO";
 import BentoBenchmarks from "../components/BentoBenchmarks";
@@ -49,7 +49,7 @@ const Home = () => {
         <Features />
         <BentoBenchmarks />
         <CTASection />
-        <DevelopedBy />
+
       </div>
     </>
   );

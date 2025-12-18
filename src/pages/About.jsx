@@ -15,6 +15,7 @@ import {
 import SectionWrapper from "../components/ui/SectionWrapper";
 import Card from "../components/ui/Card";
 import Button from "../components/ui/Button";
+import DevelopedBy from "../components/DevelopedBy";
 
 const About = () => {
   const title = "About TransferX | Secure Offline File Transfers for Education";
@@ -127,6 +128,7 @@ const About = () => {
           </span>
         </Card>
 
+        <DevelopedBy />
       </SectionWrapper>
     </div>
   );
