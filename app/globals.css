@@ -1,0 +1,136 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --logo-font: var(--font-lobster), "Lobster", sans-serif;
+  --font: var(--font-poppins), "Poppins", sans-serif;
+  --transition: 0.3s ease;
+
+  --primary-color: #5355d6;
+  --secondary-color: #8b5cf6;
+  --background-color: #111827;
+  --text-color: #f3f4f6;
+  --input-background: #1f2937;
+  --success-color: #34d399;
+  --error-color: #ef4444;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  scrollbar-width: thin;
+  scrollbar-color: var(--primary-color) var(--background-color);
+}
+
+body {
+  font-family: var(--font);
+  transition: background var(--transition);
+  color: var(--text-color);
+  background-color: var(--background-color);
+  transition: background-color var(--transition), color var(--transition);
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.app {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 1rem;
+  position: relative;
+}
+
+.input-style {
+  @apply bg-[--input-background] border border-gray-300 text-[--text-color] text-sm rounded-lg focus:ring-[--primary-color] focus:border-[--primary-color] block w-full p-2.5;
+}
+
+section {
+  padding: 2rem 0;
+  text-align: center;
+}
+
+section h2 {
+  font-size: clamp(2.5rem, 0.8696rem + 5.5652vw, 3rem);
+  font-weight: 700;
+  margin-bottom: 1rem;
+}
+
+.heading {
+  font-size: clamp(2.5rem, 0.8696rem + 5.5652vw, 3rem);
+  font-weight: 800;
+  margin-bottom: 1rem;
+  line-height: 1.2;
+}
+
+.hero_name {
+  letter-spacing: 2px;
+  font-family: var(--logo-font);
+  font-size: clamp(3rem, 0.8696rem + 5.5652vw, 4rem);
+  background: linear-gradient(45deg,
+      var(--primary-color),
+      var(--secondary-color));
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.CardHoverBG {
+  background: linear-gradient(135deg,
+      var(--primary-color),
+      var(--secondary-color));
+}
+
+.button {
+  padding: 0.8rem 1.5rem;
+  font-size: 0.9rem;
+  font-weight: 600;
+  border-radius: 100px;
+  cursor: pointer;
+  transition: all var(--transition);
+  color: var(--text-color);
+  width: auto;
+  font-weight: bold;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+}
+
+.button:hover {
+  box-shadow: 0 4px 6px rgba(50, 50, 93, 0.11), 0 1px 3px rgba(0, 0, 0, 0.08);
+}
+
+.button.primary {
+  background-color: var(--primary-color);
+  border: 2px solid var(--primary-color);
+}
+
+.button.primary:hover {
+  background: #7173fd;
+}
+
+.button.secondary {
+  border: 2px solid var(--primary-color);
+  overflow: hidden;
+  position: relative;
+}
+
+.button.secondary:hover {
+  background: var(--primary-color);
+}
+
+.page-wrapper {
+  width: 100%;
+  background: var(--background-color);
+}

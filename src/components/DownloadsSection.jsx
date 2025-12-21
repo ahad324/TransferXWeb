@@ -1,9 +1,10 @@
+"use client";
 import React, { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { IoLogoWindows, IoCloudDownloadOutline, IoServerOutline, IoLaptopOutline } from "react-icons/io5";
 import { FiCheckCircle } from "react-icons/fi";
 import { ClientImages, ServerImages } from "@src/Images"; // Ensure correct import path
-import { ImageSwiper } from "../components/ui/ImageSwipper";
+import { ImageSwiper } from "./ui/ImageSwipper";
 import "../styles/DownloadsSection.css";
 
 const DownloadsSection = () => {

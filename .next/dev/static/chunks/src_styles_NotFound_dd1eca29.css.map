@@ -1,0 +1,6 @@
+{
+  "version": 3,
+  "sources": [],
+  "sections": [
+    {"offset": {"line": 1, "column": 0}, "map": {"version":3,"sources":["file:///G:/Ahad/REACT/TransferX/TransferXweb/src/styles/NotFound.css"],"sourcesContent":[".not-found {\r\n  display: flex;\r\n  flex-direction: column;\r\n  align-items: center;\r\n  justify-content: center;\r\n  height: -moz-fit-content;\r\n  height: fit-content;\r\n  text-align: center;\r\n  padding: 50px;\r\n}\r\n\r\n.not-found-svg img {\r\n  max-width: 100%;\r\n  height: auto;\r\n}\r\n\r\n.not-found-message {\r\n  font-size: 1.2rem;\r\n  margin-bottom: 30px;\r\n}\r\n\r\n@media (max-width:768px) {\r\n  .not-found{\r\n    margin-bottom: 3rem;\r\n  }\r\n}\r\n/* Responsive styles */\r\n@media (max-width: 600px) {\r\n  .not-found-title {\r\n    font-size: 2rem;\r\n  }\r\n\r\n  .not-found-message {\r\n    font-size: 1rem;\r\n  }\r\n}\r\n"],"names":[],"mappings":"AAAA;;;;;;;;;;AAWA;;;;;AAKA;;;;;AAKA;EACE;;;;;AAKF;EACE;;;;EAIA"}}]
+}

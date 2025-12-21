@@ -1,39 +1,27 @@
-import client1 from "/assets/Images/client/1st.webp";
-import client2 from "/assets/Images/client/2nd.webp";
-import client3 from "/assets/Images/client/3rd.webp";
-import client4 from "/assets/Images/client/4th.webp";
-
-export const ClientImages = [client1, client2, client3, client4];
-
-import server1 from "/assets/Images/server/1st.webp";
-import server2 from "/assets/Images/server/2nd.webp";
-import server3 from "/assets/Images/server/3rd.webp";
-import server4 from "/assets/Images/server/4th.webp";
-import server5 from "/assets/Images/server/5th.webp";
-
-export const ServerImages = [server1, server2, server3, server4, server5];
-
-import rocketImg from "/assets/FeaturesImages/rocket.svg";
-import networkImg from "/assets/FeaturesImages/network.svg";
-import zipImg from "/assets/FeaturesImages/zip.svg";
-import updatesImg from "/assets/FeaturesImages/updates.svg";
-import serverImg from "/assets/FeaturesImages/server.svg";
-import userInterfaceImg from "/assets/FeaturesImages/userInterface.svg";
-
-export const FeaturesImages = [
-  rocketImg,
-  networkImg,
-  zipImg,
-  updatesImg,
-  serverImg,
-  userInterfaceImg,
+export const ClientImages = [
+  "/assets/Images/client/1st.webp",
+  "/assets/Images/client/2nd.webp",
+  "/assets/Images/client/3rd.webp",
+  "/assets/Images/client/4th.webp",
 ];
 
-import computer404 from "/assets/404-computer.svg";
-export const NotFoundImage = computer404;
+export const ServerImages = [
+  "/assets/Images/server/1st.webp",
+  "/assets/Images/server/2nd.webp",
+  "/assets/Images/server/3rd.webp",
+  "/assets/Images/server/4th.webp",
+  "/assets/Images/server/5th.webp",
+];
 
-import profileImage from "/assets/me.png";
-export const myImage = profileImage;
+export const FeaturesImages = [
+  "/assets/FeaturesImages/rocket.svg",
+  "/assets/FeaturesImages/network.svg",
+  "/assets/FeaturesImages/zip.svg",
+  "/assets/FeaturesImages/updates.svg",
+  "/assets/FeaturesImages/server.svg",
+  "/assets/FeaturesImages/userInterface.svg",
+];
 
-import logo from "/assets/logo.svg";
-export const Logo = logo;
+export const NotFoundImage = "/assets/404-computer.svg";
+export const myImage = "/assets/me.png";
+export const Logo = "/assets/logo.svg";

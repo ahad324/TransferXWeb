@@ -1,0 +1,6 @@
+{
+  "version": 3,
+  "sources": [],
+  "sections": [
+    {"offset": {"line": 1, "column": 0}, "map": {"version":3,"sources":["turbopack:///[project]/src/styles/ShinyText.css"],"sourcesContent":[".shiny-text {\r\n  color: #e9e4e4a4; /* Adjust this color to change intensity/style */\r\n  background: linear-gradient(\r\n    120deg,\r\n    rgba(255, 255, 255, 0) 40%,\r\n    rgba(255, 255, 255, 0.8) 50%,\r\n    rgba(255, 255, 255, 0) 60%\r\n  );\r\n  background-size: 200% 100%;\r\n  -webkit-background-clip: text;\r\n  background-clip: text;\r\n  display: inline-block;\r\n  animation: shine 5s linear infinite;\r\n}\r\n\r\n@keyframes shine {\r\n  0% {\r\n    background-position: 100%;\r\n  }\r\n  100% {\r\n    background-position: -100%;\r\n  }\r\n}\r\n\r\n.shiny-text.disabled {\r\n  animation: none;\r\n}\r\n"],"names":[],"mappings":"AAAA;;;;;;;;;AAeA;;;;;;;;;;AASA"}}]
+}

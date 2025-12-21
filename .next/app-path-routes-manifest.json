@@ -1,0 +1,14 @@
+{
+  "/_global-error/page": "/_global-error",
+  "/_not-found/page": "/_not-found",
+  "/about/page": "/about",
+  "/contact/page": "/contact",
+  "/docs/installer-error-codes/page": "/docs/installer-error-codes",
+  "/download/page": "/download",
+  "/how-transferx-works/page": "/how-transferx-works",
+  "/page": "/",
+  "/privacy-policy/page": "/privacy-policy",
+  "/robots.txt/route": "/robots.txt",
+  "/sitemap.xml/route": "/sitemap.xml",
+  "/solutions/page": "/solutions"
+}

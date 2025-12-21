@@ -1,0 +1,70 @@
+/* [project]/src/styles/Footer.css [app-client] (css) */
+.footer-container {
+  background-color: var(--secondary-bg);
+  margin-top: auto;
+}
+
+.footer-heading {
+  text-transform: uppercase;
+  letter-spacing: .05em;
+  color: var(--text-color);
+  opacity: .9;
+  margin-bottom: 1.25rem;
+  font-size: .95rem;
+  font-weight: 700;
+}
+
+.footer-links {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.footer-links li {
+  margin-bottom: .75rem;
+}
+
+.footer-links a {
+  color: var(--text-color);
+  opacity: .7;
+  font-size: .95rem;
+  text-decoration: none;
+  transition: all .2s;
+  display: inline-block;
+  position: relative;
+}
+
+.footer-links a:hover {
+  opacity: 1;
+  color: var(--primary-color);
+  transform: translateX(4px);
+}
+
+.social-icon {
+  background-color: var(--card-bg);
+  width: 40px;
+  height: 40px;
+  color: var(--text-color);
+  border: 1px solid var(--border-color);
+  border-radius: 50%;
+  justify-content: center;
+  align-items: center;
+  transition: all .3s;
+  display: flex;
+}
+
+.social-icon:hover {
+  background-color: var(--primary-color);
+  color: #fff;
+  border-color: var(--primary-color);
+  box-shadow: 0 4px 12px rgba(var(--primary-rgb, 0, 123, 255), .3);
+  transform: translateY(-3px);
+}
+
+@media (max-width: 768px) {
+  .footer-content {
+    text-align: left;
+  }
+}
+
+/*# sourceMappingURL=src_styles_Footer_css_bad6b30c._.single.css.map*/

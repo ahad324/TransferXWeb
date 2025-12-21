@@ -1,6 +1,7 @@
+"use client";
 import React from "react";
 import { motion } from "framer-motion";
-import { containerVariants } from "../../AnimationVariants";
+import { containerVariants } from "@src/AnimationVariants";
 import { twMerge } from "tailwind-merge";
 
 const SectionWrapper = ({

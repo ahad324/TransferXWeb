@@ -1,0 +1,249 @@
+/* [project]/src/styles/DownloadsSection.css [app-client] (css) */
+.downloads-section {
+  padding: 6rem 0;
+  position: relative;
+}
+
+.downloads-container {
+  flex-direction: column;
+  align-items: center;
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 0 1.5rem;
+  display: flex;
+}
+
+.downloads-header {
+  text-align: center;
+  margin-bottom: 3rem;
+}
+
+.section-title {
+  background: linear-gradient(to right, #fff, #94a3b8);
+  color: #0000;
+  -webkit-background-clip: text;
+  background-clip: text;
+  margin-bottom: .5rem;
+  font-size: 2.5rem;
+}
+
+.section-subtitle {
+  color: var(--text-secondary, #fff9);
+  font-size: 1.1rem;
+}
+
+.tabs-container {
+  background: var(--input-background);
+  border: 1px solid #ffffff0d;
+  border-radius: 99px;
+  gap: .5rem;
+  width: 320px;
+  margin-bottom: 2.5rem;
+  padding: .4rem;
+  display: flex;
+  position: relative;
+}
+
+.tab-btn {
+  color: #fff9;
+  cursor: pointer;
+  z-index: 2;
+  background: none;
+  border: none;
+  border-radius: 99px;
+  flex: 1;
+  justify-content: center;
+  align-items: center;
+  gap: .5rem;
+  padding: .8rem 1rem;
+  font-size: .95rem;
+  font-weight: 600;
+  transition: color .3s;
+  display: flex;
+  position: relative;
+}
+
+.tab-btn.active {
+  color: #fff;
+}
+
+.tab-indicator {
+  background: var(--primary-color, #00e0ff);
+  z-index: 1;
+  border-radius: 99px;
+  position: absolute;
+  top: 4px;
+  bottom: 4px;
+  left: 4px;
+  box-shadow: 0 2px 10px #00e0ff4d;
+}
+
+.tab-icon {
+  font-size: 1.2rem;
+}
+
+.command-center-card {
+  background: var(--input-background);
+  border: 1px solid #ffffff0a;
+  border-radius: 2rem;
+  width: 100%;
+  min-height: 500px;
+  padding: 2.5rem;
+  position: relative;
+  overflow: hidden;
+}
+
+.content-grid {
+  grid-template-columns: 1.2fr 1fr;
+  align-items: center;
+  gap: 3rem;
+  display: grid;
+}
+
+.visual-column {
+  position: relative;
+}
+
+.glow-container {
+  border: 1px solid #ffffff0d;
+  border-radius: 12px;
+  transition: all .5s;
+  position: relative;
+  overflow: hidden;
+  box-shadow: 0 20px 50px #00e0ff26;
+}
+
+.info-column {
+  flex-direction: column;
+  justify-content: center;
+  display: flex;
+}
+
+.info-header {
+  align-items: center;
+  gap: 1rem;
+  margin-bottom: 1rem;
+  display: flex;
+}
+
+.info-header h3 {
+  background: linear-gradient(90deg, #fff, #fffc);
+  -webkit-text-fill-color: transparent;
+  -webkit-background-clip: text;
+  margin: 0;
+  font-size: 2rem;
+  font-weight: 700;
+}
+
+.version-badge {
+  color: #ffffffb3;
+  background: #ffffff1a;
+  border: 1px solid #ffffff0d;
+  border-radius: 6px;
+  padding: 2px 8px;
+  font-size: .75rem;
+}
+
+.app-desc-text {
+  color: #ffffffe6;
+  margin-bottom: 2rem;
+  font-size: 1.05rem;
+  line-height: 1.6;
+}
+
+.features-mini-grid {
+  grid-template-columns: 1fr 1fr;
+  gap: .8rem;
+  margin-bottom: 2.5rem;
+  display: grid;
+}
+
+.feat-pill {
+  color: #fffc;
+  background: #ffffff08;
+  border: 1px solid #ffffff05;
+  border-radius: 8px;
+  align-items: center;
+  gap: .6rem;
+  padding: .6rem 1rem;
+  font-size: .9rem;
+  display: flex;
+}
+
+.feat-icon {
+  color: var(--primary-color);
+  flex-shrink: 0;
+}
+
+.action-row {
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  display: flex;
+}
+
+.os-note {
+  text-align: center;
+  color: #fffc;
+  margin-top: .8rem;
+  font-size: .8rem;
+}
+
+@media (max-width: 900px) {
+  .downloads-section {
+    padding: 4rem 0;
+  }
+
+  .content-grid {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+
+  .visual-column {
+    order: -1;
+  }
+
+  .command-center-card {
+    padding: 2rem;
+  }
+
+  .section-title {
+    font-size: 2rem;
+  }
+}
+
+@media (max-width: 600px) {
+  .downloads-container {
+    padding: 0 1rem;
+  }
+
+  .tabs-container {
+    width: 100%;
+    max-width: 320px;
+  }
+
+  .command-center-card {
+    border-radius: 1.5rem;
+    padding: 1.5rem;
+  }
+
+  .features-mini-grid {
+    grid-template-columns: 1fr;
+    gap: .6rem;
+  }
+
+  .info-header h3 {
+    font-size: 1.5rem;
+  }
+
+  .app-desc-text {
+    font-size: 1rem;
+  }
+
+  .btn-download-main {
+    padding: .8rem;
+    font-size: 1rem;
+  }
+}
+
+/*# sourceMappingURL=src_styles_DownloadsSection_8c07783f.css.map*/

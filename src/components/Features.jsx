@@ -1,9 +1,10 @@
+"use client";
 import React from "react";
 import { motion } from "framer-motion";
-import { textVariants } from "../AnimationVariants";
-import { HoverEffect } from "./ui/HoverEffect";
-import { FeaturesImages } from "../Images";
-import "../styles/Features.css";
+import { textVariants } from "@src/AnimationVariants";
+import { HoverEffect } from "@components/ui/HoverEffect";
+import { FeaturesImages } from "@src/Images";
+import "@styles/Features.css";
 
 const Features = () => {
   const features = [

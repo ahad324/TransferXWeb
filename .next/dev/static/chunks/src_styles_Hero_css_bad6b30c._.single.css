@@ -1,0 +1,64 @@
+/* [project]/src/styles/Hero.css [app-client] (css) */
+.hero {
+  justify-content: center;
+  align-items: center;
+  display: flex;
+}
+
+.hero p {
+  max-width: 600px;
+  margin-bottom: 2rem;
+  margin-left: auto;
+  margin-right: auto;
+  font-size: clamp(1rem, .8rem + 1vw, 1.25rem);
+}
+
+.hero-content {
+  z-index: 1;
+  flex: 1;
+  max-width: 50%;
+  padding-top: 1rem;
+}
+
+.hero-cta {
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+  margin-bottom: 2rem;
+  display: flex;
+}
+
+.hero-description {
+  color: var(--text-color);
+  opacity: .9;
+  max-width: 600px;
+  margin-bottom: 2rem;
+  margin-left: auto;
+  margin-right: auto;
+  font-size: clamp(.9rem, 1.8vw, 1.1rem);
+}
+
+@media (max-width: 1024px) {
+  .hero-description {
+    max-width: 100%;
+  }
+
+  .hero {
+    text-align: center;
+    flex-direction: column;
+    padding: 0 1rem 0;
+  }
+
+  .hero-content {
+    max-width: 100%;
+  }
+}
+
+@media (max-width: 480px) {
+  .hero-cta {
+    flex-direction: column;
+    width: 100%;
+  }
+}
+
+/*# sourceMappingURL=src_styles_Hero_css_bad6b30c._.single.css.map*/
