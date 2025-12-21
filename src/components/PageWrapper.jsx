@@ -1,6 +1,7 @@
+"use client";
 import React from "react";
 import { motion } from "framer-motion";
-import { pageVariants } from "../AnimationVariants";
+import { pageVariants } from "@src/AnimationVariants";
 
 const PageWrapper = ({ children, className = "" }) => {
     return (

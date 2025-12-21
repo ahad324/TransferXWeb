@@ -1,8 +1,7 @@
-import React from "react";
-import { Link } from "react-router-dom";
-import { Logo } from "../Images";
+import Link from "next/link";
+import { Logo } from "@src/Images";
 import { FaGithub, FaTwitter, FaLinkedin } from "react-icons/fa";
-import "../styles/Footer.css";
+import "@styles/Footer.css";
 
 const Footer = () => {
   return (
@@ -11,7 +10,7 @@ const Footer = () => {
 
         {/* Brand Section */}
         <div className="col-span-1 md:col-span-1 flex flex-col items-start">
-          <Link to="/" className="flex items-center gap-2 mb-4 group">
+          <Link href="/" className="flex items-center gap-2 mb-4 group">
             <img src={Logo} alt="TransferX Logo" className="w-10 h-10 rounded-lg group-hover:scale-105 transition-transform" />
             <span className="text-xl font-bold tracking-tight">TransferX</span>
           </Link>
@@ -32,10 +31,10 @@ const Footer = () => {
         <div className="col-span-1 flex flex-col">
           <h3 className="footer-heading">Product</h3>
           <ul className="footer-links">
-            <li><Link to="/">Home</Link></li>
-            <li><Link to="/how-transferx-works">How It Works</Link></li>
-            <li><Link to="/solutions">Solutions</Link></li>
-            <li><Link to="/download">Download</Link></li>
+            <li><Link href="/">Home</Link></li>
+            <li><Link href="/how-transferx-works">How It Works</Link></li>
+            <li><Link href="/solutions">Solutions</Link></li>
+            <li><Link href="/download">Download</Link></li>
           </ul>
         </div>
 
@@ -43,9 +42,9 @@ const Footer = () => {
         <div className="col-span-1 flex flex-col">
           <h3 className="footer-heading">Company & Legal</h3>
           <ul className="footer-links">
-            <li><Link to="/about">About Us</Link></li>
-            <li><Link to="/contact">Contact</Link></li>
-            <li><Link to="/privacy-policy">Privacy Policy</Link></li>
+            <li><Link href="/about">About Us</Link></li>
+            <li><Link href="/contact">Contact</Link></li>
+            <li><Link href="/privacy-policy">Privacy Policy</Link></li>
           </ul>
         </div>
 

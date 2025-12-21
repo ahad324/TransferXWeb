@@ -1,13 +1,14 @@
+"use client";
 import React from "react";
-import "../styles/DevelopedBy.css";
-import { myImage } from "../Images";
+import "@styles/DevelopedBy.css";
+import { myImage } from "@src/Images";
 import { FaGithub, FaExternalLinkAlt } from "react-icons/fa";
 import { motion } from "framer-motion";
 import {
   textVariants,
   buttonVariants,
-} from "../AnimationVariants";
-import Button from "./ui/Button";
+} from "@src/AnimationVariants";
+import Button from "@components/ui/Button";
 
 const DevelopedBy = () => {
   const handleViewProjects = () => {

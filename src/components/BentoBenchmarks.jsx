@@ -1,8 +1,9 @@
+"use client";
 import React from "react";
 import { motion } from "framer-motion";
-import { containerVariants, textVariants } from "../AnimationVariants";
+import { containerVariants, textVariants } from "@src/AnimationVariants";
 import { FiCpu, FiHardDrive, FiWifi, FiZap, FiServer, FiActivity, FiShield, FiGlobe, FiClock, FiLock } from "react-icons/fi";
-import "../styles/BentoBenchmarks.css";
+import "@styles/BentoBenchmarks.css";
 
 const CircularGauge = ({ value, max, label, subLabel, color, delay, size = "normal" }) => {
     const radius = size === "large" ? 45 : 35;

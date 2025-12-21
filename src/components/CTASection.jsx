@@ -1,10 +1,11 @@
+"use client";
 import React from "react";
-import { Link } from "react-router-dom";
+import Link from "next/link";
 import { motion } from "framer-motion";
 import { FiDownloadCloud } from "react-icons/fi";
-import Button from "./ui/Button";
-import { buttonVariants, textVariants } from "../AnimationVariants";
-import SectionWrapper from "./ui/SectionWrapper";
+import Button from "@components/ui/Button";
+import { buttonVariants, textVariants } from "@src/AnimationVariants";
+import SectionWrapper from "@components/ui/SectionWrapper";
 
 const CTASection = () => {
     return (
@@ -39,7 +40,7 @@ const CTASection = () => {
                     viewport={{ once: true }}
                     className="flex justify-center"
                 >
-                    <Link to="/download">
+                    <Link href="/download">
                         <Button
                             variants={buttonVariants}
                             className="px-8 py-4 text-lg"

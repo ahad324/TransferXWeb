@@ -1,12 +1,13 @@
+"use client";
 import React, { useState } from "react";
 import { LuLayoutGrid, LuHome, LuHelpCircle, LuRocket, LuInfo, LuMail } from "react-icons/lu";
 import { FiDownloadCloud } from "react-icons/fi";
 import { IoClose } from "react-icons/io5";
-import { NavLink } from "react-router-dom";
-import "../styles/Header.css";
-import { Logo } from "../Images";
+import NavLink from "@components/ui/NavLink";
+import "@styles/Header.css";
+import { Logo } from "@src/Images";
 import { motion } from "framer-motion";
-import { menuVariants } from "../AnimationVariants";
+import { menuVariants } from "@src/AnimationVariants";
 
 const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);

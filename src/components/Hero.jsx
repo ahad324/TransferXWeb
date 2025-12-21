@@ -1,18 +1,18 @@
-import React from "react";
-import { Link } from "react-router-dom";
+"use client";
+import Link from "next/link";
 import { motion } from "framer-motion";
 import "../styles/Hero.css";
 import {
   buttonVariants,
   textVariants,
-} from "../AnimationVariants";
+} from "@src/AnimationVariants";
 import { FiDownloadCloud } from "react-icons/fi";
 import { HiOutlineLightBulb } from "react-icons/hi";
 
-import { SparklesCore } from "./ui/Sparkles";
-import ShinyText from "./ui/ShinyText";
-import SectionWrapper from "./ui/SectionWrapper";
-import Button from "./ui/Button";
+import { SparklesCore } from "@components/ui/Sparkles";
+import ShinyText from "@components/ui/ShinyText";
+import SectionWrapper from "@components/ui/SectionWrapper";
+import Button from "@components/ui/Button";
 
 const Hero = () => {
   return (
@@ -47,7 +47,7 @@ const Hero = () => {
             creative studios, and secure facilities.
           </motion.p>
           <div className="hero-cta">
-            <Link to="/download">
+            <Link href="/download">
               <Button
                 variants={buttonVariants}
                 name="Download_TransferX"
@@ -56,7 +56,7 @@ const Hero = () => {
                 Start Collecting
               </Button>
             </Link>
-            <Link to="/how-transferx-works">
+            <Link href="/how-transferx-works">
               <Button
                 variant="secondary"
                 variants={buttonVariants}
