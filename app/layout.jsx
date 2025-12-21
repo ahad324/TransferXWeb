@@ -36,11 +36,13 @@ export const metadata = {
 export default function RootLayout({ children }) {
     return (
         <html lang="en" className={`${poppins.variable} ${lobster.variable}`}>
-            <body className="antialiased">
+            <body className="antialiased flex flex-col min-h-screen">
                 <ClientLayout>
                     <Header />
                     <ScrollToTop />
-                    {children}
+                    <main className="flex-grow min-h-screen">
+                        {children}
+                    </main>
                     <Footer />
                 </ClientLayout>
             </body>
