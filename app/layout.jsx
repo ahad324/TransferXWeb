@@ -28,6 +28,9 @@ export const metadata = {
     alternates: {
         canonical: "https://transferx.netlify.app/",
     },
+    verification: {
+        google: "_t_voY5kuMVEL4CtmBOVDuZ0j6_MRBKwBxG5mDwkK90",
+    },
 };
 
 export default function RootLayout({ children }) {
