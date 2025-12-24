@@ -12,20 +12,20 @@ const DownloadsSection = () => {
 
     const features = {
         client: [
-            "Smart Resume Support",
-            "Auto Folder Zipping",
-            "Drag & Drop Upload",
+            "Adaptive Speed Engine",
+            "Automatic Compression",
+            "Drag & Drop Support",
             "Zero-Config Discovery",
-            "Dark/Light Theme",
-            "Hyper-Fast LAN Speed"
+            "Dark & Light Themes",
+            "High-Performance LAN"
         ],
         receiver: [
             "Live Transfer Dashboard",
-            "Connection Management",
-            "Activity Logging (DB)",
+            "Client Management",
+            "Full Activity Logging",
             "Air-Gapped Security",
-            "Customizable Limits",
-            "Admin Controls"
+            "Bandwidth Control",
+            "Admin Privileges"
         ]
     };
 
@@ -96,7 +96,7 @@ const DownloadsSection = () => {
 
                                 <p className="app-desc-text">
                                     {activeTab === 'client'
-                                        ? "The ultimate sender/receiver for daily use. Zero setup required. Just launch and transfer."
+                                        ? "The ultimate sender for daily use. Zero setup required. Just launch and transfer."
                                         : "The central nervous system. Monitor traffic, manage connections, and secure your network layer."
                                     }
                                 </p>

@@ -9,9 +9,9 @@ import "@styles/Features.css";
 const Features = () => {
   const features = [
     {
-      title: "Smart Resume",
+      title: "Adaptive Speed",
       description:
-        "Network interrupted? No problem. TransferX automatically resumes uploads exactly where they left off, ensuring no data is ever lost.",
+        "Fluctuating network? TransferX intelligently adapts to your bandwidth in real-time, squeezing every bit of performance for the fastest possible transfer.",
       image: FeaturesImages[0],
     },
     {

@@ -169,28 +169,65 @@
 }
 
 /* Feat Grid */
+/* Feat Grid */
 .features-mini-grid {
     display: grid;
     grid-template-columns: 1fr 1fr;
-    gap: 0.8rem;
+    gap: 1rem;
+    /* Slightly more gap for breathable layout */
     margin-bottom: 2.5rem;
 }
 
 .feat-pill {
     display: flex;
     align-items: center;
-    gap: 0.6rem;
-    font-size: 0.9rem;
-    color: rgba(255, 255, 255, 0.8);
+    gap: 0.75rem;
+    /* Reduced gap slightly */
+    font-size: 0.95rem;
+    font-weight: 500;
+    color: rgba(255, 255, 255, 0.9);
     background: rgba(255, 255, 255, 0.03);
-    padding: 0.6rem 1rem;
-    border-radius: 8px;
-    border: 1px solid rgba(255, 255, 255, 0.02);
+    padding: 0.75rem 1rem;
+    border-radius: 12px;
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    cursor: default;
+    position: relative;
+    overflow: hidden;
+    text-align: left;
+    /* FORCE fix for awkward spacing */
+    line-height: 1.35;
+    /* Better readability for wrapped lines */
+}
+
+.feat-pill:hover {
+    background: rgba(255, 255, 255, 0.06);
+    border-color: rgba(255, 255, 255, 0.1);
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.feat-pill::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 2px;
+    height: 100%;
+    background: var(--primary-color, #00E0FF);
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.feat-pill:hover::before {
+    opacity: 1;
 }
 
 .feat-icon {
-    color: var(--primary-color);
+    color: var(--primary-color, #00E0FF);
     flex-shrink: 0;
+    font-size: 1.2rem;
+    filter: drop-shadow(0 0 5px rgba(0, 224, 255, 0.3));
 }
 
 /* Action Row */
