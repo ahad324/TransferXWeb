@@ -35,7 +35,7 @@ const Features = () => {
     {
       title: "Live Transfer Dashboard",
       description:
-        "Watch transfers in real-time. The server dashboard updates live, giving you total visibility over incoming data flow.",
+        "Watch transfers in real-time. The receiver dashboard updates live, giving you total visibility over incoming data flow.",
       image: FeaturesImages[4],
     },
     {

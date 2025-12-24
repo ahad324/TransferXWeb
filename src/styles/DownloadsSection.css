@@ -268,3 +268,15 @@
         padding: 0.8rem;
     }
 }
+
+
+/* Official Store Badge Link */
+.store-badge-link {
+    display: inline-block;
+    transition: transform 0.2s ease, opacity 0.2s ease;
+}
+
+.store-badge-link:hover {
+    transform: scale(1.05);
+    opacity: 0.9;
+}

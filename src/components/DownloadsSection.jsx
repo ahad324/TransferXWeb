@@ -3,12 +3,12 @@ import React, { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { IoLogoWindows, IoCloudDownloadOutline, IoServerOutline, IoLaptopOutline } from "react-icons/io5";
 import { FiCheckCircle } from "react-icons/fi";
-import { ClientImages, ServerImages } from "@src/Images"; // Ensure correct import path
+import { ClientImages, ReceiverImages } from "@src/Images"; // Ensure correct import path
 import { ImageSwiper } from "./ui/ImageSwipper";
 import "../styles/DownloadsSection.css";
 
 const DownloadsSection = () => {
-    const [activeTab, setActiveTab] = useState("client"); // 'client' | 'server'
+    const [activeTab, setActiveTab] = useState("client"); // 'client' | 'receiver'
 
     const features = {
         client: [
@@ -19,7 +19,7 @@ const DownloadsSection = () => {
             "Dark/Light Theme",
             "Hyper-Fast LAN Speed"
         ],
-        server: [
+        receiver: [
             "Live Transfer Dashboard",
             "Connection Management",
             "Activity Logging (DB)",
@@ -30,8 +30,8 @@ const DownloadsSection = () => {
     };
 
     const downloadLinks = {
-        client: "https://github.com/ahad324/TransferXClient/releases/download/Installer/TransferXClient.exe",
-        server: "https://github.com/ahad324/TransferXServer/releases/download/Installer/TransferXServer.exe"
+        client: "https://apps.microsoft.com/detail/9PLN8SM7NKTD?referrer=appbadge&mode=mid",
+        receiver: "https://apps.microsoft.com/detail/9N36MFVZCHW1?referrer=appbadge&mode=mid"
     };
 
     return (
@@ -50,13 +50,13 @@ const DownloadsSection = () => {
                         className={`tab-btn ${activeTab === 'client' ? 'active' : ''}`}
                         onClick={() => setActiveTab('client')}
                     >
-                        <IoLaptopOutline className="tab-icon" /> Client App
+                        <IoLaptopOutline className="tab-icon" /> Client
                     </button>
                     <button
-                        className={`tab-btn ${activeTab === 'server' ? 'active' : ''}`}
-                        onClick={() => setActiveTab('server')}
+                        className={`tab-btn ${activeTab === 'receiver' ? 'active' : ''}`}
+                        onClick={() => setActiveTab('receiver')}
                     >
-                        <IoServerOutline className="tab-icon" /> Server App
+                        <IoServerOutline className="tab-icon" /> Receiver
                     </button>
                     {/* Sliding Background for Tabs */}
                     <motion.div
@@ -84,14 +84,14 @@ const DownloadsSection = () => {
                             {/* Left: Interactive Preview / Image */}
                             <div className="visual-column">
                                 <div className={`glow-container ${activeTab}`}>
-                                    <ImageSwiper images={activeTab === 'client' ? ClientImages : ServerImages} />
+                                    <ImageSwiper images={activeTab === 'client' ? ClientImages : ReceiverImages} />
                                 </div>
                             </div>
 
                             {/* Right: Info & Actions */}
                             <div className="info-column">
                                 <div className="info-header">
-                                    <h3>{activeTab === 'client' ? "TransferX Client" : "TransferX Server"}</h3>
+                                    <h3>{activeTab === 'client' ? "TransferX Client" : "TransferX Receiver"}</h3>
                                 </div>
 
                                 <p className="app-desc-text">
@@ -111,13 +111,20 @@ const DownloadsSection = () => {
                                 </div>
 
                                 <div className="action-row">
-                                    <button
-                                        className={`button primary ${activeTab}`}
-                                        onClick={() => window.open(downloadLinks[activeTab], "_blank")}
+                                    <a
+                                        href={downloadLinks[activeTab]}
+                                        target="_blank"
+                                        rel="noopener noreferrer"
+                                        className="store-badge-link"
                                     >
-                                        <IoLogoWindows size={22} />
-                                        <span>Download for Windows</span>
-                                    </button>
+                                        <img
+                                            src="https://get.microsoft.com/images/en-us%20light.svg"
+                                            alt="Get it from Microsoft Store"
+                                            width="200"
+                                            height="60"
+                                            style={{ height: 'auto' }}
+                                        />
+                                    </a>
                                     <p className="os-note">Requires Windows 10/11 (64-bit)</p>
                                 </div>
                             </div>
