@@ -120,7 +120,7 @@ const DownloadsSection = () => {
                                         <img
                                             src="https://get.microsoft.com/images/en-us%20light.svg"
                                             alt="Get it from Microsoft Store"
-                                            width="200"
+                                            width="250"
                                             height="60"
                                             style={{ height: 'auto' }}
                                         />
