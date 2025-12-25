@@ -64,7 +64,7 @@ const Solutions = () => {
               <Card
                 key={index}
                 variants={textVariants}
-                className="group relative overflow-hidden border-white/5 bg-white/5 hover:bg-white/10 hover:border-white/10 transition-all duration-300"
+                className="group relative overflow-hidden border-white/[0.2] bg-gray-800 hover:bg-gray-700 hover:border-slate-700 transition-all duration-300"
               >
                 {/* Hover Gradient Blob */}
                 <div className="absolute inset-0 bg-gradient-to-br from-[--primary-color]/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none" />
