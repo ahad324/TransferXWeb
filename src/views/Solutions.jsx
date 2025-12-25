@@ -38,46 +38,66 @@ const Solutions = () => {
   ];
 
   return (
-    <div className="page-wrapper">
-      <SectionWrapper>
+    <div className="page-wrapper relative overflow-hidden">
+      {/* Ambient Background Glow */}
+      <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[500px] h-[500px] bg-[--primary-color] opacity-5 blur-[120px] rounded-full pointer-events-none" />
 
-        <div className="max-w-6xl mx-auto">
-          <motion.div className="text-center mb-16" variants={textVariants}>
-            <h1 className="heading leading-tight mb-4">
-              One Tool, <span className="hero_name">Infinite Possibilities</span>
+      <SectionWrapper>
+        <div className="max-w-6xl mx-auto relative z-10">
+
+          {/* Hero Section */}
+          <motion.div className="text-center mb-20" variants={textVariants}>
+            <div className="inline-block mb-4 px-4 py-1.5 rounded-full border border-[--primary-color]/30 bg-[--primary-color]/10 text-[--primary-color] text-sm font-medium">
+              Use Cases
+            </div>
+            <h1 className="heading leading-tight mb-6">
+              One Tool, <span className="bg-clip-text text-transparent bg-gradient-to-r from-[--primary-color] to-blue-400">Infinite Possibilities</span>
             </h1>
-            <p className="text-lg max-w-2xl mx-auto opacity-90">
-              TransferX isn't just for exams. It's the universal standard for secure, high-speed, offline data collection.
+            <p className="text-lg md:text-xl max-w-2xl mx-auto opacity-80 leading-relaxed">
+              TransferX isn't just for exams. It's the universal standard for secure, high-speed, offline data collection across any industry.
             </p>
           </motion.div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+          {/* Feature Grid */}
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6 lg:gap-8">
             {useCases.map((useCase, index) => (
               <Card
                 key={index}
                 variants={textVariants}
+                className="group relative overflow-hidden border-white/5 bg-white/5 hover:bg-white/10 hover:border-white/10 transition-all duration-300"
               >
-                <div className="mb-6 p-4 rounded-full bg-[--bg-dark] w-fit group-hover:scale-110 transition-transform duration-300">
-                  {useCase.icon}
-                </div>
-                <h2 className="text-2xl font-bold mb-3">{useCase.title}</h2>
-                <p className="text-lg mb-4 leading-relaxed opacity-90">{useCase.desc}</p>
-                <div className="text-sm font-semibold text-blue-200 bg-[--primary-color]/10 py-2 px-4 rounded-full w-fit">
-                  {useCase.highlight}
+                {/* Hover Gradient Blob */}
+                <div className="absolute inset-0 bg-gradient-to-br from-[--primary-color]/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none" />
+
+                <div className="relative z-10">
+                  <div className="flex justify-between items-start mb-6">
+                    <div className="p-3 rounded-2xl bg-[--primary-color]/10 text-[--primary-color] group-hover:scale-110 transition-transform duration-300">
+                      {useCase.icon}
+                    </div>
+                    <div className="text-xs font-semibold text-blue-200 bg-blue-500/10 border border-blue-500/20 py-1.5 px-3 rounded-full">
+                      {useCase.highlight.replace("Perfect for: ", "")}
+                    </div>
+                  </div>
+
+                  <h2 className="text-2xl font-bold mb-3 text-white group-hover:text-[--primary-color] transition-colors">{useCase.title}</h2>
+                  <p className="text-base text-gray-400 leading-relaxed">{useCase.desc}</p>
                 </div>
               </Card>
             ))}
           </div>
 
+          {/* CTA Section */}
           <motion.div
-            className="mt-16 text-center bg-[--card-bg] p-10 rounded-3xl border border-[--border-color]"
+            className="mt-24 text-center relative overflow-hidden bg-gradient-to-b from-[--card-bg] to-transparent p-12 rounded-3xl border border-[--border-color]"
             variants={textVariants}
           >
-            <h2 className="text-3xl font-bold mb-4">Ready to secure your data flow?</h2>
-            <p className="mb-8 text-lg">Deploy TransferX in your environment today. No configuration required.</p>
+            <div className="absolute top-0 left-0 w-full h-[1px] bg-gradient-to-r from-transparent via-[--primary-color]/50 to-transparent" />
+
+            <h2 className="text-3xl md:text-4xl font-bold mb-4">Ready to secure your data flow?</h2>
+            <p className="mb-8 text-lg opacity-80 max-w-xl mx-auto">Deploy TransferX in your environment today. No configuration required.</p>
             <span className="flex justify-center">
               <Link href="/download">
-                <Button>
+                <Button className="shadow-2xl shadow-[--primary-color]/20">
                   <LuRocket size={20} /> Get Started Now
                 </Button>
               </Link>
