@@ -51,7 +51,7 @@ const Solutions = () => {
               Use Cases
             </div>
             <h1 className="heading leading-tight mb-6">
-              One Tool, <span className="bg-clip-text text-transparent bg-gradient-to-r from-[--primary-color] to-blue-400">Infinite Possibilities</span>
+              One Tool, <span className="hero_name">Infinite Possibilities</span>
             </h1>
             <p className="text-lg md:text-xl max-w-2xl mx-auto opacity-80 leading-relaxed">
               TransferX isn't just for exams. It's the universal standard for secure, high-speed, offline data collection across any industry.
