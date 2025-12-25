@@ -29,7 +29,7 @@ const Footer = () => {
 
         {/* Links - Product */}
         <div className="col-span-1 flex flex-col">
-          <h3 className="footer-heading">Product</h3>
+          <h2 className="footer-heading">Product</h2>
           <ul className="footer-links">
             <li><Link href="/">Home</Link></li>
             <li><Link href="/how-transferx-works">How It Works</Link></li>
@@ -40,7 +40,7 @@ const Footer = () => {
 
         {/* Links - Company/Legal */}
         <div className="col-span-1 flex flex-col">
-          <h3 className="footer-heading">Company & Legal</h3>
+          <h2 className="footer-heading">Company & Legal</h2>
           <ul className="footer-links">
             <li><Link href="/about">About Us</Link></li>
             <li><Link href="/contact">Contact</Link></li>
@@ -51,7 +51,7 @@ const Footer = () => {
         {/* Newsletter / CTA (Optional, simplified to tagline for now) */}
         <div className="col-span-1 flex flex-col items-start md:items-end">
           <div className="bg-[--card-bg] p-4 rounded-xl border border-[--border-color] w-full text-center md:text-left">
-            <h3 className="font-semibold mb-2 text-white">Stay Secure.</h3>
+            <h2 className="font-semibold mb-2 text-white">Stay Secure.</h2>
             <p className="text-sm opacity-80">
               TransferX encrypts your local transfers with mTLS 1.3. Your privacy is our code.
             </p>

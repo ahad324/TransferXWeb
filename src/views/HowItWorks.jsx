@@ -59,11 +59,11 @@ const HowItWorks = () => {
       ),
     },
     {
-      title: "Silent Auto-Updates",
+      title: "Microsoft Store Secured",
       icon: <FiShield size={30} className="text-[--primary-color]" />,
       content: (
         <p>
-          We keep your security tight. TransferX silently updates itself in the background when an internet connection is available, ensuring you always have the latest features and patches.
+          Downloaded directly from the <strong>Microsoft Store</strong>. Enjoy peace of mind with verified security, reliability, and seamless background updates managed automatically by Windows.
         </p>
       ),
     },

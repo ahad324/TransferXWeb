@@ -60,9 +60,9 @@ const Solutions = () => {
                 <div className="mb-6 p-4 rounded-full bg-[--bg-dark] w-fit group-hover:scale-110 transition-transform duration-300">
                   {useCase.icon}
                 </div>
-                <h3 className="text-2xl font-bold mb-3">{useCase.title}</h3>
+                <h2 className="text-2xl font-bold mb-3">{useCase.title}</h2>
                 <p className="text-lg mb-4 leading-relaxed opacity-90">{useCase.desc}</p>
-                <div className="text-sm font-semibold text-[--primary-color] bg-[--primary-color]/10 py-2 px-4 rounded-full w-fit">
+                <div className="text-sm font-semibold text-blue-200 bg-[--primary-color]/10 py-2 px-4 rounded-full w-fit">
                   {useCase.highlight}
                 </div>
               </Card>

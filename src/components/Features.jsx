@@ -23,7 +23,7 @@ const Features = () => {
     {
       title: "On-the-Fly Zipping",
       description:
-        "Drag a folder with 100 files, and TransferX zips them instantly before sending. Orderly, compressed, and efficient.",
+        "Drag and drop 100 files, and TransferX zips them instantly before sending. Orderly, compressed, and efficient.",
       image: FeaturesImages[2],
     },
     {
