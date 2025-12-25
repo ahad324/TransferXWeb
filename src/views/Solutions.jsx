@@ -47,7 +47,7 @@ const Solutions = () => {
 
           {/* Hero Section */}
           <motion.div className="text-center mb-20" variants={textVariants}>
-            <div className="inline-block mb-4 px-4 py-1.5 rounded-full border border-[--primary-color]/30 bg-[--primary-color]/10 text-[--primary-color] text-sm font-medium">
+            <div className="inline-block mb-4 px-4 py-1.5 rounded-full border border-blue-500/30 bg-blue-500/10 text-blue-200 text-sm font-medium">
               Use Cases
             </div>
             <h1 className="heading leading-tight mb-6">
