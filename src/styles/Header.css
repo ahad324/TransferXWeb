@@ -93,6 +93,7 @@ header {
     position: absolute;
     display: block;
     width: 100%;
+    left: 0;
   }
 
   /* Grid Layout for Mobile Menu */
@@ -103,8 +104,8 @@ header {
     gap: .5rem;
     align-items: center;
     justify-items: center;
-    position: fixed;
-    top: -500%;
+    position: absolute;
+    top: -500px;
     width: 100%;
     /* height: 100dvh; */
     z-index: -1;
@@ -120,7 +121,7 @@ header {
 
   .nav-links.active ul {
     opacity: 1;
-    top: 110%;
+    top: calc(100% + 30px);
   }
 
   .nav-links li {
