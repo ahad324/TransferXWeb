@@ -61,7 +61,7 @@ const Footer = () => {
 
       <div className="footer-bottom max-w-7xl mx-auto px-6 mt-2 pt-2 pb-6 text-left">
         <p className="text-sm opacity-60">
-          &copy; 2025 TransferX Pk. All rights reserved.
+          &copy; 2025 TransferX. All rights reserved.
         </p>
       </div>
     </footer>
