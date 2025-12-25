@@ -12,7 +12,7 @@ const Footer = () => {
         <div className="col-span-1 md:col-span-1 flex flex-col items-start">
           <Link href="/" className="flex items-center gap-2 mb-4 group">
             <img src={Logo} alt="TransferX Logo" className="w-10 h-10 rounded-lg group-hover:scale-105 transition-transform" />
-            <span className="text-xl font-bold tracking-tight">TransferX</span>
+            <span className="logo text-xl font-bold tracking-tight">TransferX</span>
           </Link>
           <p className="text-sm opacity-70 mb-6 leading-relaxed">
             The ultimate offline-first file sharing solution. Secure, fast, and private transfers for your local network.
