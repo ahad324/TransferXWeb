@@ -79,7 +79,7 @@ const Solutions = () => {
                     </div>
                   </div>
 
-                  <h2 className="text-2xl font-bold mb-3 text-white group-hover:text-[--primary-color] transition-colors">{useCase.title}</h2>
+                  <h2 className="text-2xl font-bold mb-3 text-white">{useCase.title}</h2>
                   <p className="text-base text-gray-400 leading-relaxed">{useCase.desc}</p>
                 </div>
               </Card>
