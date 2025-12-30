@@ -42,7 +42,7 @@ const Footer = () => {
         <div className="col-span-1 flex flex-col">
           <h2 className="footer-heading">Company & Legal</h2>
           <ul className="footer-links">
-            <li><Link href="/about">About Us</Link></li>
+            <li><Link href="/about">About</Link></li>
             <li><Link href="/contact">Contact</Link></li>
             <li><Link href="/privacy-policy">Privacy Policy</Link></li>
           </ul>

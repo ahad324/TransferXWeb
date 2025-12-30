@@ -1,122 +1,158 @@
 /* Base Layout */
 .about-section {
-    padding: 6rem 0;
+    padding: 6rem 0 8rem;
     position: relative;
-    overflow: hidden;
+    overflow: visible;
 }
 
-/* Glass Card Container */
-.profile-card-glass {
-    background: rgba(31, 41, 55, 0.4);
-    backdrop-filter: blur(16px);
-    -webkit-backdrop-filter: blur(16px);
-    border: 1px solid rgba(255, 255, 255, 0.05);
-    border-radius: 2rem;
-    padding: 4rem 2rem;
-    max-width: 900px;
+.dev-card-wrapper {
+    position: relative;
+    width: 340px;
     margin: 0 auto;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    text-align: center;
-    position: relative;
-    box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5);
+    perspective: 1000px;
 }
 
-/* Avatar Styling */
+/* 3D Card */
+.dev-card-3d {
+    background: #0B0E14;
+    /* Solid, deep matte black/blue */
+    border-radius: 2.5rem;
+    position: relative;
+    z-index: 10;
+    box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.7);
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    /* Subtle border */
+    overflow: visible;
+    transition: transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.dev-card-3d:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 40px 60px -12px rgba(0, 0, 0, 0.8);
+}
+
+/* Avatar Container positioned absolutely at top center */
 .avatar-container {
-    position: relative;
-    width: 180px;
-    height: 180px;
-    margin: 0 auto 2rem;
+    position: absolute;
+    top: -75px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 150px;
+    height: 150px;
+    z-index: 20;
+    /* No overflow hidden! We want the image to break out */
 }
 
-.profile-avatar {
+/* The visual Circle background */
+.circle-bg {
+    position: absolute;
+    bottom: 0;
+    left: 0;
     width: 100%;
     height: 100%;
-    object-fit: cover;
     border-radius: 50%;
-    position: relative;
-    z-index: 2;
-    border: 4px solid white; /* Inner border to separate from ring */
-}
-
-.avatar-ring {
-    position: absolute;
-    top: -5px; bottom: -5px; left: -5px; right: -5px;
-    background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
-    border-radius: 50%;
+    background: rgba(11, 14, 20, 0.8);
+    /* Match card bg */
+    border: 4px solid #1f2937;
+    /* Dark Grey Ring */
+    box-shadow: 0 0 0 4px #0B0E14;
+    /* Outer ring to cut card */
     z-index: 1;
-    animation: spin-slow 10s linear infinite;
-    opacity: 0.8;
-    filter: blur(8px);
+    transition: all 0.3s ease;
 }
 
-@keyframes spin-slow {
-    from { transform: rotate(0deg); }
-    to { transform: rotate(360deg); }
+.dev-card-3d:hover .circle-bg {
+    border-color: var(--primary-color);
+    box-shadow: 0 0 20px rgba(var(--primary-color-rgb), 0.3), 0 0 0 4px #0B0E14;
+}
+
+/* The Image - Pop Out Effect */
+.avatar-pop-img {
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 90%;
+    /* Start slightly smaller/contained */
+    height: 90%;
+    object-fit: cover;
+    /* Or contain if it's a cutout */
+    border-radius: 50%;
+    /* Initially rounded */
+    z-index: 2;
+    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    transform-origin: bottom center;
+}
+
+/* HOVER STATE: This makes the image pop up and scale */
+.avatar-container:hover .avatar-pop-img {
+    transform: translateX(-50%) translateY(-15px) scale(1.15);
+    border-radius: 20px;
+    /* Optional: Squircle shape on hover or keep 50%? kept simple for now */
+    border-radius: 50%;
+    /* Keep circle for consistency */
+    /* If the user has a transparent PNG, this moves the head 'out' of the circle bg */
+}
+
+/* Status Dot */
+.status-dot {
+    position: absolute;
+    bottom: 12px;
+    right: 12px;
+    width: 20px;
+    height: 20px;
+    background: #10B981;
+    border: 3px solid #0B0E14;
+    border-radius: 50%;
+    z-index: 3;
+    transition: transform 0.3s ease;
+}
+
+.avatar-container:hover .status-dot {
+    transform: scale(1.2);
 }
 
 /* Typography */
-.dev-name {
-    font-size: 2.5rem;
-    font-weight: 700;
-    margin-bottom: 0.5rem;
-    line-height: 1.2;
+.font-display {
+    font-family: var(--font-poppins), sans-serif;
+    /* Clean, bold */
 }
-
-.dev-title {
-    font-size: 1.1rem;
-    color: var(--primary-color);
-    font-weight: 500;
-    margin-bottom: 2rem;
-    letter-spacing: 1px;
-    text-transform: uppercase;
-    font-size: 0.85rem;
-    opacity: 0.9;
-}
-
-.mission-text {
-    font-size: 1.15rem;
-    color: var(--text-secondary, rgba(255,255,255,0.7));
-    line-height: 1.8;
-    max-width: 700px;
-    margin: 0 auto 3rem;
-    font-style: italic;
-}
-
-/* Button Group */
-.button-group-center {
-    display: flex;
-    gap: 1.5rem;
-    justify-content: center;
-    flex-wrap: wrap;
-}
-
-.github-btn {
-    /* Rely on global .button.secondary for border/color */
-    /* background: transparent; removed to use global */
-    /* border: 1px solid rgba(255,255,255,0.2); removed to use global */
-}
-/* Removed hover override to allow global hover effect */
 
 /* Responsive */
-@media (max-width: 768px) {
-    .profile-card-glass {
-        padding: 3rem 1.5rem;
+@media (max-width: 480px) {
+    .dev-card-wrapper {
         width: 95%;
+        /* Take up most of the screen */
+        max-width: 400px;
     }
-    
+
+    .dev-card-3d {
+        border-radius: 2rem;
+    }
+
     .avatar-container {
-        width: 140px;
-        height: 140px;
+        width: 130px;
+        /* Restore size for impact */
+        height: 130px;
+        top: -65px;
     }
-    
-    .dev-name {
-        font-size: 2rem;
+
+    .card-content {
+        padding-top: 5rem;
+        padding-left: 1rem;
+        /* Reduce side padding slightly */
+        padding-right: 1rem;
     }
-    
-    .mission-text {
-        font-size: 1rem;
+
+    .text-5xl {
+        font-size: 2.25rem;
+        /* Restore font size */
+    }
+
+    /* Ensure buttons fit */
+    .card-content button {
+        padding-left: 1rem;
+        padding-right: 1rem;
+        font-size: 0.8rem;
     }
 }
