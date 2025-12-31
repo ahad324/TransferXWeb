@@ -54,22 +54,22 @@ header {
 .nav-links a {
   display: flex;
   align-items: center;
-  color: rgba(255, 255, 255, 0.9);
+  color: rgba(255, 255, 255, 0.7);
   text-decoration: none;
-  transition: color var(--transition), transform var(--transition);
-  font-weight: 600;
-  font-size: 1rem;
-  padding: 0.4rem 1rem;
+  transition: color var(--transition);
+  font-weight: 500;
+  font-size: 0.95rem;
+  padding: 0.5rem 1.2rem;
   border-radius: 9999px;
   cursor: pointer;
   justify-content: center;
+  position: relative; /* Essential for containing the absolute pill */
 }
 
 .nav-links a:hover,
 .nav-links a.active {
   color: white;
-  background-color: rgba(255, 255, 255, 0.3);
-  transform: translateY(-2px);
+  /* Removed background-color and transform as they are now handled by framer-motion */
 }
 
 .menu-toggle {
@@ -152,17 +152,6 @@ header {
 
   .nav-links a span {
     font-size: 0.9rem;
-  }
-
-  /* Hover state for mobile - subtle */
-  .nav-links a:hover,
-  .nav-links a.active {
-    background-color: transparent;
-    color: var(--primary-color);
-  }
-
-  .nav-links a.active .nav-icon {
-    color: var(--primary-color);
   }
 
   .menu-toggle {
