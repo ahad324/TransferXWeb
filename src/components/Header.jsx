@@ -57,7 +57,7 @@ const Header = () => {
               },
             }}
             whileInView="visible"
-            viewport={{ once: true, amount: 0.3 }}
+            viewport={{ once: false, amount: 0.3 }}
           >
             <motion.li
               custom={1}

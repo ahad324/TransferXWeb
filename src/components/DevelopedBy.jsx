@@ -2,12 +2,12 @@
 import React from "react";
 import "@styles/DevelopedBy.css";
 import { myImage } from "@src/Images";
-import { FaGithub, FaExternalLinkAlt, FaCode, FaLinkedin } from "react-icons/fa";
+import { FaGithub, FaGlobe, FaCode, FaLinkedin } from "react-icons/fa";
 import { motion } from "framer-motion";
 import { textVariants } from "@src/AnimationVariants";
 
 const DevelopedBy = () => {
-  const handleViewProjects = () => window.open("https://ahad324.github.io/AllProjects/", "_blank");
+  const handleViewPortfolio = () => window.open("https://ahad-devsite.netlify.app/", "_blank");
   const handleGitHubProfile = () => window.open("https://github.com/ahad324", "_blank");
   const handleLinkedInProfile = () => window.open("https://www.linkedin.com/in/abdul-ahad-a08263273", "_blank");
 
@@ -47,10 +47,10 @@ const DevelopedBy = () => {
 
               <div className="flex items-center justify-center gap-4 flex-wrap">
                 <button
-                  onClick={handleViewProjects}
+                  onClick={handleViewPortfolio}
                   className="px-8 py-3 rounded-xl bg-white text-black font-bold hover:bg-gray-200 transition-all transform hover:-translate-y-1 shadow-[0_0_20px_rgba(255,255,255,0.1)] flex items-center gap-2 text-sm"
                 >
-                  Projects <FaExternalLinkAlt size={12} />
+                  <FaGlobe size={16} /> Portfolio
                 </button>
 
                 <button

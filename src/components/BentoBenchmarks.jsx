@@ -38,7 +38,7 @@ const CircularGauge = ({ value, max, label, subLabel, color, delay, size = "norm
                         initial={{ strokeDashoffset: circumference }}
                         whileInView={{ strokeDashoffset }}
                         transition={{ duration: 1.5, ease: "easeOut", delay }}
-                        viewport={{ once: true }}
+                        viewport={{ once: false }}
                         transform="rotate(-90 50 50)"
                     />
                     {/* Centered Text inside SVG */}
@@ -93,7 +93,7 @@ const BentoBenchmarks = () => {
                     variants={textVariants}
                     initial="hidden"
                     whileInView="visible"
-                    viewport={{ once: true }}
+                    viewport={{ once: false }}
                 >
                     <span className="sparkle-tag">PERFORMANCE ANALYSIS</span>
                     <h2 className="heading">
