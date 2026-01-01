@@ -56,7 +56,7 @@ const Contact = () => {
   return (
     <div className="page-wrapper">
       <SectionWrapper
-        className="max-w-3xl flex justify-center items-center flex-col mx-auto"
+        className="max-w-3xl mx-auto"
       >
         <div className="w-full">
           <span className="flex justify-center items-center flex-col text-center">

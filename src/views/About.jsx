@@ -24,7 +24,7 @@ const lobster = Lobster({
 const About = () => {
   return (
     <div className="page-wrapper min-h-screen">
-      <SectionWrapper className="max-w-5xl mx-auto px-6 py-20 text-[--text-color]">
+      <SectionWrapper className="max-w-5xl mx-auto px-6 pb-20 text-[--text-color]">
 
         {/* Simple, Professional Header */}
         <motion.div

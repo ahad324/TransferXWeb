@@ -72,7 +72,7 @@ const HowItWorks = () => {
   return (
     <div className="page-wrapper">
       <SectionWrapper
-        className="max-w-5xl flex justify-center items-center flex-col mx-auto pt-10 leading-relaxed"
+        className="max-w-5xl flex justify-center items-center flex-col mx-auto leading-relaxed"
       >
         <div className="w-full h-full">
           <h1

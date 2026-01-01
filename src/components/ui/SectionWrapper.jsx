@@ -13,7 +13,7 @@ const SectionWrapper = ({
     return (
         <motion.section
             id={id}
-            className={twMerge("min-h-screen pt-32 pb-20 px-4 md:px-8 text-[--text-color]", className)}
+            className={twMerge("min-h-screen pt-32 md:pt-40 pb-20 px-4 md:px-8 text-[--text-color]", className)}
             variants={containerVariants}
             initial="hidden"
             whileInView="visible"
