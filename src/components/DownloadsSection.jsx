@@ -20,12 +20,12 @@ const DownloadsSection = () => {
             "High-Performance LAN"
         ],
         receiver: [
+            "Traffic Control (File Limits)",
             "Live Transfer Dashboard",
-            "Client Management",
+            "Smart Config Tracking",
             "Full Activity Logging",
             "Air-Gapped Security",
             "Bandwidth Control",
-            "Admin Privileges"
         ]
     };
 
