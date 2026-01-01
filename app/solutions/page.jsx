@@ -2,7 +2,7 @@ import SolutionsContent from "@/views/Solutions";
 import PageWrapper from "@/components/PageWrapper";
 
 export const metadata = {
-    title: "TransferX Solutions | Universal Offline Data Collection",
+    title: "TransferX Solutions | Offline Data Collection",
     description: "Discover how TransferX solves secure file transfer challenges for Education, Enterprise, and Creative Professionals without internet.",
     keywords: "exam file collection, secure corporate transfer, offline file sharing, lan transfer software",
     alternates: {

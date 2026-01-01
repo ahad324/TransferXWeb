@@ -1,6 +1,6 @@
 # TransferX Web
 
-**TransferX** is the official web portal for the TransferX ecosystem – the universal offline data collection tool. Secure, fast, and resumable file transfers for Exams, Corporate, and Creative Studios without internet.
+**TransferX** is the official web portal for the TransferX ecosystem – the offline data collection tool. Secure, fast, and resumable file transfers for Exams, Corporate, and Creative Studios without internet.
 
 ## 🚀 Technology Stack
 

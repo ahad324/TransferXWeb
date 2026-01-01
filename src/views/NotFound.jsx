@@ -3,14 +3,14 @@ import React from "react";
 import { useRouter } from "next/navigation";
 import { NotFoundImage } from "../Images";
 import "../styles/NotFound.css";
+import SectionWrapper from "../components/ui/SectionWrapper";
 import Button from "../components/ui/Button";
 
 const NotFound = () => {
   const router = useRouter();
 
   return (
-    <div className="not-found">
-
+    <SectionWrapper className="not-found flex flex-col items-center justify-center">
       <div className="not-found-svg">
         <img src={NotFoundImage} alt="404 Not Found" />
       </div>
@@ -21,7 +21,7 @@ const NotFound = () => {
       <Button onClick={() => router.push("/")}>
         Go back to Home
       </Button>
-    </div>
+    </SectionWrapper>
   );
 };
 

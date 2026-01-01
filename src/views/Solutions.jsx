@@ -54,7 +54,7 @@ const Solutions = () => {
               One Tool, <span className="hero_name">Infinite Possibilities</span>
             </h1>
             <p className="text-lg md:text-xl max-w-2xl mx-auto opacity-80 leading-relaxed">
-              TransferX isn't just for exams. It's the universal standard for secure, high-speed, offline data collection across any industry.
+              TransferX isn't just for exams. It's the standard for secure, high-speed, offline data collection across any industry.
             </p>
           </motion.div>
 

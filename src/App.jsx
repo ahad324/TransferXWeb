@@ -1,20 +1,14 @@
-import React, { useState, useEffect } from "react";
-import { Routes, Route, useLocation } from "react-router-dom";
+import React, { useEffect } from "react";
+import { useLocation } from "react-router-dom";
 import { ReactLenis } from "lenis/react";
 import Header from "./components/Header";
 import Footer from "./components/Footer";
 import ScrollToTop from "./components/ScrollToTop";
-import Loader from "./components/Loader";
 import AppRoutes from "./router/AppRoutes";
 import "./App.css";
 
 const App = () => {
   const location = useLocation();
-  const [isLoading, setIsLoading] = useState(true);
-
-  useEffect(() => {
-    setIsLoading(false);
-  }, []);
 
   useEffect(() => {
     if (location.hash) {
@@ -22,21 +16,19 @@ const App = () => {
       if (element) {
         element.scrollIntoView({ behavior: "smooth" });
       }
+    } else {
+      window.scrollTo(0, 0);
     }
   }, [location]);
 
   return (
     <ReactLenis root>
-      <>
+      <div className="app">
         <Header />
         <ScrollToTop />
-        {isLoading ? (
-          <Loader ClassName="h-screen w-full bg-[background-color]" />
-        ) : (
-          <AppRoutes />
-        )}
+        <AppRoutes />
         <Footer />
-      </>
+      </div>
     </ReactLenis>
   );
 };

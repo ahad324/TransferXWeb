@@ -19,7 +19,7 @@ const lobster = Lobster({
 
 export const metadata = {
     title: "TransferX - Secure & Fast Offline File Transfers",
-    description: "TransferX - The Universal Offline Data Collection Tool. Secure, fast, and resumable file transfers for Exams, Corporate, and Creative Studios without internet.",
+    description: "TransferX - The Offline Data Collection Tool. Secure, fast, and resumable file transfers for Exams, Corporate, and Creative Studios without internet.",
     keywords: "file transfer, local network, air-gapped, offline sharing, exam submission, resumable upload, mDNS, TransferX",
     authors: [{ name: "AbdulAhad" }],
     icons: {
