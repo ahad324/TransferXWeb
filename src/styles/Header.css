@@ -1,9 +1,11 @@
 header {
   padding: 0.5rem 0;
-  position: sticky;
+  position: fixed;
   width: fit-content;
   z-index: 99;
-  margin: auto;
+  left: 0;
+  right: 0;
+  margin: 0 auto;
   top: 10px;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
   backdrop-filter: blur(10px);
@@ -63,7 +65,8 @@ header {
   border-radius: 9999px;
   cursor: pointer;
   justify-content: center;
-  position: relative; /* Essential for containing the absolute pill */
+  position: relative;
+  /* Essential for containing the absolute pill */
 }
 
 .nav-links a:hover,
@@ -80,7 +83,7 @@ header {
 /* Responsive Styles */
 @media (max-width: 640px) {
   header {
-    position: sticky;
+    position: fixed;
     box-shadow: 0px -4px 11px 3px rgba(0, 0, 0, 0.1);
     width: 95%;
   }
