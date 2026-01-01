@@ -38,16 +38,13 @@ header {
   position: relative;
 }
 
-.nav-links>ul {
+.nav-links ul {
   display: flex;
   list-style: none;
   margin: 0;
   padding: 0;
 }
 
-.nav-links>li {
-  margin-left: 2rem;
-}
 
 .nav-links a svg {
   margin-right: 0.5rem;
@@ -72,12 +69,27 @@ header {
 .nav-links a:hover,
 .nav-links a.active {
   color: white;
-  /* Removed background-color and transform as they are now handled by framer-motion */
 }
 
 .menu-toggle {
   display: none;
   /* Hide by default */
+}
+
+/* Icon style for Desktop */
+.nav-icon {
+  margin-right: 0.5rem;
+  font-size: 1.2rem;
+  display: inline-flex;
+}
+
+/* Desktop Menu State - Always visible */
+@media (min-width: 641px) {
+  .mobile-menu-wrapper {
+    height: auto !important;
+    opacity: 1 !important;
+    overflow: visible !important;
+  }
 }
 
 /* Responsive Styles */
@@ -90,46 +102,43 @@ header {
 
   .header-content {
     align-items: center;
+    flex-wrap: wrap;
+    padding: 0 1.2rem;
   }
 
   .nav-links {
-    position: absolute;
+    position: relative;
     display: block;
     width: 100%;
     left: 0;
+    order: 3;
+    padding: 0;
+    /* Clear desktop 5rem left padding */
   }
 
-  /* Grid Layout for Mobile Menu */
+  .mobile-menu-wrapper {
+    height: 0;
+    opacity: 0;
+    overflow: hidden !important;
+  }
+
+  /* 2x2 Grid Layout for Mobile Menu */
   .nav-links ul {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
-    /* 3 columns based on user image */
-    gap: .5rem;
-    align-items: center;
-    justify-items: center;
-    position: absolute;
-    top: -500px;
+    gap: 0.5rem;
     width: 100%;
-    /* height: 100dvh; */
-    z-index: -1;
-    left: 0;
-    border-radius: 12px;
-    padding: 0.5rem;
-    background: var(--background-color);
-    border: 1px solid rgba(255, 255, 255, 0.125);
+    padding: 1.5rem 0;
     transition: 0.3s all ease;
-    opacity: 0;
-    align-content: start;
+    justify-items: center;
   }
 
   .nav-links.active ul {
     opacity: 1;
-    top: calc(100% + 40px);
   }
 
   .nav-links li {
     margin-left: 0;
-    /* Override desktop margin */
     width: 100%;
   }
 
@@ -138,7 +147,6 @@ header {
     flex-direction: column;
     justify-content: center;
     gap: 0.8rem;
-    padding: 0.5rem 0.5rem;
     background: transparent;
     border-radius: 12px;
     height: 100%;
@@ -167,12 +175,4 @@ header {
   }
 
 
-}
-
-
-/* Icon style for Desktop */
-.nav-icon {
-  margin-right: 0.5rem;
-  font-size: 1.2rem;
-  display: inline-flex;
 }

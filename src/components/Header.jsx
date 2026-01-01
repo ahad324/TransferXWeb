@@ -45,122 +45,125 @@ const Header = () => {
           </a>
         </div>
         <nav className={`nav-links ${isMenuOpen ? "active" : ""}`}>
-          <motion.ul
-            initial="hidden"
-            animate={isMenuOpen ? "visible" : "hidden"}
-            onMouseLeave={() => setHoveredPath(null)}
+          <motion.div
+            className="mobile-menu-wrapper"
+            initial={false}
+            animate={isMenuOpen ? "open" : "closed"}
             variants={{
-              visible: {
-                transition: {
-                  staggerChildren: 0.1,
-                },
-              },
+              open: { height: "auto", opacity: 1 },
+              closed: { height: 0, opacity: 0 }
             }}
-            whileInView="visible"
-            viewport={{ once: false, amount: 0.3 }}
+            transition={{ duration: 0.3, ease: "easeInOut" }}
           >
-            <motion.li
-              custom={1}
-              variants={menuVariants}
-              onMouseEnter={() => setHoveredPath("/")}
+            <motion.ul
+              onMouseLeave={() => setHoveredPath(null)}
+              initial="hidden"
+              whileInView="visible"
+              viewport={{ once: false, amount: 0.3 }}
             >
-              <NavLink
-                to="/"
-                onClick={toggleMenu}
-                className={({ isActive }) => `relative ${isActive ? "active" : ""}`}
+              <motion.li
+                custom={1}
+                variants={menuVariants}
+                onMouseEnter={() => setHoveredPath("/")}
               >
-                {(hoveredPath === "/" || (pathname === "/" && hoveredPath === null)) && (
-                  <motion.div
-                    layoutId="navbar-pill"
-                    className="absolute inset-0 bg-white/10 rounded-[inherit] -z-10"
-                    transition={{
-                      type: "spring",
-                      stiffness: 300,
-                      damping: 30
-                    }}
-                  />
-                )}
-                <LuHome className="nav-icon relative z-20" />
-                <span className="relative z-20">Home</span>
-              </NavLink>
-            </motion.li>
-            <motion.li
-              custom={2}
-              variants={menuVariants}
-              onMouseEnter={() => setHoveredPath("/download")}
-            >
-              <NavLink
-                to="/download"
-                onClick={toggleMenu}
-                className={({ isActive }) => `relative ${isActive ? "active" : ""}`}
+                <NavLink
+                  to="/"
+                  onClick={toggleMenu}
+                  className={({ isActive }) => `relative ${isActive ? "active" : ""}`}
+                >
+                  {(hoveredPath === "/" || (pathname === "/" && hoveredPath === null)) && (
+                    <motion.div
+                      layoutId="navbar-pill"
+                      className="absolute inset-0 bg-white/10 rounded-[inherit] -z-10"
+                      transition={{
+                        type: "spring",
+                        stiffness: 300,
+                        damping: 30
+                      }}
+                    />
+                  )}
+                  <LuHome className="nav-icon relative z-20" />
+                  <span className="relative z-20">Home</span>
+                </NavLink>
+              </motion.li>
+              <motion.li
+                custom={2}
+                variants={menuVariants}
+                onMouseEnter={() => setHoveredPath("/download")}
               >
-                {(hoveredPath === "/download" || (pathname === "/download" && hoveredPath === null)) && (
-                  <motion.div
-                    layoutId="navbar-pill"
-                    className="absolute inset-0 bg-white/10 rounded-[inherit] -z-10"
-                    transition={{
-                      type: "spring",
-                      stiffness: 300,
-                      damping: 30
-                    }}
-                  />
-                )}
-                <FiDownloadCloud className="nav-icon relative z-20" />
-                <span className="relative z-20">Download</span>
-              </NavLink>
-            </motion.li>
+                <NavLink
+                  to="/download"
+                  onClick={toggleMenu}
+                  className={({ isActive }) => `relative ${isActive ? "active" : ""}`}
+                >
+                  {(hoveredPath === "/download" || (pathname === "/download" && hoveredPath === null)) && (
+                    <motion.div
+                      layoutId="navbar-pill"
+                      className="absolute inset-0 bg-white/10 rounded-[inherit] -z-10"
+                      transition={{
+                        type: "spring",
+                        stiffness: 300,
+                        damping: 30
+                      }}
+                    />
+                  )}
+                  <FiDownloadCloud className="nav-icon relative z-20" />
+                  <span className="relative z-20">Download</span>
+                </NavLink>
+              </motion.li>
 
-            <motion.li
-              custom={3}
-              variants={menuVariants}
-              onMouseEnter={() => setHoveredPath("/about")}
-            >
-              <NavLink
-                to="/about"
-                onClick={toggleMenu}
-                className={({ isActive }) => `relative ${isActive ? "active" : ""}`}
+              <motion.li
+                custom={3}
+                variants={menuVariants}
+                onMouseEnter={() => setHoveredPath("/about")}
               >
-                {(hoveredPath === "/about" || (pathname === "/about" && hoveredPath === null)) && (
-                  <motion.div
-                    layoutId="navbar-pill"
-                    className="absolute inset-0 bg-white/10 rounded-[inherit] -z-10"
-                    transition={{
-                      type: "spring",
-                      stiffness: 300,
-                      damping: 30
-                    }}
-                  />
-                )}
-                <LuInfo className="nav-icon relative z-20" />
-                <span className="relative z-20">About</span>
-              </NavLink>
-            </motion.li>
-            <motion.li
-              custom={4}
-              variants={menuVariants}
-              onMouseEnter={() => setHoveredPath("/contact")}
-            >
-              <NavLink
-                to="/contact"
-                onClick={toggleMenu}
-                className={({ isActive }) => `relative ${isActive ? "active" : ""}`}
+                <NavLink
+                  to="/about"
+                  onClick={toggleMenu}
+                  className={({ isActive }) => `relative ${isActive ? "active" : ""}`}
+                >
+                  {(hoveredPath === "/about" || (pathname === "/about" && hoveredPath === null)) && (
+                    <motion.div
+                      layoutId="navbar-pill"
+                      className="absolute inset-0 bg-white/10 rounded-[inherit] -z-10"
+                      transition={{
+                        type: "spring",
+                        stiffness: 300,
+                        damping: 30
+                      }}
+                    />
+                  )}
+                  <LuInfo className="nav-icon relative z-20" />
+                  <span className="relative z-20">About</span>
+                </NavLink>
+              </motion.li>
+              <motion.li
+                custom={4}
+                variants={menuVariants}
+                onMouseEnter={() => setHoveredPath("/contact")}
               >
-                {(hoveredPath === "/contact" || (pathname === "/contact" && hoveredPath === null)) && (
-                  <motion.div
-                    layoutId="navbar-pill"
-                    className="absolute inset-0 bg-white/10 rounded-[inherit] -z-10"
-                    transition={{
-                      type: "spring",
-                      stiffness: 300,
-                      damping: 30
-                    }}
-                  />
-                )}
-                <LuMail className="nav-icon relative z-20" />
-                <span className="relative z-20">Contact</span>
-              </NavLink>
-            </motion.li>
-          </motion.ul>
+                <NavLink
+                  to="/contact"
+                  onClick={toggleMenu}
+                  className={({ isActive }) => `relative ${isActive ? "active" : ""}`}
+                >
+                  {(hoveredPath === "/contact" || (pathname === "/contact" && hoveredPath === null)) && (
+                    <motion.div
+                      layoutId="navbar-pill"
+                      className="absolute inset-0 bg-white/10 rounded-[inherit] -z-10"
+                      transition={{
+                        type: "spring",
+                        stiffness: 300,
+                        damping: 30
+                      }}
+                    />
+                  )}
+                  <LuMail className="nav-icon relative z-20" />
+                  <span className="relative z-20">Contact</span>
+                </NavLink>
+              </motion.li>
+            </motion.ul>
+          </motion.div>
         </nav>
 
         <button
