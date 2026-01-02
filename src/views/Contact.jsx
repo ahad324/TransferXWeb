@@ -7,7 +7,6 @@ import {
   FaPaperPlane,
 } from "react-icons/fa";
 import { containerVariants } from "@src/AnimationVariants";
-import emailjs from '@emailjs/browser';
 import SectionWrapper from "@components/ui/SectionWrapper";
 import { Input, Textarea } from "@components/ui/Input";
 import Button from "@components/ui/Button";
@@ -27,30 +26,51 @@ const Contact = () => {
     setFormData({ ...formData, [name]: value });
   };
 
-  const handleSubmit = (e) => {
+  const validateEmail = (email) => {
+    const regex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    return regex.test(email);
+  };
+
+  const handleSubmit = async (e) => {
     e.preventDefault();
+
+    // Frontend Validation
+    if (!formData.name.trim() || !formData.email.trim() || !formData.message.trim()) {
+      setMessage({ error: "All fields are required." });
+      return;
+    }
+
+    if (!validateEmail(formData.email)) {
+      setMessage({ error: "Please enter a valid email address." });
+      return;
+    }
+
     setLoading(true);
+    setMessage({});
 
-    const emailData = {
-      from_name: formData.name,
-      from_email: formData.email,
-      message: formData.message,
-    };
+    try {
+      const response = await fetch("/api/contact", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(formData),
+      });
 
-    emailjs
-      .send("service_6e7dx76", "TransferX_ID", emailData, "xKC9L2BrKrpGIQW2C")
-      .then((response) => {
-        console.log("Email sent successfully!", response.status, response.text);
+      const result = await response.json();
+
+      if (response.ok) {
         setMessage({ success: "Your message has been sent successfully!" });
         setFormData({ name: "", email: "", message: "" }); // Reset form
-      })
-      .catch((err) => {
-        console.error("Failed to send email. Error: ", err);
-        setMessage({ error: "Failed to send your message. Please try again." });
-      })
-      .finally(() => {
-        setLoading(false);
-      });
+      } else {
+        setMessage({ error: result.error || "Failed to send your message. Please try again." });
+      }
+    } catch (err) {
+      console.error("Failed to send message:", err);
+      setMessage({ error: "Something went wrong. Please try again later." });
+    } finally {
+      setLoading(false);
+    }
   };
 
   return (
