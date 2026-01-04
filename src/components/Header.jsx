@@ -9,6 +9,7 @@ import "@styles/Header.css";
 import { Logo } from "@src/Images";
 import { motion } from "framer-motion";
 import { menuVariants } from "@src/AnimationVariants";
+import Link from "next/link";
 
 const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -32,7 +33,7 @@ const Header = () => {
     >
       <div className="header-content">
         <div className="logo">
-          <a
+          <Link
             href="/"
             className="flex justify-center items-center cursor-pointer"
           >
@@ -42,7 +43,7 @@ const Header = () => {
               className="w-12  h-12 p-1 rounded-lg none md:block  "
             />
             <span>TransferX</span>
-          </a>
+          </Link>
         </div>
         <nav className={`nav-links ${isMenuOpen ? "active" : ""}`}>
           <motion.div

@@ -18,12 +18,12 @@ const Footer = () => {
             The ultimate offline-first file sharing solution. Secure, fast, and private transfers for your local network.
           </p>
           <div className="flex gap-4">
-            <a href="https://github.com/ahad324" target="_blank" rel="noopener noreferrer" className="social-icon" aria-label="GitHub">
+            <Link href="https://github.com/ahad324" target="_blank" rel="noopener noreferrer" className="social-icon" aria-label="GitHub">
               <FaGithub size={20} />
-            </a>
-            <a href="https://www.linkedin.com/in/abdul-ahad-a08263273" target="_blank" rel="noopener noreferrer" className="social-icon" aria-label="LinkedIn">
+            </Link>
+            <Link href="https://www.linkedin.com/in/abdul-ahad-a08263273" target="_blank" rel="noopener noreferrer" className="social-icon" aria-label="LinkedIn">
               <FaLinkedin size={20} />
-            </a>
+            </Link>
           </div>
         </div>
 
