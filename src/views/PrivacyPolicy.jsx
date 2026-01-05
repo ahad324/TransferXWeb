@@ -32,9 +32,9 @@ const PrivacyPolicy = () => {
                                 </p>
                                 <ul className="list-disc list-inside space-y-2 opacity-90 ml-2">
                                     <li><strong>Personal Data:</strong> We do NOT collect names, emails, phone numbers, or any personally identifiable information.</li>
-                                    <li><strong>Files:</strong> Files transferred using TransferX are sent directly between your devices (Client to Receiver). They are NOT uploaded to any cloud storage or third-party server.</li>
-                                    <li><strong>Logs:</strong> Technical logs (e.g., `mdns_connections.log`, `receiver.log`) are generated and stored <strong>locally on your device</strong> for troubleshooting purposes only. You have full control to delete these at any time.</li>
-                                    <li><strong>Databases:</strong> Application history is stored in a local SQLite database (`receiver_data.db`) on your machine. We cannot access this database.</li>
+                                    <li><strong>Files:</strong> Files transferred using TransferX are sent directly between your devices (Client to Server). They are NOT uploaded to any cloud storage or third-party server.</li>
+                                    <li><strong>Logs:</strong> Technical logs (e.g., `mdns_connections.log`, `server.log`) are generated and stored <strong>locally on your device</strong> for troubleshooting purposes only. You have full control to delete these at any time.</li>
+                                    <li><strong>Databases:</strong> Application history is stored in a local SQLite database (`server_data.db`) on your machine. We cannot access this database.</li>
                                 </ul>
                             </div>
                         </section>
@@ -46,7 +46,7 @@ const PrivacyPolicy = () => {
                                     Security is paramount for local transfers. We employ industry-standard encryption protocols to ensure your data remains confidential, even on open Wi-Fi networks.
                                 </p>
                                 <ul className="list-disc list-inside space-y-2 opacity-90 ml-2">
-                                    <li><strong>mTLS (Mutual TLS):</strong> All communication between the TransferX Client and Receiver is encrypted using Mutual TLS 1.3. This ensures that both parties are authenticated and the channel is encrypted.</li>
+                                    <li><strong>mTLS (Mutual TLS):</strong> All communication between the TransferX Client and Server is encrypted using Mutual TLS 1.3. This ensures that both parties are authenticated and the channel is encrypted.</li>
                                     <li><strong>Local Certificates:</strong> We generate unique cryptographic certificates (`TransferX_CA.crt`, etc.) locally on your machine during setup to establish this secure trust.</li>
                                     <li><strong>No Middlemen:</strong> Since data travels directly over your LAN, there is no "man-in-the-middle" server to intercept your data.</li>
                                 </ul>

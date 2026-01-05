@@ -5,7 +5,7 @@ export const ClientImages = [
   "/assets/Images/client/4th.webp",
 ];
 
-export const ReceiverImages = [
+export const ServerImages = [
   "/assets/Images/server/1st.webp",
   "/assets/Images/server/2nd.webp",
   "/assets/Images/server/3rd.webp",

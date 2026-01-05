@@ -109,7 +109,7 @@ const About = () => {
                 I asked a simple question: <span className="text-white font-semibold italic">"Why does data need to travel around the world just to reach the computer next to me?"</span>
                 <br /><br />
                 I stripped away the external dependencies. No cloud. No complex servers. Just a secure
-                Client-Server connection where only the receiver gets the files, preventing any
+                Client-Server connection where only the server gets the files, preventing any
                 student-to-student sharing or cheating.
               </p>
             </div>

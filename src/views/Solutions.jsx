@@ -32,7 +32,7 @@ const Solutions = () => {
     {
       title: "Events & Hackathons",
       icon: <FiWifi size={40} className="text-[--primary-color]" />,
-      desc: "Zero-Setup Kiosk. Set up a submission receiver in seconds on any ad-hoc Wi-Fi. No heavy infrastructure or internet required.",
+      desc: "Zero-Setup Kiosk. Set up a submission server in seconds on any ad-hoc Wi-Fi. No heavy infrastructure or internet required.",
       highlight: "Perfect for: Hackathons, Workshops"
     }
   ];

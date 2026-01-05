@@ -16,7 +16,7 @@ const HowItWorks = () => {
       content: (
         <div>
           <p>
-            Download the <strong>Receiver</strong> app for the teacher/manager, and the <strong>Client</strong> app for students or contributors.
+            Download the <strong>Server</strong> app for the teacher/manager, and the <strong>Client</strong> app for students or contributors.
           </p>
           <p className="mt-4">
             That's it. No database configuration, no complex IP routing, and no internet required. Just run the installer and you're ready.
@@ -30,13 +30,13 @@ const HowItWorks = () => {
       content: (
         <div>
           <p>
-            <strong>Receiver Side:</strong> Click <strong>Start Receiver</strong>. We handle the firewall rules and network ports automatically.
+            <strong>Server Side:</strong> Click <strong>Start Server</strong>. We handle the firewall rules and network ports automatically.
           </p>
           <p className="mt-4">
             <strong>Client Side:</strong> Launch the app and click <strong>Connect</strong>.
           </p>
           <p className="mt-2">
-            Thanks to our smart <strong>mDNS Discovery</strong>, the client finds the receiver instantly without typing a single IP address. It really is that simple.
+            Thanks to our smart <strong>mDNS Discovery</strong>, the client finds the server instantly without typing a single IP address. It really is that simple.
           </p>
         </div>
       ),

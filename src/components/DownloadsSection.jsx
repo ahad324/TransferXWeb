@@ -3,12 +3,12 @@ import React, { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { IoLogoWindows, IoCloudDownloadOutline, IoServerOutline, IoLaptopOutline } from "react-icons/io5";
 import { FiCheckCircle } from "react-icons/fi";
-import { ClientImages, ReceiverImages } from "@src/Images"; // Ensure correct import path
+import { ClientImages, ServerImages } from "@src/Images"; // Ensure correct import path
 import { ImageSwiper } from "./ui/ImageSwipper";
 import "../styles/DownloadsSection.css";
 
 const DownloadsSection = () => {
-    const [activeTab, setActiveTab] = useState("client"); // 'client' | 'receiver'
+    const [activeTab, setActiveTab] = useState("client"); // 'client' | 'server'
 
     const features = {
         client: [
@@ -19,7 +19,7 @@ const DownloadsSection = () => {
             "Dark & Light Themes",
             "High-Performance LAN"
         ],
-        receiver: [
+        server: [
             "Traffic Control (File Limits)",
             "Live Transfer Dashboard",
             "Smart Config Tracking",
@@ -31,7 +31,7 @@ const DownloadsSection = () => {
 
     const downloadLinks = {
         client: "https://apps.microsoft.com/detail/9PLN8SM7NKTD?referrer=appbadge&mode=mid",
-        receiver: "https://apps.microsoft.com/detail/9N36MFVZCHW1?referrer=appbadge&mode=mid"
+        server: "https://apps.microsoft.com/detail/9N36MFVZCHW1?referrer=appbadge&mode=mid"
     };
 
     return (
@@ -53,10 +53,10 @@ const DownloadsSection = () => {
                         <IoLaptopOutline className="tab-icon" /> Client
                     </button>
                     <button
-                        className={`tab-btn ${activeTab === 'receiver' ? 'active' : ''}`}
-                        onClick={() => setActiveTab('receiver')}
+                        className={`tab-btn ${activeTab === 'server' ? 'active' : ''}`}
+                        onClick={() => setActiveTab('server')}
                     >
-                        <IoServerOutline className="tab-icon" /> Receiver
+                        <IoServerOutline className="tab-icon" /> Server
                     </button>
                     {/* Sliding Background for Tabs */}
                     <motion.div
@@ -84,14 +84,14 @@ const DownloadsSection = () => {
                             {/* Left: Interactive Preview / Image */}
                             <div className="visual-column">
                                 <div className={`glow-container ${activeTab}`}>
-                                    <ImageSwiper images={activeTab === 'client' ? ClientImages : ReceiverImages} />
+                                    <ImageSwiper images={activeTab === 'client' ? ClientImages : ServerImages} />
                                 </div>
                             </div>
 
                             {/* Right: Info & Actions */}
                             <div className="info-column">
                                 <div className="info-header">
-                                    <h3>{activeTab === 'client' ? "TransferX Client" : "TransferX Receiver"}</h3>
+                                    <h3>{activeTab === 'client' ? "TransferX Client" : "TransferX Server"}</h3>
                                 </div>
 
                                 <p className="app-desc-text">
