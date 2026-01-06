@@ -1,4 +1,5 @@
 import { Poppins, Lobster } from "next/font/google";
+import Script from "next/script";
 import "./globals.css";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
@@ -36,6 +37,20 @@ export const metadata = {
 export default function RootLayout({ children }) {
     return (
         <html lang="en" className={`${poppins.variable} ${lobster.variable}`}>
+            <head>
+                <Script
+                    src="https://www.googletagmanager.com/gtag/js?id=G-27ZSNBMB0T"
+                    strategy="afterInteractive"
+                />
+                <Script id="gtag-init" strategy="afterInteractive">
+                    {`
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+            gtag('config', 'G-27ZSNBMB0T');
+          `}
+                </Script>
+            </head>
             <body className="antialiased flex flex-col min-h-screen">
                 <ClientLayout>
                     <Header />
